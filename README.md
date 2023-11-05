@@ -1,5 +1,7 @@
 # grupo_12_huellitas
-Proyecto Digital House.
+**Proyecto Digital House**
+
+> HUELLITAS. Todo para familias multiespecie.
 
 ![Logo](./Img/logo.jpg)
 
