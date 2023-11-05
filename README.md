@@ -1,5 +1,7 @@
 # grupo_12_huellitas
-Proyecto Digital House
+Proyecto Digital House.
+
+![Logo](./Img/logo.jpg)
 
 # Integrantes:
 - **Lina Barauskas**, 41 años, de la ciudad de Santa Fe, Argentina. Psicóloga, dibujante y Clown. Actualmente, estudiante de programación en la búsqueda de nuevos horizontes. Amante de los gatos y los nuevos desafíos.
