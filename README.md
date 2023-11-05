@@ -36,3 +36,18 @@ https://trello.com/b/HffSb3Gm/sprint01-26-10-09-11-dh-huellitas-grupo-12
 # Paleta de colores:
 
 https://coolors.co/ffffff-16c6cc-11999e-576d69-293533
+
+# Tipografía:
+
+https://fonts.google.com/specimen/Roboto?query=roboto
+
+# sprints: 
+
+- [x] Sprint 1: 26/10 - 09/11
+- [ ] sprint 2: 09/11 - 23/11
+- [ ] Sprint 3: 05/12 - 19/12
+- [ ] Sprint 4: 19/12 - 11/01
+- [ ] Sprint 5: 11/01 - 01/02
+- [ ] Sprint 6: 01/02 - 27/02
+- [ ] Sprint 7: 27/02 - 12/03
+- [ ] Sprint 8: 12/03 - 26/03
