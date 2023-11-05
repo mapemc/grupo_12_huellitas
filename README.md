@@ -2,10 +2,10 @@
 Proyecto Digital House
 
 # Integrantes:
--**Lina Barauskas**, 41 años, de la ciudad de Santa Fe, Argentina. Psicóloga, dibujante y Clown. Actualmente, estudiante de programación en la búsqueda de nuevos horizontes. Amante de los gatos y los nuevos desafíos.
--**Analia Fernanda Jaime**, 46 años. Madre de 2 humanos y 2 perras. Licenciada en Administración y MBA.
--**Malena Villa Abrille**, 24 años, Palermo, estudiante Ing. en Sistemas, Desarrolladora de base de datos.
--**Juan Esteban Ruiz**: 28 años. Nací en Tierra del Fuego, crecí en Catriel, Río Negro pero estoy viviendo en Palermo. Contador Público, aunque prefiero contar chistes antes que números .
+- **Lina Barauskas**, 41 años, de la ciudad de Santa Fe, Argentina. Psicóloga, dibujante y Clown. Actualmente, estudiante de programación en la búsqueda de nuevos horizontes. Amante de los gatos y los nuevos desafíos.
+- **Analia Fernanda Jaime**, 46 años. Madre de 2 humanos y 2 perras. Licenciada en Administración y MBA.
+- **Malena Villa Abrille**, 24 años, Palermo, estudiante Ing. en Sistemas, Desarrolladora de base de datos.
+- **Juan Esteban Ruiz**: 28 años. Nací en Tierra del Fuego, crecí en Catriel, Río Negro pero estoy viviendo en Palermo. Contador Público, aunque prefiero contar chistes antes que números .
 
 
 # Temática:
