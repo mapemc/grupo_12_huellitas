@@ -20,3 +20,15 @@ HOWLPOT (en chino creo jaja pero está bueno) iconos que llevan a categorías de
 Furbo Cat Camera | Pet Camera designed specifically for cats à diseño minimalista. Log in simple
 
 Wild One à presentación de productos. Tiene una parte que es para ayudar a animales “give back” . También habla de mascotas como parte de la familia. El shop está dividido en categorías que están buenas.
+
+# Wireframes:
+
+https://xd.adobe.com/view/d24cc48e-4265-425f-bc9d-d8b9a3bd5ea2-871f/
+
+# Tablero de trabajo:
+
+https://trello.com/b/6X6Z1Z6Q/grupo-12-huellitas
+
+# Paleta de colores:
+
+https://coolors.co/ffffff-ffcbcb-ff9e9e-ff7171-ff3f3f
