@@ -1,11 +1,11 @@
-# grupo_12_huellitas
-**Proyecto Digital House**
+# grupo_12_huellitas :two hearts:
+##Proyecto Digital House##
 
-> HUELLITAS. Todo para familias multiespecie.
+> ***HUELLITAS. Todo para familias multiespecie *** 
 
 ![Logo](./Img/logo.jpg)
 
-# Integrantes:
+# Integrantes del equipo :smile::
 - **Lina Barauskas**, 41 años, de la ciudad de Santa Fe, Argentina. Psicóloga, dibujante y Clown. Actualmente, estudiante de programación en la búsqueda de nuevos horizontes. Amante de los gatos y los nuevos desafíos.
 - **Analia Fernanda Jaime**, 46 años. Madre de 2 humanos y 2 perras. Licenciada en Administración y MBA.
 - **Malena Villa Abrille**, 24 años, Palermo, estudiante Ing. en Sistemas, Desarrolladora de base de datos.
