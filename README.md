@@ -17,13 +17,13 @@ El e-commerce tiene como objetivo la venta de productos para mascotas como alime
 El público objetivo es aquél que tenga mascotas o esté pensando en adoptar alguna "Huellitas" es el destino perfecto para aquellos que consideran a sus mascotas como parte integral de su familia, independientemente de cuántas patas tengan.
 
 # Sitios de interés y justificación:
-Up Dog Toys | Modern & Minimalist Toys For Dogs And Puppies diseño limpio. Presentación del producto. Carrito. Historias de clientes.
+https://www.updogtoys.com/  Up Dog Toys | Modern & Minimalist Toys For Dogs And Puppies diseño limpio. Presentación del producto. Carrito. Historias de clientes.
 
-HOWLPOT (en chino creo jaja pero está bueno) iconos que llevan a categorías de productos
+https://howlpot.com/ HOWLPOT (en chino creo jaja pero está bueno) iconos que llevan a categorías de productos
 
-Furbo Cat Camera | Pet Camera designed specifically for cats à diseño minimalista. Log in simple
+https://furbo.com/us/products/furbo-360-cat-camera Furbo Cat Camera | Pet Camera designed specifically for cats à diseño minimalista. Log in simple
 
-Wild One à presentación de productos. Tiene una parte que es para ayudar a animales “give back” . También habla de mascotas como parte de la familia. El shop está dividido en categorías que están buenas.
+https://wildone.com/ Wild One à presentación de productos. Tiene una parte que es para ayudar a animales “give back” . También habla de mascotas como parte de la familia. El shop está dividido en categorías que están buenas.
 
 # Wireframes:
 
