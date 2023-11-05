@@ -9,7 +9,7 @@
 - **Lina Barauskas**, 41 años, de la ciudad de Santa Fe, Argentina. Psicóloga, dibujante y Clown. Actualmente, estudiante de programación en la búsqueda de nuevos horizontes. Amante de los gatos y los nuevos desafíos.
 - **Analia Fernanda Jaime**, 46 años. Madre de 2 humanos y 2 perras. Licenciada en Administración y MBA.
 - **Malena Villa Abrille**, 24 años, Palermo, estudiante Ing. en Sistemas, Desarrolladora de base de datos.
-- **Juan Esteban Ruiz**: 28 años. Nací en Tierra del Fuego, crecí en Catriel, Río Negro pero estoy viviendo en Palermo. Contador Público, aunque prefiero contar chistes antes que números .
+- **Juan Esteban Ruiz**: 28 años. Nací en Tierra del Fuego, crecí en Catriel, Río Negro pero estoy viviendo en Palermo. Contador Público, aunque prefiero contar chistes antes que números.
 
 
 # Temática:
@@ -41,7 +41,7 @@ https://coolors.co/ffffff-16c6cc-11999e-576d69-293533
 
 https://fonts.google.com/specimen/Roboto?query=roboto
 
-# sprints: 
+# Sprints: 
 
 - [x] Sprint 1: 26/10 - 09/11
 - [ ] sprint 2: 09/11 - 23/11
