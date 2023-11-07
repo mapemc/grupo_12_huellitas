@@ -10,7 +10,7 @@
 - **Analia Fernanda Jaime**, 46 años. Madre de 2 humanos y 2 perras. Licenciada en Administración y MBA.
 - **Malena Villa Abrille**, 24 años, Palermo, estudiante Ing. en Sistemas, Desarrolladora de base de datos.
 - **Juan Esteban Ruiz**: 28 años. Nací en Tierra del Fuego, crecí en Catriel, Río Negro pero estoy viviendo en Palermo. Contador Público, aunque prefiero contar chistes antes que números.
-
+- **Stiven Alexánder Sánchez Varela**: tengo 28 años; nací en Bogotá, Colombia; soy licenciado en español y filología Clásica, y técnico en diseño gráfico.
 
 # Temática:
 El e-commerce tiene como objetivo la venta de productos para mascotas como alimentos o accesorios y pequeños servicios, peluqueria y guarderia, El e-commerce ofrece una amplia gama de productos y servicios diseñados para animales domésticos. Desde alimentos premium hasta juguetes interactivos, y servicios que abarcan desde el cuidado básico hasta el entrenamiento especializado.
@@ -24,6 +24,8 @@ https://howlpot.com/ HOWLPOT (en chino creo jaja pero está bueno) iconos que ll
 https://furbo.com/us/products/furbo-360-cat-camera Furbo Cat Camera | Pet Camera designed specifically for cats à diseño minimalista. Log in simple
 
 https://wildone.com/ Wild One à presentación de productos. Tiene una parte que es para ayudar a animales “give back” . También habla de mascotas como parte de la familia. El shop está dividido en categorías que están buenas.
+
+https://laika.com.co/ Está página web cuenta con una distribución clara y de fácil comprensión para el usuario. simplicidad y minimalismo en todo el sitio web.
 
 # Wireframes:
 
