@@ -4,7 +4,8 @@
   "description": "Proyecto Digital House",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node src/app.js",
+    "test": "Servidor corriendo en http://localhost:3456"
   },
   "keywords": [],
   "author": "",
