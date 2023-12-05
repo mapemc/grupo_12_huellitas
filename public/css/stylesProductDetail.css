@@ -245,7 +245,7 @@ input[type=number]::-webkit-outer-spin-button */
   }
 
   
-/* ////////////////////////////////////////////////////////////////////// */
+
 
 .caja-carrito{    /* tt-row-custom-01 */
   display: flex;
@@ -364,4 +364,81 @@ input[type=number]::-webkit-outer-spin-button */
   /* text-size-adjust: auto; */
   font-size: 15px;
   color: rgba(87, 109, 105, 1);
+}
+
+
+/* ///////////////////////////////////Productos recomendados/////////////////////////////////// */
+
+.vistos-recientemente{
+  display: flex;
+  background-color: #585f5bb3;
+  color: #dcdddf;
+  /* width: 100vw; */
+  /* text-align: center; */
+  height: 37px;
+  /* flex-wrap: nowrap; */
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+  /* align-content: stretch; */
+  align-items: center;
+}
+
+.section-otros-productos{
+  width: 100vw;
+  background-color: #ebebeb;
+  display: flex;
+}
+
+.contenedor-articulos{
+  display: flex;
+  margin: 7px;
+  text-align: center;
+  /* padding: 15px; */
+  width: 25%;
+}
+
+.producto{
+  background-color: white;
+  transition: all 500ms; 
+}
+
+
+.producto:hover{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.producto img{
+  width: 90%; 
+  height: auto;
+}
+
+.caja-descripcion-1{
+  display: flex;
+  border-top: solid 1px #ebebeb;
+  padding: 10px;
+  line-height: 1.5;
+  /* flex-direction: row; */
+  /* align-items: flex-start; */
+  justify-content: space-between;
+}
+
+.tipografia-precios{
+  font-size: 0.90rem;
+  text-align: left;
+  width: 47%;
+  color: #585b58;
+}
+
+.tipografia-descuentos{
+  font-size: 0.75rem;
+  color: #11999e;
+  text-align: left;
+}
+
+.tipografia-descripciones{
+  font-size: 1rem;
+  color: #666;
+  padding: 9px;
+  text-align: left;
+  margin-bottom: 5px;
 }
