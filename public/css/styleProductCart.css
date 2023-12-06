@@ -1,0 +1,73 @@
+body{
+    font-family:'Roboto', sans-serif; 
+    box-sizing: border-box;
+    background-color: #293533;
+}
+h1{
+    font-family:'Roboto', sans-serif; 
+    text-align: center;
+    margin: 30px 0px;
+}
+img{
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius:20px 20px 0px 0px ;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+
+}
+.items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+
+}
+.items>div{
+    box-shadow: 0px 0px 5px 0px #11999E;
+    background-color: #16C6CC;
+    border-radius: 20px;
+
+}
+.items>div:hover{
+    background-color:#11999E ;
+}
+.info{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15;
+
+}
+.info>p:first-child{
+    font-size: 25px;
+    font-weight: 300;
+}
+.info .precio{
+    font-size: 20px;
+    font-weight: 500;
+}
+.info button {
+    color: #FFFFFF;
+    background-color: #576D69;
+    width: 100px;
+    height: 35;
+    border-radius: 10px;
+    border: none;
+
+    font-size: 17px;
+    font-weight: 30px;
+    cursor: pointer;
+}
