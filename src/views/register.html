@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset = "utf-8">
+    <!--Vas a ser responsive o no hdp-->
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <title>Registro | Huellitas 🐾</title>
+    <link rel = "stylesheet" href = "/css/stylesRegister.css">
 </head>
+
 <body>
-    
+    <header>
+        <!--Header Huellitas-->
+        <!--Banner-->
+        <img class = "banner" src = "/img/banner-register.jpeg" alt = "img-register-banner">
+    </header>
+
+    <main>
+        <h3 class = "title">¡Bienvenid@! Completa este formulario para registrarte</h3>
+        <form action = "/register" method = "POST" class = "register-form">
+                <div class = "columns">
+                <!--Campos del formulario-->
+                <div class = "register-left">
+                    <div class = "input-boxes">
+                        <label for = "user">Nombre de usuari@</label>
+                        <input type = "text" name = "user" id = "user">
+                    </div>
+                    <div class = "input-boxes">
+                        <label for = "email">Email</label>
+                        <input type = "email" name = "email" id = "email">
+                    </div>
+                    <div class = "input-boxes">    
+                        <label for = "password">Contraseña</label>
+                        <input type = "password" name = "password" id = "password">
+                    </div>
+                    <div class = "input-boxes">
+                        <label for = "confirmPassword">Confirmar contraseña</label>
+                        <input type = "password" name = "confirmPassword" id = "confirmPassword">
+                    </div>
+
+                    <!--Botones formulario-->
+                    <div class = "submit-button-box">
+                        <button type = "submit" id = "registerButton">Registrarse</button>
+                    </div>    
+                </div>
+
+                <!--Divisor-->
+                <div class = "divider"></div>
+
+                <!--Logo-->
+                <div class = "register-right">
+                    <img class = "logo" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-register"> 
+                </div>
+            </div>
+            <!--Login-->
+                <div class = "register-down">
+                    <p>Ya tengo una cuenta</p>
+                    <button class = "login-button-box" id = "loginButton">
+                        <a href = "/login">Iniciar sesión</a>
+                    </button>
+                </div>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Contenido del pie de página -->
+    </footer>
 </body>
 </html>
