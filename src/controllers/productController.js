@@ -3,12 +3,12 @@ const path = require('path');
 
 const productController ={
     carrito: (req, res) =>{
-        res.sendFile(path.resolve(__dirname, "../views/productCart.html"));
+        res.render("productCart.ejs");
     },
 
     detalle: (req, res) =>{
       
-      res.sendFile(path.resolve(__dirname, "../views/productDetail.html")); 
+      res.render("productDetail.ejs"); 
     },
 };
 

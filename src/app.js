@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
+
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
 
 /* rutas */
-const mainRouter = require("./routes/mainRouter.js");
-const userRouter = require("./routes/userRouter.js");
-const productRouter = require("./routes/productRouter.js");
+const mainRouter = require("./routes/mainRouter");
+const userRouter = require("./routes/userRouter");
+const productRouter = require("./routes/productRouter");
 
 app.use(express.static("public"));
 
