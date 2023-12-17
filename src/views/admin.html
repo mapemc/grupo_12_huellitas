@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset = "utf-8">
+    <!--Vas a ser responsive o no hdp-->
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <title>Administrador | Huellitas 🐾</title>
+    <!--Link con CSS-->
+    <link rel = "stylesheet" href = "/css/stylesAdmin.css">
+    <!--Linkeando con íconos-->
+    <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel = "stylesheet"/>
+    
+
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h3 class = "title">Productos</h3>
+        <form action = "/products" method = "POST" class = "edit-products-form">
+        <!--Cuerpo-->
+            <!--Boton nuevo-->
+            <div class = "new-product-button">
+                <a href = "/admin/products/new" class = "newProductButton">
+                    <i class="fa-solid fa-circle-plus"></i>Agregar un producto</a>
+            </div>
+            <div class = "product-box">
+                <div class = "product-box-header">
+                    <p>Producto</p>
+                    <p>Precio</p>
+                    <p>Stock</p>
+                </div>
+                <div class = "product-box-container">
+                    <div class = "product-main-details">
+                        <p class = "product-photo">foto1 del producto</p>
+                        <p class = "product-name">nombre click manda al prod</p>
+                    </div>
+                    <input type = "number" step = 0.01 min = 0 name = "product-price" id = "product-price" class = "form-input">
+                    <input type = "number" min = 0 name = "product-stock" id = "product-stock" class = "form-input">
+                </div>
+                <div class = "actions">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Contenido del pie de página -->
+    </footer>
+</body>	
+</html>

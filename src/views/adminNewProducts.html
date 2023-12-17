@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset = "utf-8">
+    <!--Vas a ser responsive o no hdp-->
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <title>Nuevo Producto | Huellitas 🐾</title>
+    <!--Link con CSS-->
+    <link rel = "stylesheet" href = "/css/stylesAdminNewProducts.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h3 class = "title">Nuevo Producto</h3>
+        <form action = "/admin/products/new" method = "POST" class = "products-form">
+        <!--Cuerpo-->
+            <div class = "name-description">
+                <label for = "product-name" class = "form-label">Nombre</label>
+                    <input type = "text" name = "product-name" id = "product-name" class = "form-input" placeholder = "Ej: Collar rojo para perro">
+                <label for = "product-detail">Descripción</label>
+                    <textarea name = "product-detail" id = "product-detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
+            </div>
+            <div class = "photos">
+            <label for = "product-photos" class = "form-label">Fotos</label>
+                <input type = "file" name = "product-photos" accept = ".jpg, .png, .svg" id = "product-photos" class = "form-input">
+            </div>
+            <div class = "price-stock">
+            <label for = "product-price" class = "form-label">Precio</label>
+                <input type = "number" step = 0.01 min = 0 name = "product-price" id = "product-price" class = "form-input">
+            <label for = "product-stock" class = "form-label">Stock</label>
+                <input type = "number" min = 0 name = "product-stock" id = "product-stock" class = "form-input">
+            </div>
+            <div class = "category">
+                <label for = "category" class = "form-label">Categoría</label>
+                    <select name = "category" id = "category" class = "form-input">
+                        <option value = "default-cat">Categoría</option>
+                        <option value = "accesories">Accesorios</option>
+                        <option value = "food">Alimento</option>
+                        <option value = "beds">Camas</option>
+                        <option value = "bath">Higiene y estética</option>
+                        <option value = "clothes">Indumentaria</option>
+                        <option value = "toys">Juguetes</option>
+                        <option value = "outside">Paseo</option>
+                    </select>
+            </div>
+            <div class = "specs">
+                <label for = "product-color" class = "form-label">Color</label>
+                    <select name = "product-color" id = "product-color" class = "form-input">
+                        <option value = "default-color">Color</option>
+                        <option value = "yellow">Amarillo</option>
+                        <option value = "blue">Azul</option>
+                        <option value = "white">Blanco</option>
+                        <option value = "black">Negro</option>
+                        <option value = "red">Rojo</option>
+                        <option value = "pink">Rosa</option>
+                        <option value = "green">Verde</option>                        
+                    </select>
+                <label for = "product-size" class = "form-label">Tamaño</label>
+                    <div class = "size-checkboxes">
+                        <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
+                        <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
+                        <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
+                        <label for = "sizeL"><input type = "checkbox" id = "sizeL" name = "sizes" value = "L">L</label>
+                        <label for = "sizeXL"><input type = "checkbox" id = "sizeXL" name = "sizes" value = "XL">XL</label>
+                    </div>
+            </div>
+            <div class = "button-container">
+                <!--Boton borrar producto-->
+                <button type = "submit" id = "deleteButton" class = "deleteButton">Eliminar</button>
+                <!--Boton borrar contenido y volver para atras-->
+                <a href = "/admin/products" class = "cancelButton">Cancelar</a>
+                <!--Boton nuevo-->
+                <button type = "submit" id = "newProductButton" class = "newProductButton">Agregar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Contenido del pie de página -->
+    </footer>
+</body>	
+</html>
