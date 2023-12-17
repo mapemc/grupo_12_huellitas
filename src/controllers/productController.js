@@ -10,6 +10,17 @@ const productController ={
       
       res.render("productDetail.ejs"); 
     },
+
+    admin: (req, res) =>{
+      res.render("admin.ejs"); 
+    },
+    
+
+    create: (req, res) =>{
+      res.render("adminNewProducts.ejs")
+    },
+
+
 };
 
 
