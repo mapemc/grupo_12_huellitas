@@ -1,0 +1,46 @@
+
+/* Estilos para el Navbar */
+.navbar {
+    background-color: #16c6cc; /* Color de fondo */
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); /* Sombra de la navbar */
+    margin-top: 5px; /* Margen superior */
+    margin-bottom: 5px; /* Margen inferior */
+    /*overflow: hidden; /* Oculta el contenido desbordado */
+    /*position: fixed; /* Fija la navbar en la parte superior */
+    top: 0; /* Posición superior */
+    width: 100%; /* Ancho completo */
+    height:60px; /* Altura *
+    /*z-index: 1000; /* Asegura que la navbar se mantenga en la parte superior */
+}
+
+.navbar nav ul {
+    list-style-type: none; /* Remueve los estilos de lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Distribución horizontal de los elementos */
+    justify-content: left; /* Centrado horizontal */
+}
+
+.navbar nav ul li {
+    display: inline; /* Coloca los elementos de la lista en línea */
+}
+
+.navbar nav ul li a {
+    display: inline-block; /* Bloques en línea para los enlaces */
+    color: white; /* Color del texto */
+    font-family: 'Open Sans', sans-serif; /* Tipo de fuente */
+    font-size: large; /* Tamaño de la fuente */
+    text-align: center; /* Alineación del texto */
+    padding: 14px 16px; /* Espaciado alrededor del texto */
+    text-decoration: none; /* Remueve el subrayado del enlace */
+}
+
+.navbar nav ul li a:hover {
+   
+    color: black; /* Color del texto al pasar el ratón */
+}
+
+.logo img {
+    height: 35px; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
+    width: auto; /* Ancho automático */
+}

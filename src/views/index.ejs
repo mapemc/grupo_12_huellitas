@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <title>Home | Huellitas 🐾</title>
+    <link rel="stylesheet" href="/css/styleHome.css">
 </head>
 
 <body>
@@ -15,9 +16,81 @@
         
     </header>
     <main>
-        <div>
-            ¡Hola, mundo!
-        </div>
+        <section>
+
+
+
+            <div class="slide">
+                <div class="slide-inner">
+                    <input class="slide-open" type="radio" id="slide-1" 
+                          name="slide" aria-hidden="true" hidden="" checked="checked">
+                    <div class="slide-item">
+                        <img src="./img/foto3.jpeg">
+                    </div>
+                    <input class="slide-open" type="radio" id="slide-2" 
+                          name="slide" aria-hidden="true" hidden="">
+                    <div class="slide-item">
+                        <img src="./img/foto6.jpeg">
+                    </div>
+                    <input class="slide-open" type="radio" id="slide-3" 
+                          name="slide" aria-hidden="true" hidden="">
+                    <div class="slide-item">
+                        <img src="./img/foto5.jpeg">
+                    </div>
+                    
+                    <label for="slide-3" class="slide-control prev control-1">‹</label>
+                    <label for="slide-2" class="slide-control next control-1">›</label>
+                    <label for="slide-1" class="slide-control prev control-2">‹</label>
+                    <label for="slide-3" class="slide-control next control-2">›</label>
+                    <label for="slide-2" class="slide-control prev control-3">‹</label>
+                    <label for="slide-1" class="slide-control next control-3">›</label>
+                    <ol class="slide-indicador">
+                        <li>
+                            <label for="slide-1" class="slide-circulo">•</label>
+                        </li>
+                        <li>
+                            <label for="slide-2" class="slide-circulo">•</label>
+                        </li>
+                        <li>
+                            <label for="slide-3" class="slide-circulo">•</label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+    
+        </section>
+    
+        <section>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="./img/card1.jpeg" alt="">
+                        <h2>Título 1</h2>
+                        <p>Descripción de la tarjeta 1...</p>
+                        <!-- Más contenido si es necesario -->
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-content">
+                        <img src="./img/card2.jpeg" alt="">
+                        <h2>Título 2</h2>
+                        <p>Descripción de la tarjeta 2...</p>
+                        <!-- Más contenido si es necesario -->
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-content">
+                        <img src="./img/card3.jpeg" alt="">
+                        <h2>Título 3</h2>
+                        <p>Descripción de la tarjeta 3...</p>
+                        <!-- Más contenido si es necesario -->
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     </main>
     <footer>
         <%- include('partials/footer.ejs') %>
