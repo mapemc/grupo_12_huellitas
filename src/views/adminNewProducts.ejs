@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang = "es">
 <head>
-    <meta charset = "utf-8">
-    <!--Vas a ser responsive o no hdp-->
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <title>Nuevo Producto | Huellitas 🐾</title>
-    <!--Link con CSS-->
-    <link rel = "stylesheet" href = "/css/stylesAdminNewProducts.css">
+    <%- include("./partials/head.ejs", {cssSheet:"stylesAdminNewProducts", title:"Formulario de creación"}) %>
 </head>
 
 <body>
     <header>
+        <%- include('partials/header.ejs') %>
     </header>
+
     <main>
         <h3 class = "title">Nuevo Producto</h3>
-        <form action = "/admin/products/new" method = "POST" class = "products-form">
+        <form class="form" action = "/admin/products/new" method = "POST" class = "products-form">
         <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "product-name" class = "form-label">Nombre</label>
@@ -78,7 +75,7 @@
     </main>
 
     <footer>
-        <!-- Contenido del pie de página -->
+        <%- include('partials/footer.ejs') %>
     </footer>
 </body>	
 </html>

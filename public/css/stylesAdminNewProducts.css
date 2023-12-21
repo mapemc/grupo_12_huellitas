@@ -1,36 +1,42 @@
 /* Total */
 * 
-    {font-family: 'Roboto', sans-serif;
+    {font-family: 'Rubik', sans-serif;
     margin: 10px;
     padding: 0;
     box-sizing: border-box;
-    text-transform: uppercase;}
+    color: rgba(41, 53, 51, 1);
+}
 
 body 
     {background-color: rgb(250,250,250);}
 
 /* Main */
 main
-    {width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
+    {    width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;}
 
 .title
     {margin-bottom: 10px;
     margin-top: 80px;
     font-size: x-large;}
 
+.form{
+width: 90vw;
+}
+
+
 /* Nombre y descripcion */
 .name-description
-    {width: 100%;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    border: #333 1px solid;
-    border-radius: 10px;
-    background-color: white;}
+    {    width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        border: #333 1px solid;
+        border-radius: 10px;
+        background-color: #ebebeb;}
 
 .name-description label
     {display: block;
@@ -48,13 +54,13 @@ main
 
 /* Fotos */
 .photos
-    {width: 100%;
-    background-color: white; 
-    padding: 15px; 
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    border: #333 1px solid;}
+    {    width: 100%;
+        background-color: #ebebeb;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: #333 1px solid;}
 
 .photos label
     {display: block;
@@ -62,14 +68,14 @@ main
 
 /* Precio y stock */
 .price-stock
-    {width: 100%;
-    background-color: white; 
-    padding: 15px; 
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    border: #333 1px solid;
-    align-items: center;}
+    {    width: 100%;
+        background-color: #ebebeb;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: #333 1px solid;
+        align-items: center;}
 
 .price-stock label
     {display: block;
@@ -87,13 +93,13 @@ main
 
 /* Categoria */
 .category
-    {width: 100%;
-    background-color: white; 
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    border: #333 1px solid;}
+    {    width: 100%;
+        background-color: #ebebeb;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: #333 1px solid;}
 
 .category label
     {display: block;
@@ -109,14 +115,15 @@ main
 
 /* Color y talle */
 .specs
-    {width: 100%;
-    background-color: white; 
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    border: #333 1px solid;
-    align-items: center;}
+    {    width: 100%;
+        background-color: #ebebeb;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: #333 1px solid;
+        align-items: center;
+        flex-wrap: wrap;}
 
 .specs label
     {display: block;
@@ -129,6 +136,10 @@ main
     font-size: 12px;
     text-align-last: center;
     border: 1px solid #888;}
+
+ .form-label{
+    width: 100%;
+ }   
 
 /* Tamaño de los talles */
 .size-checkboxes
@@ -207,9 +218,21 @@ main
     {}
 
 /*Tablets*/
-@media (min-width: 480px) and (max-width:768px)
-    {}
+@media (min-width:768px)
+{
 
+.form {
+    width: 75vw;
+}
+
+
+}
 /*Desktop*/
-@media (min-width: 769px)
-    {}
+@media (min-width: 992px)
+{
+       
+.form {
+        width: 50vw;
+}  
+       
+}

@@ -15,7 +15,6 @@ const productController ={
       res.render("admin.ejs"); 
     },
     
-
     create: (req, res) =>{
       res.render("adminNewProducts.ejs")
     },

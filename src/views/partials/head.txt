@@ -1,0 +1,8 @@
+<!-- En el archivo ejs que hizo cada uno:
+Aquí el include recibe un segundo parámetro y mas...
+vamos a agregar dos parametros más, en un objeto literal
+para que tome la hoja de estilo de cada uno y el titulo de cada vista
+quedaría asi:
+-->
+
+<!-- <%- include("./partials/head.ejs", {cssSheet:"nombreArchivoEjs"}, {title:"tituloDeLaVista"}) %> -->
