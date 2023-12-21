@@ -1,0 +1,173 @@
+
+
+/* Estilos para el Carrusel */
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 450px + 3em);
+}
+
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 
+{
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slide-circulo {
+    color: #16c6cc;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: #16c6cc;
+}
+
+#slide-1:checked ~ .control-1 ~ .slide-indicador 
+     li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo
+       {
+    color: #16c6cc;
+}
+
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.container {
+width: 100%;
+padding: 5px;
+margin-top: 50px;
+margin-bottom: 50px;
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+}
+
+/* Estilos del Contenedor de Tarjetas */
+.cards-container {
+display: flex; /* Habilita Flexbox */
+justify-content: space-around; /* Distribuye las tarjetas uniformemente */
+padding: 20px; /* Agrega algo de espacio alrededor */
+}
+
+/* Estilos de Cada Tarjeta */
+.card {
+flex: 1; /* Las tarjetas ocuparán un espacio igual */
+margin: 10px; /* Espacio entre las tarjetas */
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para un efecto 3D */
+border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos del Contenido de la Tarjeta */
+.card-content {
+padding: 20px; /* Espacio interno */
+}
+
+/* Estilos para los títulos y párrafos si es necesario */
+.card-content h2 {
+margin-top: 0;
+/* Otros estilos para el título */
+}
+
+.card-content p {
+/* Estilos para el párrafo */
+}
+
+.card img {
+width: 100%;
+height: auto;
+object-fit: cover;
+border-radius: 10px 10px 0 0;
+}
