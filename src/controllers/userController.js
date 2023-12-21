@@ -8,8 +8,12 @@ const userController ={
     },
 
     register: (req, res) =>{
-      
-      res.render("register.ejs"); 
+        
+    res.render("register.ejs"); 
+    },
+
+    contacto: (req, res) =>{
+        res.render("contacto.ejs");
     },
 };
 
