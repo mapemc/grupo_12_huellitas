@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Suponiendo que tienes un controlador llamado contactoController
-const contactoController = require('../controllers/contactoController');
+const contactController = require('../controllers/contactController');
 
 // Ruta para enviar un mensaje de contacto
 router.post('/enviar', (req, res) => {
@@ -11,7 +11,7 @@ router.post('/enviar', (req, res) => {
     // Aquí puedes agregar lógica para validar los datos entrantes
 
     // Llama al método correspondiente en el controlador
-    contactoController.enviarMensaje(nombre, email, mensaje)
+    contactController.enviarMensaje(nombre, email, mensaje)
         .then(respuesta => {
             res.status(200).json({ mensaje: 'Mensaje enviado con éxito', data: respuesta });
         })

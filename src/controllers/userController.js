@@ -12,8 +12,8 @@ const userController ={
     res.render("register.ejs"); 
     },
 
-    contacto: (req, res) =>{
-        res.render("contacto.ejs");
+    contact: (req, res) =>{
+        res.render("contact.ejs");
     },
 };
 

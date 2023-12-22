@@ -18,42 +18,9 @@
 </head>
 
 <body>
+    
     <header>
-
-        <div class="header-log-bar">
-            <div class="logo">
-                <a href="/src/views/login.html">
-                    <img src="/img/logoHuellitas.png" class="logo" alt="Logo Huellitas" >
-                </a>
-            </div>
-            
-            
-            <ul class="menssage-card"style="list-style: none;>
-
-                <li> <a href="#">Segui tu orden</a> </li>
-                <li> <a href="#">Login</a> </li>
-                <li> <a href="#">Registro</a> </li>
-
-            </ul>
-        </div>
-            
-
-        <nav class="nav-bar">
-
-            <ul class="nav-bar-izquierda" style="list-style: none;">
-                <li> <a href="/alimentos.html">Alimento</a> <i class="fa-solid fa-utensils"></i> </li>
-                <li> <a href="/ropa.html">Ropa</a> <i class="fa-solid fa-shirt"></i> </li>
-                <li> <a href="/juguetes.html">Juguetes</a> <i class="fa-solid fa-gamepad"></i> </li>
-                <li> <a href="/servicios.html">Servicios</a> <i class="fa-solid fa-wifi"></i> </li>
-            </ul>
-
-
-            <ul class="nav-bar-menu-derecha" style="list-style: none;">
-                <li> <a href="/register.html">Créa tu cuenta</a> <i class=" fa-regular fa-address-card"></i> </li>
-                <li> <a href="/login.html">Ingresá</a> <i class=" fa-solid fa-right-to-bracket"></i> </li>
-                <li> <a href="/miscompras.html">Mis compras</a> <i class=" fa-solid fa-basket-shopping"></i> </li>
-            </ul>
-        </nav>
+        <%- include('partials/header.ejs') %>
     </header>
 
     <div>
@@ -105,13 +72,7 @@
 
 <footer>
 
-    <div class="basic-information">
-
-        <div class="copyright-information">
-        <p>Copyright © 2023 www.HUELLITAS.com.ar </p>
-        </div>
-    
-    </div>
+    <%- include('partials/footer.ejs') %>
 
 </footer>
 </body>

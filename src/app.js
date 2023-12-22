@@ -10,16 +10,16 @@ app.set("views", path.resolve(__dirname, "views"));
 const mainRouter = require("./routes/mainRouter");
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
-const contactoRouter = require("./routes/contactoRouter");
+const contactRouter = require("./routes/contactRouter");
 
 
 app.use(express.static("public"));
 
 
 app.use("/", mainRouter);
-app.use("/usuarios", userRouter);
-app.use("/productos", productRouter);
-app.use("/contacto", contactoRouter);
+app.use("/users", userRouter);
+app.use("/products", productRouter);
+app.use("/contact", contactRouter);
 
 
 

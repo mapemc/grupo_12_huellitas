@@ -2,11 +2,11 @@ const path = require('path');
 
 
 const productController ={
-    carrito: (req, res) =>{
+    cart: (req, res) =>{
         res.render("productCart.ejs");
     },
 
-    detalle: (req, res) =>{
+    detail: (req, res) =>{
       
       res.render("productDetail.ejs"); 
     },

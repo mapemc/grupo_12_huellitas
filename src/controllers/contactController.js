@@ -1,7 +1,7 @@
 // contactoController.js
 
 // Este es un ejemplo simple de cómo podrías estructurar el controlador
-const contactoController = {
+const contactController = {
     enviarMensaje: (nombre, email, mensaje) => {
         return new Promise((resolve, reject) => {
             // Aquí puedes integrar la lógica para enviar el mensaje, como enviar un correo electrónico o guardar en una base de datos
@@ -20,4 +20,4 @@ const contactoController = {
     }
 };
 
-module.exports = contactoController;
+module.exports = contactController;
