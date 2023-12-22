@@ -125,6 +125,31 @@
          -1px 0px 2px rgba(255, 255, 255, 0);
 }
 
+.text-overlay {
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+    text-shadow: #aaaaaa;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    
+    text-align: center;
+   
+    padding: 10px;
+    width: 100%;
+     /* Agregar sombra al texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+  /* Establecer color del texto con transparencia */
+  color: rgba(255, 255, 255, 0.8); 
+
+    
+  }
+
+/* estilos container general*/
 .container {
 width: 100%;
 padding: 5px;
