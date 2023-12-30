@@ -164,14 +164,74 @@ main{
     align-items: center;
     justify-content: center;
 }
+.carrito{
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart{
+    flex-direction: column;
+    background-color: #FFFFFF;
+    align-items: center;
+    display: flex;
+    border: 1px solid #111;
+    width: 90% ;
+    margin: 1.5em;
+}
+.title{
+    font-size: 2em;
+    display: flex;
+    color: #111;
+    font-weight: 600;
+    width: 25em;
+    height: 3em;
+    text-align: center;
+    justify-content: center;
+    border-color: 1px solid #111;
+
+}
+.columns{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    box-sizing: inherit;
+    width: 100%;
+}
+
+.product-name{
+    display: flex;
+    flex-direction: column;
+    color: #111;
+    font-size: 1.5em;
+    text-align: left;
+    width: 50%;
+    padding: 0 .5em;
+    
+}
+.prices{
+    display: flex;
+    color: #111;
+    font-size: 1.5em;
+    text-align: right;
+    padding: 0 .5em;
+    width: 50%;
+    flex-direction: column;
+    
+
+}
+
 .comprar {
     color: #FFFFFF;
-    background-color: #576D69;
-    width: 100px;
-    height: 35;
-    border-radius: 10px;
-    border: ;
-    font-size: 17px;
-    font-weight: 30px;
+    background-color: #111;
+    width: 90%;
+    font-size: 2rem;
+    font-weight: bold;
     cursor: pointer;
+    padding: 0.5em;
+    margin: 0.5em;
+    display: block;
+    text-align: center;
+    border: none;
 }
+
