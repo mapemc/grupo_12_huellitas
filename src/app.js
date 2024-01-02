@@ -22,7 +22,7 @@ app.use("/products", productRouter);
 app.use("/contact", contactRouter);
 
 
-
+// * Servidor *// 
 app.listen(3456, () => {
     console.log('Servidor corriendo en http://localhost:3456');
 })
