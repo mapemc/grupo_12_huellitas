@@ -5,52 +5,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/DigitalHouse/proyectoIntegrador/grupo_12_huellitas/public/css/styleProductCart.css">
+    <link rel="stylesheet" href="/css/styleProductCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
-
+        <%- include('partials/header.ejs') %>
     </header>
     <main>
         <h1>Tu carrito de compras</h1>
-        <section>
-            <div class="items">
-                <img src="/DigitalHouse/proyectoIntegrador/grupo_12_huellitas/public/img/otrosProductos1.jpg" alt="Collar para perro">
-                <div class="info">
-                    <p>Collar para perro</p>
-                    <p class="precio">$500</p>
-                    <p>$30</p>
-                <button>Agregar al Carrito</button>
+        <section class="contenedor">
+            <div class="products">
+                <!-- Item 1 -->
+                <div class="item">
+                    <div class="productVisual">
+                        <img src="/img/otrosProductos1.jpg" alt="Collar para perro">
+                    </div>
+                    <div class="info">
+                        <p class="productName">Collar para perro</p>
+                        
+                        <div class="cantidad-producto">
+                            <button class="boton-sumar">+</button>
+                            <input type="text" value="1" class="cantidad-numerica"></input>
+                            <button class="boton-restar">-</button>
+                        </div>
+                    </div>
+                    <div class="price-info">
+                        <div class="rating">
+                            <div class="score">
+                                <input type="radio" name="star1">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star2">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star3">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star4">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star5">
+                            </div>
+                        </div>
+                        <p class="precio">$500</p>
+                        <span  class="btn-container">
+                            <div>
+                                <button class="delete-item" type="button">
+                                    <i class="fa-solid fa-x"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="fav-item" type="button">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="item">
+                    <div class="productVisual">
+                        <img src="/img/otrosProductos2.jpg" alt="Arenero">
+                    </div>
+                    <div class="info">
+                        <p class="productName">Arenero</p>
+                        
+                        <div class="cantidad-producto">
+                            <button class="boton-sumar">+</button>
+                            <input type="text" value="1" class="cantidad-numerica"></input>
+                            <button class="boton-restar">-</button>
+                        </div>
+                    </div>
+                    <div class="price-info">
+                        <div class="rating">
+                            <div class="score">
+                                <input type="radio" name="star1">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star2">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star3">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star4">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star5">
+                            </div>
+                        </div>
+                        <p class="precio">$500</p>
+                        <span  class="btn-container">
+                            <div>
+                                <button class="delete-item" type="button">
+                                    <i class="fa-solid fa-x"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="fav-item" type="button">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="item">
+                    <div class="productVisual">
+                        <img src="/img/otrosProductos3.jpg" alt="Rascador">
+                    </div>
+                    <div class="info">
+                        <p class="productName">Rascador</p>
+                        
+                        <div class="cantidad-producto">
+                            <button class="boton-sumar">+</button>
+                            <input type="text" value="1" class="cantidad-numerica"></input>
+                            <button class="boton-restar">-</button>
+                        </div>
+                    </div>
+                    <div class="price-info">
+                        <div class="rating">
+                            <div class="score">
+                                <input type="radio" name="star1">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star2">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star3">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star4">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star5">
+                            </div>
+                        </div>
+                        <p class="precio">$500</p>
+                        <span  class="btn-container">
+                            <div>
+                                <button class="delete-item" type="button">
+                                    <i class="fa-solid fa-x"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="fav-item" type="button">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="item">
+                    <div class="productVisual">
+                        <img src="/img/otrosProductos4.jpg" alt="Collar para Gato">
+                    </div>
+                    <div class="info">
+                        <p class="productName">Collar para Gato</p>
+                        
+                        <div class="cantidad-producto">
+                            <button class="boton-sumar">+</button>
+                            <input type="text" value="1" class="cantidad-numerica"></input>
+                            <button class="boton-restar">-</button>
+                        </div>
+                    </div>
+                    <div class="price-info">
+                        <div class="rating">
+                            <div class="score">
+                                <input type="radio" name="star1">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star2">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star3">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star4">
+                            </div>
+                            <div class="score">
+                                <input type="radio" name="star5">
+                            </div>
+                        </div>
+                        <p class="precio">$500</p>
+                        <span  class="btn-container">
+                            <div>
+                                <button class="delete-item" type="button">
+                                    <i class="fa-solid fa-x"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="fav-item" type="button">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="items">
-                <img src="/DigitalHouse/proyectoIntegrador/grupo_12_huellitas/public/img/otrosProductos4.jpg" alt="Collar para gato">
-                <div class="info">
-                    <p>Collar para Gato</p>
-                    <p class="precio">$500</p>
-                    <p>$30</p>
-                <button>Agregar al Carrito</button>
-                </div>
-            </div>
-            <div class="items">
-                <img src="/DigitalHouse/proyectoIntegrador/grupo_12_huellitas/public/img/otrosProductos2.jpg" alt="Arenero">
-                <div class="info">
-                    <p>Arenero</p>
-                    <p class="precio">$500</p>
-                    <p>$30</p>
-                <button>Agregar al Carrito</button>
-                </div>
-            </div>
-            <div class="items">
-                <img src="/DigitalHouse/proyectoIntegrador/grupo_12_huellitas/public/img/otrosProductos3.jpg" alt="Rascador de Gato">
-                <div class="info">
-                    <p>Rascador de Gato</p>
-                    <p class="precio">$500</p>
-                    <p>$30</p>
-                <button>Agregar al Carrito</button>
+            <div class="carrito">
+                <div class="cart">
+                    <div class="title">
+                        <p>TU CARRITO DE COMPRAS</p>
+                    </div>
+                    <div class="columns">
+                        <!-- Nombre del Producto -->
+                        <div class="product-name">
+                            <p>Collar de perro</p>
+                            <p>Collar de perro</p>
+                            <p>Collar de perro</p>
+                            <p>Collar de perro</p>
+                        </div>
+                        <!-- Precios -->
+                        <div class="prices">
+                        <p>Precio</p>
+                        <p>precio</p>
+                        <p>precio</p>
+                        <p>precio</p>
+                        </div>
+                        <!-- Boton de compra -->
+                    </div>
+                    <button class="comprar">FINALIZAR COMPRA</button> 
                 </div>
             </div>
         </section>
+        <footer>
+            <%- include('partials/footer.ejs') %>
+        </footer>
     </main>
 </body>
 </html>
