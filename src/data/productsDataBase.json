@@ -1,63 +1,82 @@
 [
-{
-    "id": 1,
-    "name": "Arnés con correa",
-    "price": "$15000",
-    "stock": 127,
-    "category": "paseo",
-    "color": "amarillo",
-    "size": "S",
-    "inSale": false,
-    "description": "Un arnés resistente y seguro para pasear a tu mascota. Su diseño en color amarillo brinda visibilidad y sujeción adecuada para perros de tamaño pequeño.",
-    "image": "otrosProductos1.jpg"
-},
-{
-    "id": 2,
-    "name": "Caja arenera con palita",
-    "price": "$18.000",
-    "stock": 168,
-    "category": "accesorios",
-    "color": "azul",
-    "size": "L",
-    "inSale": false,
-    "description": "Una caja arenera espaciosa y cómoda para tu gato, que incluye una palita para mantener la higiene.",
-    "image": "otrosProductos2.jpg"
-},
-{
-    "id": 3,
-    "name": "Cepillo quita pelusas",
-    "price": "$4000",
-    "stock": 395,
-    "category": "higiene y estetica",
-    "color": "azul",
-    "size": "M",
-    "inSale": true,
-    "description": "Cepillo efectivo para eliminar pelusas y mantener el pelaje de tu mascota impecable. Su diseño ergonómico facilita su uso y almacenamiento.",
-    "image": "otrosProductos3.jpg"
-},
-{
-    "id": 4,
-    "name": "Collar para gato con cascabel",
-    "price": "$4999",
-    "stock": 32,
-    "category": "accesorios",
-    "color": "rojo",
-    "size": "M",
-    "inSale": true,
-    "description": "Collar elegante para gatos con un encantador cascabel. El diseño agrega estilo y garantiza comodidad para tu felino.",
-    "image": "otrosProductos4.jpg"
-},
-{
-    "id": 5,
-    "name": "Hueso porta bolsitas de residuo",
-    "price": "$1900",
-    "stock": 272,
-    "category": "paseo",
-    "color": "rojo",
-    "size": "S",
-    "inSale": false,
-    "description": "Este ingenioso hueso es el accesorio esencial para los dueños de mascotas con estilo y conciencia ambiental.",
-    "image": "bolsitas1.jpg"
-}
-
+ {
+  "id": 1,
+  "name": "Arnés con correa",
+  "price": "$15000",
+  "stock": 127,
+  "category": "paseo",
+  "color": "amarillo",
+  "size": "S",
+  "inSale": false,
+  "description": "Un arnés resistente y seguro para pasear a tu mascota. Su diseño en color amarillo brinda visibilidad y sujeción adecuada para perros de tamaño pequeño.",
+  "image": "otrosProductos1.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Caja arenera con palita",
+  "price": "$18.000",
+  "stock": 168,
+  "category": "accesorios",
+  "color": "azul",
+  "size": "L",
+  "inSale": false,
+  "description": "Una caja arenera espaciosa y cómoda para tu gato, que incluye una palita para mantener la higiene.",
+  "image": "otrosProductos2.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Cepillo quita pelusas",
+  "price": "$4000",
+  "stock": 395,
+  "category": "higiene y estetica",
+  "color": "azul",
+  "size": "M",
+  "inSale": true,
+  "description": "Cepillo efectivo para eliminar pelusas y mantener el pelaje de tu mascota impecable. Su diseño ergonómico facilita su uso y almacenamiento.",
+  "image": "otrosProductos3.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Collar para gato con cascabel",
+  "price": "$4999",
+  "stock": 32,
+  "category": "accesorios",
+  "color": "rojo",
+  "size": "M",
+  "inSale": true,
+  "description": "Collar elegante para gatos con un encantador cascabel. El diseño agrega estilo y garantiza comodidad para tu felino.",
+  "image": "otrosProductos4.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Hueso porta bolsitas de residuo",
+  "price": "$1900",
+  "stock": 272,
+  "category": "paseo",
+  "color": "rojo",
+  "size": "S",
+  "inSale": false,
+  "description": "Este ingenioso hueso es el accesorio esencial para los dueños de mascotas con estilo y conciencia ambiental.",
+  "image": "bolsitas1.jpg"
+ },
+ {
+  "id": 6,
+  "name": "collar",
+  "detail": "dsafgdafgfd",
+  "price": "50000",
+  "stock": "",
+  "category": "food",
+  "color": "blue",
+  "sizes": "M"
+ },
+ {
+  "id": 7,
+  "name": "",
+  "detail": "",
+  "photos": "",
+  "price": "",
+  "stock": "",
+  "category": "default-cat",
+  "color": "default-color"
+ }
 ]

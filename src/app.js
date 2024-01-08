@@ -1,10 +1,20 @@
+/////////REQUIRES////////////
 const express = require("express");
-const app = express();
 const path = require("path");
 
 
+/////////EXPRESS//////////
+const app = express();
+
+
+/////////////////MIDDLEWARES//////////////
+app.use(express.urlencoded({ extended: false })); // Para tomar los datos del body
+app.use(express.json()); // Para tomar los datos del body
+
+///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
+
 
 /* rutas */
 const mainRouter = require("./routes/mainRouter");
