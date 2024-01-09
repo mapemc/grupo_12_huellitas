@@ -39,17 +39,17 @@ const productController = {
 
     detail: (req, res) => {
      
-      ;
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
   
       const singleProduct = products.find(product => {
         return product.id == req.params.id
       })
       
-      res.render("productDetail", {singleProduct});
+      res.render("productDetail.ejs", {singleProduct});
     },
 
     edit: (req, res) =>{
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
     productToEdit = products.find(product =>{
       return product.id == req.params.id;

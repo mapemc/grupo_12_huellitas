@@ -9,14 +9,12 @@
         <%- include('partials/header.ejs') %>
     </header>
 
-    <p class="ruta-al-producto">HOME>JUGUETES>Hueso porta bolsa residuos</p>
-
     
     <div class="orden">
         <section class="fotos-de-artículos">
                 
             <article class="caja-img-ppal">
-                    <img src= "/img/bolsitas1.jpg">
+                    <img src= "/img/<%= singleProduct.image %>">
             </article>
 
             <div class="otras-fotos-del-articulo">
@@ -43,7 +41,7 @@
         <div class="caja-agrupamiento-precios-selecciones">  
             <section>
 
-                <h2 class="nombre-producto">Hueso porta bolsitas de residuo</h2>
+                <h2 class="nombre-producto"><%= singleProduct.name %></h2>
                 
                 
                 <div>
@@ -72,9 +70,9 @@
             
 
             <section class="precios">
-                <div class="oferta"><h4>Oferta</h4></div>
-                <div class="precio-oferta"><h2>$1.900</h2></div> 
-                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: $2500</h5></div>
+                <div class="oferta"><h4>Oferta </h4></div>
+                <div class="precio-oferta"><h2>$<%= Math.round(singleProduct.price * 0.8) %></h2></div> 
+                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: <%= singleProduct.price %></h5></div>
                 <div>
                     <h4 class="compra-cuotas-transferencia"><i class="fa-regular fa-credit-card"></i>3 cuotas sin interés</h4>
                     <h4 class="compra-cuotas-transferencia"><i class="fa-solid fa-money-bill-transfer"></i>10% de descuento pagando con transferencia bancaria</h4>
@@ -129,7 +127,7 @@
                             <div class="caja-boton-edit">
                                 <button class="boton-edit" type="submit">
                                     <i class="fa-solid fa-cart-shopping"></i> <span>EDITAR PRODUCTO</span>
-                                    <a href = "/products/detail/<%= products.id %>"> Editar producto </a>
+                                    <a href = "/products/detail/$<%= singleProduct.id %>"> Editar producto </a>
                                 </button>
                             </div>
                         <!-- </div> -->
