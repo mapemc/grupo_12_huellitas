@@ -19,16 +19,16 @@
 			
 			<% products.forEach(product =>{ %>
 				<div class= "box">
-					<a href="/products/products/<%= product.id %>"></a>
-					<div class="product-box_image">
-						<img src="/img/<%= product.image %>" alt="imagen de producto">
-					</div>
-					<article class="product-box_data">
-						<h2 class="price-product"> <%= product.price %></h2>
-						<h1 class="name-product"><%= product.name %></h1>
-						<h3 class="category-product">Categoria: <%= product.category %></h3>
-						
-					</article>
+					<a href="/products/detail/<%= product.id %>">
+						<div class="product-box_image">
+							<img src="/img/<%= product.image %>" alt="imagen de producto">
+						</div>
+						<article class="product-box_data">
+							<h2 class="price-product"> <%= product.price %></h2>
+							<h1 class="name-product"><%= product.name %></h1>
+							<h3 class="category-product">Categoria: <%= product.category %></h3>
+						</article>
+					</a>
 				</div>
 				
 			<% }); %>

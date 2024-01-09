@@ -72,10 +72,10 @@
             <section class="precios">
                 <div class="oferta"><h4>Oferta </h4></div>
                 <div class="precio-oferta"><h2>$<%= Math.round(singleProduct.price * 0.8) %></h2></div> 
-                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: <%= singleProduct.price %></h5></div>
+                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: $<%= singleProduct.price %></h5></div>
                 <div>
                     <h4 class="compra-cuotas-transferencia"><i class="fa-regular fa-credit-card"></i>3 cuotas sin interés</h4>
-                    <h4 class="compra-cuotas-transferencia"><i class="fa-solid fa-money-bill-transfer"></i>10% de descuento pagando con transferencia bancaria</h4>
+                    <h4 class="compra-cuotas-transferencia"><i class="fa-solid fa-money-bill-transfer"></i>20% de descuento en toda la tienda</h4>
                 </div>
             </section>
 
@@ -86,9 +86,11 @@
                 </div>
 
                 <section class="seleccion-colores">
-                    <div class="color red"></div>
-                    <div class="color green"></div>
-                    <div class="color blue"></div>
+
+                         <input class="color red" tipe="checkbox" name="color" value="">
+                         <input class="color green" tipe="checkbox" name="color" value="">
+                         <input class="color blue" tipe="checkbox" name="color" value="">
+                    </select>
                 </section>
 
                 <div>
@@ -96,10 +98,11 @@
                 </div>
 
                 <section class="seleccion-talles">
-                    <div class="talle small-medium-large"> S </div>
-                    <div class="talle small-medium-large"> M </div>
-                    <div class="talle small-medium-large"> L </div>
+                    <input class="talle small-medium-large" tipe="checkbox" name="talle" value="S">
+                    <input class="talle small-medium-large" tipe="checkbox" name="talle" value="M">
+                    <input class="talle small-medium-large" tipe="checkbox" name="talle" value="L">
                 </section>
+
 
             </section>
 
@@ -125,9 +128,9 @@
                             </div>
 
                             <div class="caja-boton-edit">
-                                <button class="boton-edit" type="submit">
+                                <button class="boton-enviar" type="submit">
                                     <i class="fa-solid fa-cart-shopping"></i> <span>EDITAR PRODUCTO</span>
-                                    <a href = "/products/detail/$<%= singleProduct.id %>"> Editar producto </a>
+                                    <a href = "/products/edit/<%= singleProduct.id %>"> </a>
                                 </button>
                             </div>
                         <!-- </div> -->

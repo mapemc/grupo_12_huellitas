@@ -14,7 +14,7 @@
  {
   "id": 2,
   "name": "Caja arenera con palita",
-  "price": 18.000,
+  "price": 18000,
   "stock": 168,
   "category": "accesorios",
   "color": "azul",

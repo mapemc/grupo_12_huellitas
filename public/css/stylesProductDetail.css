@@ -32,7 +32,7 @@ body{
   display: flex;
   margin: 10px;
   text-align: center;
-  width: 90%;
+  width: 76%;
   justify-content: center;
   align-items: center;
   border: solid 5px white;
@@ -40,14 +40,14 @@ body{
 }
 
 .caja-img-ppal img{
-  width: 100%;
+  width: 350px;
 }
 
 .otras-fotos-del-articulo{
   display: flex;
   margin: 10px;
   text-align: center;
-  width: 90%;
+  width: 77%;
   justify-content: center;
   align-items: center;
 }
@@ -232,14 +232,17 @@ body{
   
   .red {
     background-color: #eeaf38;
+    border: #eeaf38;
   }
   
   .green {
     background-color: #e4b496;
+    border: #e4b496;
   }
   
   .blue {
     background-color: #b0ccbd;
+    border: #b0ccbd;
   }
 
   .seleccion-talles {
@@ -252,6 +255,7 @@ body{
     height: 35px;
     margin: 0 10px;
     cursor: pointer;
+    text-align: center;
   }
   
   .small-medium-large {
@@ -536,6 +540,14 @@ body{
     width: 18%;
   }
 
+  .otras-fotos-del-articulo{
+    width: 65%;
+  }
+
+  .caja-img-ppal{
+    width: 65%;
+  }
+  
   .section-otros-productos {
     width: 100%;
     background-color: #ebebeb;
