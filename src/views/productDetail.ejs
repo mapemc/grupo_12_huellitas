@@ -108,36 +108,43 @@
 
         </div>
     </div>    
+           
             <section>
-                <section>
-                    <div class="caja-carrito">
-                        <div class="algo-contador">
-                            <div class="contador">
-                                <div class="caja-descendente"> 
-                                    <span class="descendente"> - </span>
+                <div class="caja-carrito">
+                    <div class="algo-contador">
+                        <div class="contador">
+                            <div class="caja-descendente"> 
+                                <span class="descendente"> - </span>
                                 </div>
-                            <!--  <div> -->
                                     <input type="text" value="1" id="cantidad" size="1">
                                     <span class="ascendente"> + </span>
                                 </div>
                             </div>
                             <div class="caja-boton-carrito">
-                                <button class="boton-enviar" type="submit">
-                                    <i class="fa-solid fa-cart-shopping"></i> <span>AGREGAR AL CARRITO</span>
-                                </button>
-                            </div>
+                            <button class="boton-enviar" type="submit">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>AGREGAR AL CARRITO</span>
+                            </button>
+                        </div>
+                    </div>        
+                </div>
+            </section> 
+            
+            <section class="caja-editar-borrar">
+                <div class="caja-boton-edit">
+                    <a href = "/products/edit/<%= singleProduct.id %>" class="boton-editar" type="submit"> EDITAR </a>
+                </div>
 
-                            <div class="caja-boton-edit">
-                                <button class="boton-enviar" type="submit">
-                                    <i class="fa-solid fa-cart-shopping"></i> <span>EDITAR PRODUCTO</span>
-                                    <a href = "/products/edit/<%= singleProduct.id %>"> </a>
-                                </button>
-                            </div>
-                        <!-- </div> -->
-                    </div>
-                </section>
+            
+                <div class="caja-boton-edit">
+                    <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST">
+                        <button class="boton-enviar" type="submit">
+                            <span>ELIMINAR</span>
+                        </button>
+                    </form>
+                </div>
+
             </section>
-   
+            
        
     <section class="caja-descripcion">
         <div class="titulo-descripcion-producto">DESCRIPCIÓN DEL PRODUCTO</div>

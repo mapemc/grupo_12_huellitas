@@ -57,10 +57,46 @@ const productController = {
     res.render("adminNewProducts", {productToEdit});
     },
 
-    
+    processEdit: (req, res) => {
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-   delete: (req, res) =>{
-      res.render("adminNewProducts.ejs"); 
+      const id = req.params.id;
+      let productToEdit = products.find(product => product.id == id);
+
+      productToEdit = {
+        id: productToEdit.id,
+        name: req.body.name,
+        detail: req.body.detail,
+        photos: req.body.photos,
+        price: req.body.price,
+        stock: req.body.stock,
+        category: req.body.category,
+        color: req.body.color,
+        sizes: req.body.sizes,
+      }
+
+      let indice = products.findIndex(product =>{
+        return product.id == id
+      });
+
+      products[indice] = productToEdit;
+
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+		  
+      res.redirect("/products/products")
+    },
+
+    
+    destroy: (req, res) =>{
+      let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+      products = products.filter (product =>{
+        return product.id != req.params.id
+      });
+
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+
+      res.redirect("/products/products");
     },
     
 

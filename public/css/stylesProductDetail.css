@@ -74,6 +74,7 @@ body{
     font-size: 24px;
     padding: 10px;
     color: rgba(41, 53, 51, 1);
+    margin-top: 25px;
 }
 
 /* ///////////////////////////////////ESTRELLITAS//////////////////////////////////////////////////////////////// */
@@ -274,9 +275,9 @@ body{
 .caja-carrito{    
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 20px;
 }    
 
@@ -352,6 +353,33 @@ body{
   transition: background-color 0.5s;
   height: 52px;
   margin-left: 16px;
+  cursor: pointer;
+}
+
+.boton-editar{
+  display: block;
+  width: 80vw;
+  color: white;
+  background-color: rgba(17, 153, 158, 1);
+  border: solid 2px #1259c312;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 12px;
+  width: 17rem;
+  transition: background-color 0.5s;
+  height: 52px;
+  margin-left: 16px;
+  text-align: center;
+}
+
+.caja-editar-borrar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .caja-descripcion{

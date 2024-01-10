@@ -1,7 +1,7 @@
 /////////REQUIRES////////////
 const express = require("express");
 const path = require("path");
-
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 /////////EXPRESS//////////
 const app = express();
@@ -10,6 +10,7 @@ const app = express();
 /////////////////MIDDLEWARES//////////////
 app.use(express.urlencoded({ extended: false })); // Para tomar los datos del body
 app.use(express.json()); // Para tomar los datos del body
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");

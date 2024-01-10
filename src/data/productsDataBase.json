@@ -58,25 +58,5 @@
   "inSale": false,
   "description": "Este ingenioso hueso es el accesorio esencial para los dueños de mascotas con estilo y conciencia ambiental.",
   "image": "bolsitas1.jpg"
- },
- {
-  "id": 6,
-  "name": "collar",
-  "detail": "dsafgdafgfd",
-  "price": 50000,
-  "stock": "",
-  "category": "food",
-  "color": "blue",
-  "sizes": "M"
- },
- {
-  "id": 7,
-  "name": "",
-  "detail": "",
-  "photos": "",
-  "price": 1200,
-  "stock": "",
-  "category": "default-cat",
-  "color": "default-color"
  }
 ]
