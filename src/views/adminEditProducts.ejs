@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesAdminEditProducts", title:"Formulario de creación"}) %>
+</head>
+
+<body>
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+
+    <main>
+        <h3 class = "title">Nuevo Producto</h3>
+        <form class="form" action = "/products/edit" method = "POST" class = "products-form">
+        <!--Cuerpo-->
+            <div class = "name-description">
+                <label for = "name" class = "form-label">Nombre</label>
+                    <input type = "text" name = "name" id = "name" class = "form-input" placeholder = "Ej: Collar rojo para perro">
+                <label for = "detail">Descripción</label>
+                    <textarea name = "detail" id = "detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
+            </div>
+            <div class = "photos">
+            <label for = "photos" class = "form-label">Fotos</label>
+                <input type = "file" name = "photos" accept = ".jpg, .png, .svg" id = "photos" class = "form-input">
+            </div>
+            <div class = "price-stock">
+            <label for = "price" class = "form-label">Precio</label>
+                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input">
+            <label for = "stock" class = "form-label">Stock</label>
+                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input">
+            </div>
+            <div class = "category">
+                <label for = "category" class = "form-label">Categoría</label>
+                    <select name = "category" id = "category" class = "form-input">
+                        <option value = "default-cat">Categoría</option>
+                        <option value = "accesories">Accesorios</option>
+                        <option value = "food">Alimento</option>
+                        <option value = "beds">Camas</option>
+                        <option value = "bath">Higiene y estética</option>
+                        <option value = "clothes">Indumentaria</option>
+                        <option value = "toys">Juguetes</option>
+                        <option value = "outside">Paseo</option>
+                    </select>
+            </div>
+            <div class = "specs">
+                <label for = "color" class = "form-label">Color</label>
+                    <select name = "color" id = "color" class = "form-input">
+                        <option value = "default-color">Color</option>
+                        <option value = "yellow">Amarillo</option>
+                        <option value = "blue">Azul</option>
+                        <option value = "white">Blanco</option>
+                        <option value = "black">Negro</option>
+                        <option value = "red">Rojo</option>
+                        <option value = "pink">Rosa</option>
+                        <option value = "green">Verde</option>                        
+                    </select>
+                <label for = "product-size" class = "form-label">Tamaño</label>
+                    <div class = "size-checkboxes">
+                        <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
+                        <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
+                        <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
+                        <label for = "sizeL"><input type = "checkbox" id = "sizeL" name = "sizes" value = "L">L</label>
+                        <label for = "sizeXL"><input type = "checkbox" id = "sizeXL" name = "sizes" value = "XL">XL</label>
+                    </div>
+            </div>
+            <div class = "button-container">
+                <!--Boton borrar producto-->
+                <button type = "submit" id = "deleteButton" class = "deleteButton">Eliminar</button>
+                <!--Boton borrar contenido y volver para atras-->
+                <a href = "/products/products" class = "cancelButton">Cancelar</a>
+                <!--Boton editar aplicar cambios-->
+                <button type = "submit" id = "editProductButton" class = "editProductButton">Aplicar Cambios</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <%- include('partials/footer.ejs') %>
+    </footer>
+</body>	
+</html>
