@@ -1,79 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/css/stylesLogin.css" rel="stylesheet">
-
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-
-            <link rel="icon" href="/img/logoHuellitas.png">
-
-            <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
-
-    <title>Login | Huellitas 🐾</title>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesLogin", title:"Iniciar Sesión"}) %>
 </head>
-
 <body>
-    
     <header>
         <%- include('partials/header.ejs') %>
     </header>
+    <main>
+        <h3 class = "title">Iniciar Sesión</h3>
+        <form action = "/login" method = "POST" class = "register-form">
+            <div class = "columns">
+            <!--Campos del formulario-->
+            <div class = "login-left">
+                <div class = "input-boxes">
+                    <label for = "email">Email</label>
+                    <input type = "email" name = "email" id = "email">
+                </div>
+                <div class = "input-boxes">    
+                    <label for = "password">Contraseña</label>
+                    <input type = "password" name = "password" id = "password">
+                </div>
+                <div class = "forgot-password">    
+                    <a href = "/users/request-password-reset">Olvidé la contraseña</a>
+                </div>
 
-    <div>
+                <!--Botones formulario-->
+                <div class = "submit-button-box">
+                    <button type = "submit" id = "loginButton">Iniciar Sesión</button>
+                </div>    
+            </div>
 
-        <p class=""> Login </p>
-    
-    </div>
+            <!--Divisor-->
+            <div class = "divider"></div>
 
-    <div class="caja-izquierda">
-
-        <div class="user-form-box">
-            <input type="text" name="user" id="user-form" placeholder="E-Mail">
+            <!--Logo-->
+            <div class = "login-right">
+                <img class = "logo" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-register"> 
+            </div>
         </div>
+        <!--Login-->
+            <div class = "login-down">
+                <p>Nuevo Usuario</p>
+                <button class = "register-button-box" id = "registerButton">
+                    <a href = "/users/register">Crear Cuenta</a>
+                </button>
+            </div>
+        </form>
+    </main>
 
-        <div class="password-form-box">
-            <input type="password" name="password" id="password-form" placeholder="Contraseña">
-        </div>
-
-        <div class="account-button-box">
-            <input type="submit" name="submit" id="submit-form" value="LOGIN"> 
-        </div>
-
-    </div>
-
-    <div class="caja-derecha"> 
-        <div>
-            
-            <p class="titulo-caja"> Login con redes sociales</p> 
-        
-        </div>
-
-
-    </div>
-
-</form>
-
-
-<div>
-    <div  class="free-shipping">
-        <h3 class="title-extra-info">Nuevo Usuario</h3>
-
-        <div class="submit-button-box">
-            <input type="submit" name="submit" id="submit-form" value="CREAR UNA CUENTA"> 
-        </div>
-
-    </div>
-</div>
-
-
-<footer>
-
-    <%- include('partials/footer.ejs') %>
-
-</footer>
+    <footer>
+        <%- include('partials/footer.ejs') %>
+    </footer>
 </body>
-</html>
