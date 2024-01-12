@@ -1,10 +1,9 @@
 /*Total*/
 * 
     {font-family: 'Roboto', sans-serif;
-    margin: 10px;
     padding: 0;
     box-sizing: border-box;
-    text-transform: uppercase;}
+    }
 
 body 
     {background-color: white;}
@@ -22,7 +21,8 @@ main
     {width: 90%;
     margin: auto;
     display: flex;
-    flex-direction: column;}
+    flex-direction: column;
+    text-transform: uppercase;}
 
 .title
     {margin-bottom: 10px;
@@ -35,7 +35,8 @@ input
     padding: 20px;
     margin-bottom: 15px;
     border: 1px solid #888;
-    font-size: 12px;}
+    font-size: 12px;
+    text-transform: uppercase;}
 
 .input-boxes
     {margin-top: 1px;
@@ -54,15 +55,15 @@ input
     background-color: #333;
     padding: 20px;
     color: white;
-    border: none;}
+    border: none;
+    text-transform: uppercase;}
 
 #registerButton:hover
     {background-color: #555;}
 
 .submit-button-box
     {display: flex;
-    justify-content: flex-end;
-    margin: -10px;}
+    justify-content: flex-end;}
 
 /*Whole register considerations*/
 .register-left, .register-right
@@ -106,9 +107,10 @@ a
     color: #333;
     border: 1px solid #333;
     cursor: pointer;
-    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: 900;
-    font-size: medium;}
+    font-size: medium;
+    text-transform: uppercase;}
     
 #loginButton:hover
     {background-color: #ccc;
