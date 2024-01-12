@@ -46,8 +46,8 @@ https://fonts.google.com/specimen/Roboto?query=roboto
 # Sprints: 
 
 - [x] Sprint 1: 26/10 - 09/11
-- [ ] sprint 2: 09/11 - 23/11
-- [ ] Sprint 3: 05/12 - 19/12
+- [x] sprint 2: 09/11 - 23/11
+- [x] Sprint 3: 05/12 - 19/12
 - [ ] Sprint 4: 19/12 - 11/01
 - [ ] Sprint 5: 11/01 - 01/02
 - [ ] Sprint 6: 01/02 - 27/02
