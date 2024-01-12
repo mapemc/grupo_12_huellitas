@@ -4,7 +4,9 @@
     margin: 10px;
     padding: 0;
     box-sizing: border-box;
+    /*II L.B. Cambio de color crema a gris*/
     color: rgba(41, 53, 51, 1);
+    /*FF*/;
 }
 
 body 
