@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"styleNotFound", title:"Sitio no encontrado"}) %>
+</head>
+    <body>
+        <div class="main-container">
+        <header>
+            <%- include('partials/header.ejs') %>
+        </header>
+        <main>
+            <h1>No se puede encontrar la página web que estás buscando.</h1>
+            <p>Comprobá que la dirección web esté bien escrita, sino podés usar el buscador de la página.</p>
+
+            <div class="boton-index">
+                <a class="index-button-box" id="indexButton" href="/">
+                <span>Volver</span>
+                </a>
+            </div>
+            
+            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
+        </main>
+        </div>
+        <footer>
+            <%- include('partials/footer.ejs') %>
+        </footer>
+    </body>
+</html>
