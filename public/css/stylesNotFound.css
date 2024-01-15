@@ -1,0 +1,74 @@
+body
+  {margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;}
+
+.main-container
+    {flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/perro-notfound.jpg');
+    background-size: cover;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 0px -100px;}
+
+.text-box
+    {margin-left: 10px;}
+
+/*bone home button*/
+:root
+  {--bg: #1a1e24;
+  --color: #eee;}
+  
+.boton-index
+  {padding: 1.5rem 0;
+  filter: url('#goo');
+  text-align: left;
+  margin-left: 200px;}
+
+.index-button-box
+  {display: inline-block;
+  text-align: center;
+  background: var(--color);
+  color: var(--bg);
+  font-weight: bold;
+  padding: 0.8em 0.5em 0.8em;
+  border-radius: 0.4em;
+  position: relative;
+  min-width: 8.23em;
+  text-decoration: none;
+  font-size: 1.25rem;}
+
+.index-button-box::before,
+.index-button-box::after,
+.index-button-box span::before,
+.index-button-box span::after
+  {width: 2.3em;
+  height: 2.3em;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: var(--color);
+  border-radius: 50%;
+  transition: transform 1s ease;
+  z-index: -1;}
+
+.index-button-box::before
+  {top: 50%;
+  right: -10%;}
+
+.index-button-box::after
+  {bottom: 50%;
+  right: -10%;}
+
+.index-button-box span::before
+  {top: 50%;
+  left: -10%;}
+
+.index-button-box span::after
+  {bottom: 50%;
+  left: -10%;}

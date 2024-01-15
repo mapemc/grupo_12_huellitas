@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("./partials/head.ejs", {cssSheet:"styleNotFound", title:"Sitio no encontrado"}) %>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesNotFound", title:"Sitio no encontrado"}) %>
 </head>
     <body>
-        <div class="main-container">
+        
         <header>
             <%- include('partials/header.ejs') %>
         </header>
+        <div class="main-container">
         <main>
-            <h1>No se puede encontrar la página web que estás buscando.</h1>
-            <p>Comprobá que la dirección web esté bien escrita, sino podés usar el buscador de la página.</p>
-
+            <div class = "text-box">
+                <h1>No se puede encontrar la página web que estás buscando.</h1>
+                <p>Comprobá que la dirección web esté bien escrita, sino podés usar el buscador de la página.</p>
+            </div>
             <div class="boton-index">
                 <a class="index-button-box" id="indexButton" href="/">
                 <span>Volver</span>
