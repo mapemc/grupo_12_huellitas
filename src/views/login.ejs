@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
     <%- include("./partials/head.ejs", {cssSheet:"stylesLogin", title:"Iniciar Sesión"}) %>
+    <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+    <meta name="appleid-signin-scope" content="[SCOPES]">
+    <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
+    <meta name="appleid-signin-state" content="[STATE]">
 </head>
 <body>
     <header>
@@ -9,36 +13,58 @@
     </header>
     <main>
         <h3 class = "title">Iniciar Sesión</h3>
-        <form action = "/login" method = "POST" class = "register-form">
+        <form action = "/login" method = "POST" class = "login-form">
             <div class = "columns">
-            <!--Campos del formulario-->
-            <div class = "login-left">
-                <div class = "input-boxes">
-                    <label for = "email">Email</label>
-                    <input type = "email" name = "email" id = "email">
-                </div>
-                <div class = "input-boxes">    
-                    <label for = "password">Contraseña</label>
-                    <input type = "password" name = "password" id = "password">
-                </div>
-                <div class = "forgot-password">    
-                    <a href = "/users/request-password-reset">Olvidé la contraseña</a>
+                <!--Campos del formulario-->
+                <div class = "login-left">
+                    <div class = "input-boxes">
+                        <label for = "email">Email</label>
+                        <input type = "email" name = "email" id = "email">
+                    </div>
+                    <div class = "input-boxes">    
+                        <label for = "password">Contraseña</label>
+                        <input type = "password" name = "password" id = "password">
+                    </div>
+                    <div class = "forgot-password">    
+                        <a href = "/users/resetting/request">Olvidé la contraseña</a>
+                    </div>
+
+                    <!--Botones formulario-->
+                    <div class = "submit-button-box">
+                        <button type = "submit" id = "loginButton">Iniciar Sesión</button>
+                    </div>    
                 </div>
 
-                <!--Botones formulario-->
-                <div class = "submit-button-box">
-                    <button type = "submit" id = "loginButton">Iniciar Sesión</button>
-                </div>    
+                <!--Divisor-->
+                <div class = "divider">
+                    <div class="circle">O</div>
+                </div>
+
+                <!--Logo-->
+                <div class = "login-right">
+                    <img class = "logo" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-register">
+                    <div class="button-container">
+                        <!--Boton Google-->
+                        <script src="https://accounts.google.com/gsi/client" async></script>
+                            <div id="g_id_onload"
+                                data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                                data-login_uri="https://your.domain/your_login_endpoint"
+                                data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin"
+                                data-type="icon"
+                                data-logo-alignment = "center"
+                                data-size="xxl"
+                                data-theme="outline"
+                                data-shape="circle">
+                            </div>
+                        <!--Boton Apple-->
+                        <div id="appleid-signin" class="signin-button-apple" data-color="black" data-border="false" data-border-radius="50" data-type="sign-in" data-mode="logo-only"></div>
+                        <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+                    </div>
+                </div>
             </div>
-
-            <!--Divisor-->
-            <div class = "divider"></div>
-
-            <!--Logo-->
-            <div class = "login-right">
-                <img class = "logo" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-register"> 
-            </div>
-        </div>
+        </form>
         <!--Login-->
             <div class = "login-down">
                 <p>Nuevo Usuario</p>
@@ -46,7 +72,7 @@
                     <a href = "/users/register">Crear Cuenta</a>
                 </button>
             </div>
-        </form>
+        
     </main>
 
     <footer>

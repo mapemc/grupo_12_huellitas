@@ -1,12 +1,14 @@
 /*Total*/
 * 
-    {font-family: 'Roboto', sans-serif;
-    padding: 0;
-    box-sizing: border-box;
-    }
+    {font-family: 'Roboto', sans-serif;}
 
 body 
-    {background-color: white;}
+    {margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;}
 
 .banner
     {width: 100%;
@@ -14,7 +16,8 @@ body
     height: 200px;  
     object-fit: cover;
     display: block;
-    margin: 0 auto;}
+    margin: 0 auto;
+    margin-top: 10px;}
 
 /*Main*/
 main
@@ -27,7 +30,8 @@ main
 .title
     {margin-bottom: 10px;
     display: flex;
-    margin-top: 80px;}
+    margin-top: 50px;
+    color: #333}
 
 /*login left*/
 input
@@ -45,7 +49,10 @@ input
     flex-direction: column;
     color: #333;
     font-weight: 500;
-    font-size: 15px;}
+    font-size: 15px;
+    width: 100%;
+    text-align: left;
+    width: calc(100% - 60px);}
 
 .forgot-password
     {font-style: italic;
@@ -53,7 +60,9 @@ input
     justify-content: right;
     margin-bottom: 5px;
     color: #888;
-    text-decoration: underline;}
+    text-decoration: underline;
+    position: relative;
+    left: -20px;}
 
 /*Login Button*/
 #loginButton
@@ -64,10 +73,14 @@ input
     padding: 20px;
     color: white;
     border: none;
-    text-transform: uppercase;}
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    left: -20px;}
 
 #loginButton:hover
-    {background-color: #555;}
+    {background-color: #555;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
 .submit-button-box
     {display: flex;
@@ -78,28 +91,61 @@ input
     {flex: 1;
     padding: 20px;
     width: 50%;
-    margin: auto;}
+    text-align: center;}
 
 .divider
-    {width: 1px;
-    background-color: #ccc;
-    margin: 30px;}
-
+    {position: relative;
+    width: 1px;
+    background-color: #ccc;}
+    
+.circle
+    {position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    color: #333;
+    background-color: white;
+    border: 0.5px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;}
+    
 .columns
     {display: flex;}
 
-/*login right/Logo*/
+/*login right*/
 .logo
-    {max-width: 120%;
-    height: auto;
-    margin-top: 20px;}
+    {height: auto;}
 
+.button-container
+    {display: flex;
+    align-items: center;
+    margin-left: 80px;
+    margin-bottom: 50px;}
+
+.g_id_signin,
+.signin-button-apple
+    {margin-left: 100px;
+    margin-top: 20px;
+    display: flex;}
+
+/*google button*/
+.g_id_signin div
+    {transform: scale(1.17);}
+    
+/*apple button*/
+.signin-button-apple
+    {cursor: pointer;}
 
 /*login down main considerations*/
 .login-down
     {display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 30px;
     color: #ccc;
     align-items: center;}
 
@@ -123,7 +169,8 @@ a
     
 #registerButton:hover
     {background-color: #ccc;
-    color: white;}
+    color: white;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
 /*----------Breakpoints----------*/
 /*Phones*/
@@ -137,3 +184,4 @@ a
 /*Desktop*/
 @media (min-width: 769px)
     {}
+
