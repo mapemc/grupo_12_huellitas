@@ -1,12 +1,14 @@
 /*Total*/
 * 
-    {font-family: 'Roboto', sans-serif;
-    padding: 0;
-    box-sizing: border-box;
-    }
+    {font-family: 'Roboto', sans-serif;}
 
 body 
-    {background-color: white;}
+    {margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;}
 
 .banner
     {width: 100%;
@@ -14,7 +16,8 @@ body
     height: 200px;  
     object-fit: cover;
     display: block;
-    margin: 0 auto;}
+    margin: 0 auto;
+    margin-top: 10px;}
 
 /*Main*/
 main
@@ -27,7 +30,8 @@ main
 .title
     {margin-bottom: 10px;
     display: flex;
-    margin-top: 80px;}
+    margin-top: 80px;
+    color: #333}
 
 /*Register right*/
 input
@@ -45,7 +49,8 @@ input
     flex-direction: column;
     color: #333;
     font-weight: 500;
-    font-size: 15px;}
+    font-size: 15px;
+    width: calc(100% - 50px);}
 
 /*Register Button*/
 #registerButton
@@ -56,10 +61,14 @@ input
     padding: 20px;
     color: white;
     border: none;
-    text-transform: uppercase;}
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    left: -8px;}
 
 #registerButton:hover
-    {background-color: #555;}
+    {background-color: #555;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
 .submit-button-box
     {display: flex;
@@ -75,16 +84,47 @@ input
 .divider
     {width: 1px;
     background-color: #ccc;
-    margin: 30px;}
+    margin: 10px;}
 
+.circle
+    {position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    color: #333;
+    background-color: white;
+    border: 0.5px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;}
+    
 .columns
     {display: flex;}
 
-/*Register right/Logo*/
-.logo
-    {max-width: 120%;
-    height: auto;
-    margin-top: 20px;}
+/*Register right*/
+.button-container
+    {display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 50px;}
+
+.g_id_signin,
+.signin-button-apple
+    {margin-left: 100px;
+    margin-top: 20px;
+    display: flex;}
+
+/*google button*/
+.g_id_signin div
+    {transform: scale(1.17);}
+    
+/*apple button*/
+.signin-button-apple
+    {cursor: pointer;}
 
 /*Register down main considerations*/
 .register-down
@@ -114,7 +154,8 @@ a
     
 #loginButton:hover
     {background-color: #ccc;
-    color: white;}
+    color: white;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
 /*----------Breakpoints----------*/
 /*Phones*/
