@@ -54,7 +54,7 @@ const productController = {
     productToEdit = products.find(product =>{
       return product.id == req.params.id;
     })
-    res.render("adminNewProducts", {productToEdit});
+    res.render("adminEditProducts", {productToEdit});
     },
 
     processEdit: (req, res) => {

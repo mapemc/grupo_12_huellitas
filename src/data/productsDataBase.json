@@ -1,17 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "Arnés con correa",
-  "price": 15000,
-  "stock": 127,
-  "category": "paseo",
-  "color": "amarillo",
-  "size": "S",
-  "inSale": false,
-  "description": "Un arnés resistente y seguro para pasear a tu mascota. Su diseño en color amarillo brinda visibilidad y sujeción adecuada para perros de tamaño pequeño.",
-  "image": "otrosProductos1.jpg"
- },
- {
   "id": 2,
   "name": "Caja arenera con palita",
   "price": 18000,

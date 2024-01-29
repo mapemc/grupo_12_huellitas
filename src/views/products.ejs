@@ -10,8 +10,10 @@
     </header>
 
     <!-- todos los productos -->
-	<div>
-		<h2 class="products-title">Todos los productos</h2>
+	<div class="encabezado-catalogo">
+		<img src="/img/imgCatalogo.jpeg" alt="imagen-catalogo" class="img-catalogo">
+		<div class="text-overlay">CATALOGO </div>
+		<!-- <h2 class="products-title"></h2> -->
 	</div>
 
     <div class="container-products">
@@ -25,6 +27,7 @@
 						</div>
 					</a>	
 						<article class="product-box_data">
+							<a href="/products/detail/<%= product.id %>" style="text-decoration: none;"> 
 							<h2 class="price-product"> $ <%= product.price %></h2>
 							<h1 class="name-product"><%= product.name %></h1>
 							<h3 class="category-product">Categoria: <%= product.category %></h3>
