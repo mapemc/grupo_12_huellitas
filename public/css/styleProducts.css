@@ -101,3 +101,6 @@
     font-weight: lighter;
     text-decoration: none;
 }
+
+a
+{text-decoration: none;}
