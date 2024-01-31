@@ -10,38 +10,42 @@
     <section class="navbar">
 
         <nav>
-           
-            
-                        <ul>
-                            <li class="logo">
-                                <a href="/">
-                                    <img src="/img/logo.jpg" alt="Logo de la Empresa">
-                                </a>
-                            </li>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/products/products">Productos</a></li>
-                        <li><a href="/users/contact">Contacto</a></li>
-                        <li><a href="/users/contact">Servicios</a></li>
-                        <div class = "nav-right">
-                            <div class = "searchbar">
-                                <i class="fa fa-solid fa-magnifying-glass"></i>
-                            </div>
-                            <div class = "user">
-                                <i class="fa fa-solid fa-user"></i>
-                            </div>
-                            <div class = "cart">
-                                <a href="/products/cart"><i class="fa fa-solid fa-cart-shopping"></i></a>
-                            </div>
-
+            <ul>
+                <li class="logo">
+                    <a href="/">
+                        <img src="/img/logo.jpg" alt="Logo de la Empresa">
+                    </a>
+                </li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/products/products">Productos</a></li>
+                <li><a href="/users/contact">Contacto</a></li>
+                <li><a href="/users/contact">Servicios</a></li>
+                <!--II. M.V.A. Agregado navbar derecha
+                <li><a href="/users/login">Iniciar Sesion</a></li>
+                <li><a href="/users/register">Registrarse</a></li>
+                FF-->
+                <!--II. M.V.A. Agregado navbar derecha-->
+                <div class = "nav-right">
+                    <div class = "icon">
+                        <i class = "fa fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class = "dropdown">
+                        <div class = "icon">
+                            <i class = "fa fa-solid fa-user"></i>
                         </div>
-
-                        <!--
-                        <li><a href="/users/login">Iniciar Sesion</a></li>
-                        <li><a href="/users/register">Registrarse</a></li>
-                        -->
-    
-                    </ul>
-                
+                        <div class = "dropdown-content">
+                            <a href = "/users/register" id = "register">Registrarse</a>
+                            <a href = "/users/login" id = "login">Iniciar sesión</a>
+                            <a href = "" id="my-account" style = "display: none;">Mi cuenta</a>
+                            <a href = "" id="logout" style = "display: none;">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <div class = "icon">
+                        <a href="/products/cart"><i class = "fa fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+                <!--FF-->    
+            </ul>    
         </nav>
     </section>
 </header>
