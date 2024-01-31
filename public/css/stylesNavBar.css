@@ -64,14 +64,86 @@ a
     {text-decoration: none;
     color: white}
 a:hover
-    {color: black}
+    {color: black;}
 
-/* Estilos del menú desplegable */
+/*Products dropdown*/
+.dropdown-products-content
+    {display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+
+.dropdown-products
+    {position: relative;}
+
+.dropdown-products:hover .dropdown-products-content
+    {display: block;}
+
+.dropdown-products-content a
+    {color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+
+.dropdown-products-content a:hover
+    {background-color: #ddd;}
+
+/*Servicios dropdown*/
+.dropdown-services-content
+    {display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+
+.dropdown-services
+    {position: relative;}
+
+.dropdown-services:hover .dropdown-services-content
+    {display: block;}
+
+.dropdown-services-content a
+    {color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+
+.dropdown-services-content a:hover
+    {background-color: #ddd;}
+
+/*Searchbar*/
+.search-box
+    {display: flex;
+    align-items: center;
+    margin-left: auto;}
+
+.search-box form
+    {display: flex;
+    align-items: center;}
+
+.search-box input[type=text]
+    {padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    width: 300px;}
+
+.search-box button
+    {background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;}
+
+/*Usuarios dropdown*/
 .icon
     {color: white;}
 
 .icon:hover
-    {color: black}
+    {color: black;
+    cursor: pointer;}
 
 .dropdown-content
     {display: none;
