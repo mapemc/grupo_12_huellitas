@@ -44,3 +44,18 @@
     height: 35px; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
     width: auto; /* Ancho automático */
 }
+
+/*Navbar Derecha*/
+.navbar nav ul
+    {list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;}
+
+.nav-right
+    {display: flex;
+    align-items: center;}
+
+.nav-right > div
+    {margin-left: 10px;}
