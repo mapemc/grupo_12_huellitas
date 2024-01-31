@@ -148,9 +148,12 @@ input
     align-items: center;}
 
 /*Register Button*/
-a
+#registerButton a
     {text-decoration: none;
-    color: #333}
+    color: #333;}
+
+#registerButton a:hover
+    {color: #333;}
 
 #registerButton
     {padding: 20px;

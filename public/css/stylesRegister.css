@@ -133,9 +133,12 @@ input
     align-items: center;}
 
 /*Login Button*/
-a
+#loginButton a
     {text-decoration: none;
-    color: #333}
+    color: #333;}
+
+#loginButton a:hover
+    {color: #333;}
 
 #loginButton
     {padding: 20px;
@@ -148,12 +151,13 @@ a
     margin-bottom: 10px;
     font-weight: 900;
     font-size: medium;
-    text-transform: uppercase;}
+    text-transform: uppercase;
+    position: relative;}
     
 #loginButton:hover
     {background-color: #ccc;
-    color: white;
     transition: background-color 0.3s, color 0.3s, border 0.1s;}
+
 
 /*----------Breakpoints----------*/
 /*Phones*/
