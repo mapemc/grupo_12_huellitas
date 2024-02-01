@@ -5,17 +5,16 @@
     margin: 10px;
     padding: 0;
     FF. M.V.A. */
-    box-sizing: border-box;
-    /*II L.B. Cambio de color crema a gris*/
-    color: rgba(41, 53, 51, 1);
-    /*FF*/
-}
+    box-sizing: border-box;}
 
 body 
     {margin: 8px;
     padding: 0px;
     height: 90vh;
-    background-color: white;}
+    background-color: white;
+    /*II L.B. Cambio de color negro a gris*/
+    color: rgba(41, 53, 51, 1);
+    /*FF*/}
 
 /* Main */
 main
