@@ -58,9 +58,17 @@ input
     justify-content: right;
     margin-bottom: 5px;
     color: #888;
-    text-decoration: underline;
     position: relative;
-    left: -20px;}
+    left: -20px;
+    cursor: pointer;}
+
+.forgot-password a
+    {text-decoration: none;
+    color: #333;}
+
+.forgot-password a:hover
+    {color: #333;
+    text-decoration: underline;}
 
 /*Login Button*/
 #loginButton
