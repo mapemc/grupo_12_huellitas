@@ -42,14 +42,6 @@ input
 .password-change h3
     {margin-top: 0;}
 
-.password-change input[type="password"]:focus
-    {border-color: #66afe9;
-    outline: 0;}
-
-.password-change input[type="password"]:required:invalid
-    {border-color: #ff9999;}
-
-    
 /*Columna del medio/pfp pic*/
 .middle-column
     {flex: 0.6;

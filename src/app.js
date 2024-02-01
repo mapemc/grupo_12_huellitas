@@ -2,6 +2,8 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+const multer = require('multer');
+var uploadFile = multer().single('avatar')
 
 /////////EXPRESS//////////
 const app = express();
@@ -34,6 +36,17 @@ app.use("/contact", contactRouter);
 
 /*Not found*/
 app.use((req, res, next) => {res.status(404).render('notFound')})
+/*Error multer*/
+app.post("/editProfile", (req, res) => {
+    uploadFile(req, res, (err) => {
+        if (err){
+            res.status(400).send('Algo salió mal')
+        }
+        else
+        res.send('Archivo subido correctamente')
+    })
+    res.send(req.file)
+});
 
 
 // * Servidor *// 

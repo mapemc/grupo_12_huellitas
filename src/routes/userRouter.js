@@ -1,6 +1,9 @@
 const express = require('express');
 /* const app = express(); */
+const path = require('path');
 const router = express.Router();
+const userController = require("../controllers/userController.js");
+
 /*Agregado multer*/
 const multer = require('multer');
 const storage = multer.diskStorage(
@@ -13,20 +16,24 @@ const storage = multer.diskStorage(
     });
 const uploadFile = multer({storage}); /*Execution saved*/
 
-const userController = require("../controllers/userController.js");
 
-
-router.get("/login", userController.login);
+/*REGISTER*/
 router.get("/register", userController.register);
-router.get("/contact", userController.contact);
+router.post("/register", userController.processRegister);
+
+/*LOGIN*/
+router.get("/login", userController.login);
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
 router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-email?username=mail@algo*/
 /*FF M.V.A.*/
-/*Multer*/
+
+/*EDIT PROFILE*/
 router.get("/editProfile", userController.editProfile);
-/*router.post("/editProfile", uploadFile.single('avatar'), userController.processEditProfile)*/
+router.post("/editProfile/:id", uploadFile.single('avatar'), userController.processEditProfile);
 
 
+/*CONTACTO*/
+router.get("/contact", userController.contact);
 
 module.exports = router; 
