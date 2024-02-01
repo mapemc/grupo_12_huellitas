@@ -1,0 +1,162 @@
+/* Total */
+*
+    {font-family: 'Roboto', sans-serif;}
+
+/*Columnas general*/
+.columns
+    {display: flex;}
+
+input
+    {width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    font-size: 12px;
+    text-transform: uppercase;}
+
+.input-boxes 
+    {margin-top: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+    width: calc(100% - 50px);}
+
+/*Columna izquierda*/
+.left-column
+    {width: 40%;
+    padding-right: 10px;
+    box-sizing: border-box;}
+
+[disabled]
+    {color: #777; 
+    background-color: #eee;
+    cursor: not-allowed;}
+
+/*Contraseña*/
+.password-change
+    {margin-bottom: 20px;}
+
+.password-change h3
+    {margin-top: 0;}
+
+.password-change input[type="password"]:focus
+    {border-color: #66afe9;
+    outline: 0;}
+
+.password-change input[type="password"]:required:invalid
+    {border-color: #ff9999;}
+
+    
+/*Columna del medio/pfp pic*/
+.middle-column
+    {flex: 0.6;
+    padding-right: 10px;
+    box-sizing: border-box;}
+
+.avatar input[type="file"]
+    {border: none;
+    outline: none;}
+
+.thumbnail-container
+    {width: 100px;
+    height: 100px; 
+    overflow: hidden;
+    border: 1px solid #ccc;}
+    
+.thumbnail-container img
+    {width: 100%;
+    height: auto; 
+    display: block;}
+    
+
+/*Divisor*/
+.divider
+    {width: 1px;
+    background-color: #ccc;
+    margin: 10px;
+    align-self: stretch;}
+
+
+/*Columna derecha*/
+.right-column
+    {display: flex;
+    flex-direction: column;}
+
+.address-group
+    {display: flex;
+    justify-content: space-between;}
+
+.small-input
+    {width: 40%;}
+
+/*Tarjeta*/
+.card
+    {background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);}
+    
+.visa-card
+    {display: flex;
+    align-items: center;}
+    
+.card-logo
+    {width: 50px;
+    margin-right: 5px;}
+    
+.card-logo img
+    {width: 100%;}
+    
+.card-details
+    {flex-grow: 1;}
+
+.card-number
+    {font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;}
+    
+/*Botones*/
+.button-container
+    {margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;}
+
+.deleteButton, .cancelButton, .editProductButton
+    {padding: 10px;
+    display: block;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: medium;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 5px;}
+
+.deleteButton
+    {background-color: #FF6969;
+    color: white;}
+
+.deleteButton:hover
+    {background-color: #E97777;}
+
+.cancelButton
+    {background-color: #888;
+    color: white;}
+
+.cancelButton:hover
+    {background-color: #333;}
+
+.editProductButton
+    {background-color: rgba(22, 198, 204, 1);
+    color: white;}
+
+.editProductButton:hover
+    {background-color: rgba(17, 153, 158, 1);}
