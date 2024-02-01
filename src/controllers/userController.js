@@ -8,8 +8,11 @@ const userController ={
     },
 
     register: (req, res) =>{
-        
-    res.render("register.ejs"); 
+        res.render("register.ejs"); 
+    },
+    /*Register form*/
+    editProfile: (req, res) =>{
+        res.render("editProfile.ejs"); 
     },
     /*II M.V.A. password reset*/
     resetPassword: (req, res) => {
