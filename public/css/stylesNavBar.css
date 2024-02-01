@@ -127,7 +127,9 @@ a:hover
     margin: 0;
     border: none;
     border-radius: 5px;
-    width: 300px;}
+    width: 300px;
+    text-transform: capitalize;
+    font-size: 15px;}
 
 .search-box button
     {background: none;
