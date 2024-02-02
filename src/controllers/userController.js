@@ -1,37 +1,43 @@
 const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, "../data/users.json");
+const bcrypt = require('bcryptjs');
+
 
 
 const userController ={
     processRegister: (req, res) =>{
         try {
-        const {username, email, password, confirmPassword} = req.body;
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        const existingUser = users.find(user => user.username === username);
-        if (existingUser) {
-            return res.status(400).send("El nombre de usuario o el correo electrónico ya están en uso");
-        }
-        if (password !== confirmPassword) {
-            return res.status(400).send("Las contraseñas no coinciden");
-        }
-        
-        const newUser ={
-            id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
-            username,
-            email,
-        }
-  
-        users.push(newUser);
-  
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-          
-        res.redirect("/");
-    } catch (error) {console.error(error);
-        res.status(500).send("Error al registrarse");}
-    },
+            const {username, email, password, confirmPassword} = req.body;
+            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     
+            const existingUser = users.find(user => user.username === username);
+            if (existingUser) {
+                return res.status(400).send("El nombre de usuario o el correo electrónico ya están en uso");
+            }
+            if (password !== confirmPassword) {
+                return res.status(400).send("Las contraseñas no coinciden");
+            }
+                
+                const newUser ={
+                    id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
+                    username,
+                    email,
+                    password 
+                };
+
+                let encriptedPass = bcrypt.hashSync(password, 10);
+                console.log(encriptedPass)
+    
+                users.push(newUser);
+                fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+                
+                res.redirect("/");
+        } catch (error) {
+            console.error(error);
+            res.status(500).send("Error al registrarse");
+        }
+    },
     /*Register form*/
     editProfile: (req, res) => {
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
