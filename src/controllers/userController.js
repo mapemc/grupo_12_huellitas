@@ -11,17 +11,16 @@ const userController ={
 
         const existingUser = users.find(user => user.username === username);
         if (existingUser) {
-            return res.status(400).send("El nombre de usuario ya está en uso");
+            return res.status(400).send("El nombre de usuario o el correo electrónico ya están en uso");
         }
         if (password !== confirmPassword) {
             return res.status(400).send("Las contraseñas no coinciden");
         }
-  
+        
         const newUser ={
             id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
             username,
             email,
-            password,
         }
   
         users.push(newUser);
@@ -30,42 +29,47 @@ const userController ={
           
         res.redirect("/");
     } catch (error) {console.error(error);
-        res.status(500).send("Error en el proceso de registro");}
+        res.status(500).send("Error al registrarse");}
     },
     
     /*Register form*/
-    editProfile: (req, res) =>{
+    editProfile: (req, res) => {
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-    userToEdit = users.find(user =>{
-      return user.id == req.params.id;
-    })
-    res.render("editProfile", {userToEdit});
+        const userToEdit = users.find(user => user.id == req.params.id);
+        if (!userToEdit) {
+            return res.status(404).send("Usuario no encontrado");
+        }
+        res.render("editProfile", { userToEdit });
     },
 
-    processEditProfile: (req, res) =>{
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-      const id = req.params.id;
-      let userToEdit = users.find(user => user.id == id);
-
-      userToEdit = {
-        id: userToEdit.id,
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        address: req.body.address,
-      }
-
-      let indice = users.findIndex(user =>{
-        return user.id == id
-      });
-
-      users[indice] = userToEdit;
-
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-		  
-      res.redirect("/users/editProfile/" + id)
+    processEditProfile: (req, res) => {
+        try {
+            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            const id = req.params.id;
+            const { username, email, password, address } = req.body;
+    
+            const userIndex = users.findIndex(user => user.id == id);
+    
+            if (userIndex === -1) {
+                return res.status(404).send("Usuario no encontrado");
+            }
+    
+            users[userIndex] = {
+                id: users[userIndex].id,
+                username,
+                email,
+                password,
+                address,
+                avatar,
+            };
+    
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+    
+            res.redirect(`/users/editProfile/${id}`);
+        } catch (error) {
+            console.error(error);
+            res.status(500).send("No se pudieron cargar los cambios");
+        }
     },
 
     /*II M.V.A. password reset*/
@@ -83,6 +87,22 @@ const userController ={
 
     login: (req, res) =>{
         res.render("login.ejs");
+    },
+
+    processLogin: (req, res) =>{
+        try {
+            const { email, password } = req.body;
+            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    
+            const user = users.find(user => user.email === email && user.password === password);
+            if (!user) {
+                return res.status(401).send("El mail o la contraseña son incorrectas");
+            }
+            res.redirect("/");
+        } catch (error) {
+            console.error(error);
+            res.status(500).send("Error al iniciar sesión");
+        }
     },
 
     register: (req, res) =>{

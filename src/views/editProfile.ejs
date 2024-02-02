@@ -12,7 +12,7 @@
 
     <main>
         <h2 class="title">Editar Perfil</h2>
-        <form class="form" action="/user/editProfile" method="POST" enctype="multipart/form-data">
+        <form class="form" action="/users/editProfile/<%= userToEdit.id %>" method="POST" enctype="multipart/form-data">
             <div class="columns">
             <!-- Columna Izquierda -->
                 <div class="left-column">
@@ -52,7 +52,7 @@
                     <div class="avatar">
                         <label for="avatar" class="form-label">Foto de Perfil</label>
                         <div class="thumbnail-container">
-                            <img id="thumbnail" src="#" alt="Miniatura de la imagen">
+                            <img id="avatar" src="#" alt="Miniatura de la imagen">
                         </div>
                         <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar" class="form-input">
                     </div>

@@ -23,6 +23,8 @@ router.post("/register", userController.processRegister);
 
 /*LOGIN*/
 router.get("/login", userController.login);
+router.post("/login", userController.processLogin);
+
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
 router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-email?username=mail@algo*/

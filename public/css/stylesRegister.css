@@ -50,6 +50,15 @@ input
     font-size: 15px;
     width: calc(100% - 50px);}
 
+.error-message
+    {display: none;
+    color: red;
+    font-size: 12px;}
+    
+/* Mostrar el mensaje de error cuando hay un error */
+input:invalid + .error-message
+    {display: block;}
+
 /*Register Button*/
 #registerButton
     {width: 60%;
