@@ -28,8 +28,7 @@ const userController ={
   
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
           
-        res.redirect("/users");
-        res.send("Registro exitoso");
+        res.redirect("/");
     } catch (error) {console.error(error);
         res.status(500).send("Error en el proceso de registro");}
     },
@@ -66,7 +65,7 @@ const userController ={
 
       fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 		  
-      res.redirect("/users/editProfile" + id)
+      res.redirect("/users/editProfile/" + id)
     },
 
     /*II M.V.A. password reset*/
