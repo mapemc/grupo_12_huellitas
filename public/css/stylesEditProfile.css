@@ -30,7 +30,7 @@ input
     padding-right: 10px;
     box-sizing: border-box;}
 
-[disabled]
+[readonly]
     {color: #777; 
     background-color: #eee;
     cursor: not-allowed;}

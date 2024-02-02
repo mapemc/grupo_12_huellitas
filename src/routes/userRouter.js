@@ -8,7 +8,7 @@ const userController = require("../controllers/userController.js");
 const multer = require('multer');
 const storage = multer.diskStorage(
     {destination: function(req, file, cb)
-        {let folder = path.join(__dirname, '../public/img/avatars');
+        {let folder = path.join(__dirname, '../../public/img/avatars');
         cb(null, folder);}, /*folder where saved*/
         filename: function(req, file, cb)
         {let imageName = Date.now() + path.extname(file.originalname);
@@ -31,7 +31,7 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*FF M.V.A.*/
 
 /*EDIT PROFILE*/
-router.get("/editProfile", userController.editProfile);
+router.get("/editProfile/:id", userController.editProfile);
 router.post("/editProfile/:id", uploadFile.single('avatar'), userController.processEditProfile);
 
 

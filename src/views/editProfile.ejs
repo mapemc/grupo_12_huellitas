@@ -18,11 +18,11 @@
                 <div class="left-column">
                     <div class="input-boxes">
                         <label for="username" class="form-label">Nombre</label>
-                        <input type="text" name="username" id="username" disabled>
+                        <input type="text" name="username" id="username" value="<%= userToEdit.username %>" readonly>
                     </div>
                     <div class="input-boxes">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" disabled>
+                        <input type="email" name="email" id="email" value="<%= userToEdit.email %>" readonly>
                     </div>
                     <div class="input-boxes">
                         <label for="birthday">Cumpleaños</label>
@@ -52,9 +52,9 @@
                     <div class="avatar">
                         <label for="avatar" class="form-label">Foto de Perfil</label>
                         <div class="thumbnail-container">
-                            <img id="avatar" src="#" alt="Miniatura de la imagen">
+                            <img id="preview-avatar" src="#" alt="Miniatura de la imagen">
                         </div>
-                        <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar" class="form-input">
+                        <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar-input" class="form-input">
                     </div>
                 </div>
 
@@ -66,31 +66,31 @@
                     <h4 class="subtitle-right">Mi Dirección</h4>
                     <div class="input-boxes">
                         <label for="street" class="form-label">Calle</label>
-                        <input type="text" name="street" id="street">
+                        <input type="text" name="street" id="street" value="<%= userToEdit.street %>">
                     </div>
                     <div class="address-group">
                         <div class="input-boxes">
                             <label for="address" class="form-label">Número</label>
-                            <input type="number" name="address" id="address" class="small-input">
+                            <input type="number" name="address" id="address" class="small-input" value="<%= userToEdit.address %>">
                         </div>
                         <div class="input-boxes">
                             <label for="floor" class="form-label">Piso</label>
-                            <input type="number" name="floor" id="floor" class="small-input">
+                            <input type="number" name="floor" id="floor" class="small-input" value="<%= userToEdit.floor %>">
                         </div>
                     </div>
                     <div class="address-group">
                         <div class="input-boxes">
                             <label for="flat" class="form-label">Departamento</label>
-                            <input type="text" name="flat" id="flat" class="small-input">
+                            <input type="text" name="flat" id="flat" class="small-input" value="<%= userToEdit.flat %>">
                         </div>
                         <div class="input-boxes">
                             <label for="postal" class="form-label">CP</label>
-                            <input type="number" name="postal" id="postal" class="small-input">
+                            <input type="number" name="postal" id="postal" class="small-input" value="<%= userToEdit.postal %>">
                         </div>
                     </div>
                     <div class="input-boxes">
                         <label for="location" class="form-label">Provincia</label>
-                        <input type="text" name="location" id="location">
+                        <input type="text" name="location" id="location" value="<%= userToEdit.location %>">
                     </div>
                     <h4 class="subtitle-right">Mis Métodos de Pago</h4>
                         <div class="card">
