@@ -1,0 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+//const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+
+const servicesController = {
+
+}
+
+module.exports = servicesController;

@@ -22,6 +22,7 @@ const mainRouter = require("./routes/mainRouter");
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
 const contactRouter = require("./routes/contactRouter");
+const servicesRouter = require("./routes/servicesRouter")
 
 
 app.use(express.static("public"));
@@ -31,6 +32,7 @@ app.use("/", mainRouter);
 app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/contact", contactRouter);
+app.use("/services", servicesRouter);
 
 /*Not found*/
 app.use((req, res, next) => {res.status(404).render('notFound')})

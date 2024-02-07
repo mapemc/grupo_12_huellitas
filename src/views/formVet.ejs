@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesFormVet", title:"Veterinarios"}) %>
+</head>
+
+<body>
+
+  <h1>Formulario de Guardería de Mascotas</h1>
+
+  <form action="/enviarDatos" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p>Gracias por elegir nuestro servicio de guardería para mascotas. Nuestro equipo de asesores revisará la información proporcionada y se comunicará contigo pronto para brindarte más detalles sobre nuestros servicios y responder a tus preguntas.</p>
+
+  <h2>Características del Servicio de Guardería</h2>
+  <ul>
+    <li>Atención personalizada para cada mascota.</li>
+    <li>Áreas seguras y cómodas para el juego y descanso.</li>
+    <li>Personal capacitado y amante de los animales.</li>
+    <li>Actividades recreativas y paseos diarios.</li>
+    <!-- Agrega más características según sea necesario -->
+  </ul>
+
+  <!-- Agrega aquí cualquier otro contenido que desees mostrar en la página -->
+
+</body>
+
+<footer>
+    <%- include('partials/footer.ejs') %>
+</footer>
+
+</html>
