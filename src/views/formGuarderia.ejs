@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("./partials/head.ejs", {cssSheet:"stylesFormVet", title:"Veterinarios"}) %>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesFormGuarderia", title:"Guardería"}) %>
 </head>
 
 <body>
 
-  <h1>Formulario de Guardería de Mascotas</h1>
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+
+  <h1>Servicio de Guardería</h1>
 
   <form action="/enviarDatos" method="post">
     <label for="nombre">Nombre:</label>

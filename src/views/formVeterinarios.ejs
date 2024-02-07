@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesFormPeluqueria", title:"Veterinarios"}) %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+
+  <h1>Servicios Veterinarios</h1>
+
+  <section>
+    <h2>Nuestros Veterinarios</h2>
+    <div class="veterinarios">
+      <div class="veterinario">
+        <img src="veterinario1.jpg" alt="Veterinario 1">
+        <p>Dr. Juan Pérez</p>
+        <p>Matrícula: 12345</p>
+      </div>
+      <!-- Repite este bloque para cada veterinario -->
+    </div>
+  </section>
+
+  <section>
+    <h2>Formulario de Contacto</h2>
+    <form action="/enviarConsultaVeterinario" method="post">
+      <label for="nombre">Nombre y Apellido:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p>Gracias por confiar en nuestros servicios veterinarios. Nuestro equipo revisará tu mensaje y se pondrá en contacto contigo pronto para brindarte la mejor atención para tu mascota.</p>
+  </section>
+
+  <section>
+    <h2>Atención de Urgencias</h2>
+    <p>Para situaciones de emergencia, estamos disponibles las 24 horas del día, los 7 días de la semana. Comunícate con nosotros al número de urgencias: <strong>123-456-7890</strong>.</p>
+  </section>
+
+  <section>
+    <h2>Descripción del Servicio Veterinario</h2>
+    <p>Nuestros veterinarios altamente calificados ofrecen una atención integral para tu mascota. Realizamos chequeos regulares, vacunaciones, cirugías, y brindamos asesoramiento personalizado para el cuidado de la salud de tu animal.</p>
+
+    <p>En nuestra clínica, valoramos la relación especial que tienes con tu mascota. Nos esforzamos por proporcionar un ambiente cálido y amigable para que tanto tú como tu mascota se sientan cómodos durante cada visita.</p>
+
+    <p>La salud y el bienestar de tu mascota son nuestra principal prioridad. ¡Confía en nosotros para el cuidado veterinario de calidad!</p>
+
+    <!-- Agrega cualquier otra información relevante que desees incluir -->
+  </section>
+
+  <!-- Agrega aquí cualquier otro contenido que desees mostrar en la página -->
+
+</body>
+
+<footer>
+    <%- include('partials/footer.ejs') %>
+</footer>
+
+</html>

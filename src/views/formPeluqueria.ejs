@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesFormPeluqueria", title:"Peluquería"}) %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+
+  <h1>Servicio de Peluquería</h1>
+
+  <form action="/enviarDatosPeluqueria" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p>Gracias por elegir nuestro servicio de peluquería para mascotas. Nuestro equipo de asesores revisará la información proporcionada y se comunicará contigo pronto para brindarte más detalles sobre nuestros servicios y responder a tus preguntas.</p>
+
+  <h2>Características del Servicio de Peluquería</h2>
+  <ul>
+    <li>Corte de pelo y peinado profesional para tu mascota.</li>
+    <li>Baño con productos de alta calidad y adaptados a la piel de cada animal.</li>
+    <li>Eliminación de nudos y enredos en el pelaje.</li>
+    <li>Secado y cepillado cuidadoso.</li>
+    <li>Revisión de uñas y limpieza de oídos.</li>
+    <!-- Agrega más características según sea necesario -->
+  </ul>
+
+  <p>En nuestro servicio de peluquería, nos preocupamos por el bienestar y la comodidad de tu mascota. Nuestros profesionales están capacitados para brindar un trato amable y respetuoso, asegurando una experiencia positiva para tu fiel compañero.</p>
+
+  <!-- Agrega aquí cualquier otro contenido que desees mostrar en la página -->
+
+</body>
+
+<footer>
+    <%- include('partials/footer.ejs') %>
+</footer>
+
+</html>
