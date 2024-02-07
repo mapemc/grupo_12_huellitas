@@ -9,7 +9,7 @@ const multer = require('multer');
 const generateFileName = (user, originalname) => {
     const fileNameWithoutExtension = path.parse(originalname).name;
     const fileExt = path.extname(originalname);
-    const timestamp = new Date().toISOString().replace(/[-:.]/g, '');
+    const timestamp = new Date();
     return `${fileNameWithoutExtension}_${timestamp}${fileExt}`;
 };
 const storage = multer.diskStorage(
