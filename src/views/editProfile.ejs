@@ -52,7 +52,7 @@
                     <div class="avatar">
                         <label for="avatar" class="form-label">Foto de Perfil</label>
                         <div class="thumbnail-container">
-                            <img id="preview-avatar" src="#" alt="Miniatura de la imagen">
+                            <img id="preview-avatar" src='/img/avatars/<%= userToEdit.avatar ? userToEdit.avatar : 'card7.jpeg'  %>' alt="Miniatura de la imagen">
                         </div>
                         <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar-input" class="form-input">
                     </div>
