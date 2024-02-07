@@ -35,7 +35,6 @@ app.use("/contact", contactRouter);
 /*Not found*/
 app.use((req, res, next) => {res.status(404).render('notFound')})
 
-
 // * Servidor *// 
 app.listen(3456, () => {
     console.log('Servidor corriendo en http://localhost:3456');

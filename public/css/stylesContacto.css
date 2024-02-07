@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body 
+    {margin: 8px;
+    padding: 0px;
+    height: 90vh;
+    background-color: white;}
 
 .mapa {
     width: 100%;

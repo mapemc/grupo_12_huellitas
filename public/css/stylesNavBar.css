@@ -1,4 +1,3 @@
-
 /* Estilos para el Navbar */
 .navbar {
     background-color: #16c6cc; /* Color de fondo */
@@ -44,3 +43,127 @@
     height: 35px; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
     width: auto; /* Ancho automático */
 }
+
+/*II. M.V.A. Agregado navbar derecha*/
+/*Navbar Derecha*/
+.navbar nav ul
+    {list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;}
+
+.nav-right
+    {display: flex;
+    align-items: center;}
+
+.nav-right > div
+    {margin-left: 10px;}
+
+a
+    {text-decoration: none;
+    color: white}
+a:hover
+    {color: black;}
+
+/*Products dropdown*/
+.dropdown-products-content
+    {display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+
+.dropdown-products
+    {position: relative;}
+
+.dropdown-products:hover .dropdown-products-content
+    {display: block;}
+
+.dropdown-products-content a
+    {color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+
+.dropdown-products-content a:hover
+    {background-color: #ddd;}
+
+/*Servicios dropdown*/
+.dropdown-services-content
+    {display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+
+.dropdown-services
+    {position: relative;}
+
+.dropdown-services:hover .dropdown-services-content
+    {display: block;}
+
+.dropdown-services-content a
+    {color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+
+.dropdown-services-content a:hover
+    {background-color: #ddd;}
+
+/*Searchbar*/
+.search-box
+    {display: flex;
+    align-items: center;
+    margin-left: auto;}
+
+.search-box form
+    {display: flex;
+    align-items: center;}
+
+.search-box input[type=text]
+    {padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    text-transform: capitalize;
+    font-size: 15px;}
+
+.search-box button
+    {background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;}
+
+/*Usuarios dropdown*/
+.icon
+    {color: white;}
+
+.icon:hover
+    {color: black;
+    cursor: pointer;}
+
+.dropdown-content
+    {display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+
+.dropdown-content a
+    {color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+
+.dropdown-content a:hover
+    {background-color: #ddd;}
+
+.dropdown:hover > .dropdown-content
+    {display: block;}
+
+/*FF*/

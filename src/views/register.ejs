@@ -15,17 +15,19 @@
     </header>
     <main>
         <h3 class = "title">¡Bienvenid@! Completa este formulario para registrarte</h3>
-        <form action = "/register" method = "POST" class = "register-form">
+        <form action = "/users/register" method = "POST" class = "register-form">
             <div class = "columns">
                 <!--Campos del formulario-->
                 <div class = "register-left">
                     <div class = "input-boxes">
-                        <label for = "user">Nombre de usuari@</label>
-                        <input type = "text" name = "user" id = "user">
+                        <label for = "username">Nombre de usuari@</label>
+                        <input type = "text" name = "username" id = "username">
+                        <div class="error-message" id="username-error">El nombre de usuario ya está en uso</div>
                     </div>
                     <div class = "input-boxes">
                         <label for = "email">Email</label>
                         <input type = "email" name = "email" id = "email">
+                        <div class="error-message" id="email-error">El correo electrónico a está en uso</div>
                     </div>
                     <div class = "input-boxes">    
                         <label for = "password">Contraseña</label>

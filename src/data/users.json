@@ -1,79 +1,128 @@
-[{"id":1,
-"category":"Admin",
-"firstName":"Paul",
-"lastName":"McCartney",
-"email":"paulmccartney@gmail.com",
-"password":"uE1?o_?E\\z",
-"avatar":"https://robohash.org/quisinet.jpg?size=50x50&set=set1"},
-
-{"id":2,
-"category":"Testing",
-"firstName":"Gordon",
-"lastName":"Ramsay",
-"email":"gordonramsay@gmail.com",
-"password":"vM4#<9\"YL2PjLy7D",
-"avatar":"https://robohash.org/debitisassumendavoluptatem.jpg?size=50x50&set=set1"},
-
-{"id":3,
-"category":"Customer",
-"firstName":"Javier",
-"lastName":"Milei",
-"email":"javomilei@gmail.com",
-"password":"dL0`o2E5ob9PY",
-"avatar":"https://robohash.org/situtalias.jpg?size=50x50&set=set1"},
-
-{"id":4,
-"category":"Customer",
-"firstName":"César",
-"lastName":"Millan",
-"email":"encantadordeperros@gmail.com",
-"password":"hK3=Sss/~PUX.Ra",
-"avatar":"https://robohash.org/fugiatbeataeperferendis.jpg?size=50x50&set=set1"},
-
-{"id":5,
-"category":"Customer",
-"firstName":"Pluto",
-"lastName":"Elperro",
-"email":"plutoelperro@gmail.com",
-"password":"qJ7|~msvwPAP",
-"avatar":"https://robohash.org/eanostrummaiores.jpg?size=50x50&set=set1"},
-
-{"id":6,
-"category":"Customer",
-"firstName":"Goofy",
-"lastName":"Goof",
-"email":"goofygoof@gmail.com",
-"password":"eE5+ypQ'l",
-"avatar":"https://robohash.org/etinid.jpg?size=50x50&set=set1"},
-
-{"id":7,
-"category":"Customer",
-"firstName":"Garfield",
-"lastName":"Naranja",
-"email":"garfieldnaranja@gmail.com",
-"password":"tT9*_AnI6`9",
-"avatar":"https://robohash.org/istedebitistenetur.jpg?size=50x50&set=set1"},
-
-{"id":8,
-"category":"Customer",
-"firstName":"Cruela",
-"lastName":"De Vil",
-"email":"crueladevil@gmail.com",
-"password":"aA1#anuk9Mz#(%ri",
-"avatar":"https://robohash.org/eligendisequiad.jpg?size=50x50&set=set1"},
-
-{"id":9,
-"category":"Customer",
-"firstName":"Scooby",
-"lastName":"Doo",
-"email":"scoobydoo@gmail.com",
-"password":"yS2%)l5'O3\"",
-"avatar":"https://robohash.org/aliquiddolornemo.jpg?size=50x50&set=set1"},
-
-{"id":10,
-"category":"Customer",
-"firstName":"Coraje",
-"lastName":"Perro Cobarde",
-"email":"corajecobarde@gmail.com",
-"password":"nV6(=WsBp9{>?",
-"avatar":"https://robohash.org/beataeestqui.jpg?size=50x50&set=set1"}]
+[
+  {
+    "id": 1,
+    "username": "Paul",
+    "email": "paulmccartney@gmail.com",
+    "street": "aaaaa"
+  },
+  {
+    "id": 2,
+    "category": "Testing",
+    "username": "Gordon",
+    "email": "gordonramsay@gmail.com",
+    "password": "vM4#<9YL2PjLy7D",
+    "avatar": "https://robohash.org/debitisassumendavoluptatem.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 3,
+    "category": "Customer",
+    "username": "Javier",
+    "email": "javomilei@gmail.com",
+    "password": "dL0`o2E5ob9PY",
+    "avatar": "https://robohash.org/situtalias.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 4,
+    "category": "Customer",
+    "username": "César",
+    "email": "encantadordeperros@gmail.com",
+    "password": "hK3=Sss/~PUX.Ra",
+    "avatar": "https://robohash.org/fugiatbeataeperferendis.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 5,
+    "category": "Customer",
+    "username": "Pluto",
+    "email": "plutoelperro@gmail.com",
+    "password": "qJ7|~msvwPAP",
+    "avatar": "https://robohash.org/eanostrummaiores.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 6,
+    "category": "Customer",
+    "username": "Goofy",
+    "email": "goofygoof@gmail.com",
+    "password": "eE5+ypQ'l",
+    "avatar": "https://robohash.org/etinid.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 7,
+    "category": "Customer",
+    "username": "Garfield",
+    "email": "garfieldnaranja@gmail.com",
+    "password": "tT9*_AnI6`9",
+    "avatar": "https://robohash.org/istedebitistenetur.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 8,
+    "category": "Customer",
+    "username": "Cruela",
+    "email": "crueladevil@gmail.com",
+    "password": "aA1#anuk9Mz#(%ri",
+    "avatar": "https://robohash.org/eligendisequiad.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 9,
+    "category": "Customer",
+    "username": "Scooby",
+    "email": "scoobydoo@gmail.com",
+    "password": "yS2%)l5'O3",
+    "avatar": "https://robohash.org/aliquiddolornemo.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 10,
+    "category": "Customer",
+    "username": "Coraje",
+    "email": "corajecobarde@gmail.com",
+    "password": "nV6(=WsBp9{>?",
+    "avatar": "https://robohash.org/beataeestqui.jpg?size=50x50&set=set1",
+    "address": "siempre viva 123"
+  },
+  {
+    "id": 11,
+    "username": "",
+    "email": "",
+    "password": ""
+  },
+  {
+    "id": 12,
+    "username": "maleneadas",
+    "email": "malvertva99@gmail.com",
+    "password": "aa"
+  },
+  {
+    "id": 13,
+    "username": "maleneada",
+    "email": "malvertva99@gmail.com"
+  },
+  {
+    "id": 14,
+    "username": "maleneadas",
+    "email": "malvertva99@gmail.com"
+  },
+  {
+    "id": 15,
+    "username": "malenadas",
+    "email": "malvertva99@gmail.com"
+  },
+  {
+    "id": 16,
+    "username": "aaaaa",
+    "email": "malvertva99@gmail.com",
+    "street": "aasd",
+    "address": "2",
+    "floor": "33",
+    "flat": "e",
+    "postal": "1425",
+    "location": "",
+    "avatar": "1706909702616.jpg"
+  }
+]

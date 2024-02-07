@@ -3,11 +3,9 @@
     {font-family: 'Roboto', sans-serif;}
 
 body 
-    {margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    {margin: 8px;
+    padding: 0px;
+    height: 90vh;
     background-color: white;}
 
 .banner
@@ -60,9 +58,17 @@ input
     justify-content: right;
     margin-bottom: 5px;
     color: #888;
-    text-decoration: underline;
     position: relative;
-    left: -20px;}
+    left: -20px;
+    cursor: pointer;}
+
+.forgot-password a
+    {text-decoration: none;
+    color: #333;}
+
+.forgot-password a:hover
+    {color: #333;
+    text-decoration: underline;}
 
 /*Login Button*/
 #loginButton
@@ -150,9 +156,12 @@ input
     align-items: center;}
 
 /*Register Button*/
-a
+#registerButton a
     {text-decoration: none;
-    color: #333}
+    color: #333;}
+
+#registerButton a:hover
+    {color: #333;}
 
 #registerButton
     {padding: 20px;

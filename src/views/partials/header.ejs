@@ -10,23 +10,63 @@
     <section class="navbar">
 
         <nav>
-           
-            
-                        <ul>
-                            <li class="logo">
-                                <a href="/">
-                                    <img src="/img/logo.jpg" alt="Logo de la Empresa">
-                                </a>
-                            </li>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/products/products">Productos</a></li>
-                        <li><a href="/users/contact">Contacto</a></li>
-                        <li><a href="/users/login">Iniciar Sesion</a></li>
-                        <li><a href="/users/register">Registrarse</a></li>
-                        
-    
-                    </ul>
-                
+            <ul>
+                <li class="logo">
+                    <a href="/">
+                        <img src="/img/logo.jpg" alt="Logo de la Empresa">
+                    </a>
+                </li>
+                <li><a href="/">Inicio</a></li>
+                <li class="dropdown-products">
+                    <a href="/products/products">Productos</a>
+                    <div class = "dropdown-products">
+                        <div class = "dropdown-products-content">
+                            <a href = "#" id = "sale">Ofertas</a>
+                            <a href = "#" id = "accessories">Accesorios</a>
+                            <a href = "#" id = "food">Alimentos</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/users/contact">Contacto</a></li>
+                <li class="dropdown-services">
+                    <a href="#">Servicios</a>
+                    <div class = "dropdown-services">
+                        <div class = "dropdown-services-content">
+                            <a href = "#" id = "daycare">Guardería</a>
+                            <a href = "#" id = "hairdresser">Peluquería</a>
+                            <a href = "#" id = "vet">Veterinaria</a>
+                        </div>
+                    </div>
+                </li>
+                <!--II. M.V.A. Agregado navbar derecha
+                <li><a href="/users/login">Iniciar Sesion</a></li>
+                <li><a href="/users/register">Registrarse</a></li>
+                FF-->
+                <!--II. M.V.A. Agregado navbar derecha-->
+                <div class = "nav-right">
+                    <div class = "search-box">
+                        <form action = "/search" method = "GET">
+                            <input type="text" placeholder="Buscar..." name="search-box">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class = "dropdown">
+                        <div class = "icon">
+                            <i class = "fa fa-solid fa-user"></i>
+                        </div>
+                        <div class = "dropdown-content">
+                            <a href = "/users/login" id = "login">Iniciar sesión</a>
+                            <a href = "/users/register" id = "register">Registrarse</a>
+                            <a href = "" id="my-account" style = "display: none;">Mi cuenta</a>
+                            <a href = "" id="logout" style = "display: none;">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <div class = "icon">
+                        <a href="/products/cart"><i class = "fa fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+                <!--FF-->    
+            </ul>    
         </nav>
     </section>
 </header>

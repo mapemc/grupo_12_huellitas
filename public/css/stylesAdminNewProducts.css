@@ -1,48 +1,53 @@
 /* Total */
 * 
     {font-family: 'Rubik', sans-serif;
+    /* II. M.V.A. Corrección navbar
     margin: 10px;
     padding: 0;
-    box-sizing: border-box;
-    /*II L.B. Cambio de color crema a gris*/
-    color: rgba(41, 53, 51, 1);
-    /*FF*/;
-}
+    FF. M.V.A. */
+    box-sizing: border-box;}
 
 body 
-    {background-color: rgb(250,250,250);}
+    {margin: 8px;
+    padding: 0px;
+    height: 90vh;
+    background-color: white;
+    /*II L.B. Cambio de color negro a gris*/
+    color: rgba(41, 53, 51, 1);
+    /*FF*/}
 
 /* Main */
 main
-    {    width: 90%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;}
+    {width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
 
 .title
     {margin-bottom: 10px;
     margin-top: 80px;
     font-size: x-large;}
 
-.form{
-width: 90vw;
-}
+.form
+    {width: 90vw;}
 
 
 /* Nombre y descripcion */
 .name-description
-    {    width: 100%;
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: column;
-        border: #333 1px solid;
-        border-radius: 10px;
-        background-color: #ebebeb;}
+    {width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    border: #333 1px solid;
+    border-radius: 10px;
+    background-color: #ebebeb;}
 
 .name-description label
     {display: block;
-    margin-bottom: 5px;}
+    margin-bottom: 5px;
+    padding: 5px;
+    margin-left: 20px;}
 
 .name-description input,
 .name-description textarea
@@ -52,17 +57,19 @@ width: 90vw;
     margin-bottom: 10px;
     border: 1px solid #888;
     font-size: 12px;
-    border-radius: 10px;}
+    border-radius: 10px;
+    margin-left: 10px;}
 
 /* Fotos */
 .photos
-    {    width: 100%;
-        background-color: #ebebeb;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        border-radius: 10px;
-        border: #333 1px solid;}
+    {width: 100%;
+    margin-bottom: 15px;
+    background-color: #ebebeb;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: #333 1px solid;}
 
 .photos label
     {display: block;
@@ -70,18 +77,20 @@ width: 90vw;
 
 /* Precio y stock */
 .price-stock
-    {    width: 100%;
-        background-color: #ebebeb;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        border-radius: 10px;
-        border: #333 1px solid;
-        align-items: center;}
+    {width: 100%;
+    margin-bottom: 15px;    
+    background-color: #ebebeb;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: #333 1px solid;
+    align-items: center;}
 
 .price-stock label
     {display: block;
-    margin-bottom: 5px;}
+    margin-bottom: 5px;
+    padding: 10px;}
 
 .price-stock input
     {width: 100%;
@@ -95,17 +104,19 @@ width: 90vw;
 
 /* Categoria */
 .category
-    {    width: 100%;
-        background-color: #ebebeb;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        border-radius: 10px;
-        border: #333 1px solid;}
+    {width: 100%;
+    margin-bottom: 15px;
+    background-color: #ebebeb;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: #333 1px solid;}
 
 .category label
     {display: block;
-    margin-bottom: 5px;}
+    margin-bottom: 5px;
+    padding: 10px;}
 
 .category select
     {width: 40%;
@@ -117,15 +128,15 @@ width: 90vw;
 
 /* Color y talle */
 .specs
-    {    width: 100%;
-        background-color: #ebebeb;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        border-radius: 10px;
-        border: #333 1px solid;
-        align-items: center;
-        flex-wrap: wrap;}
+    {width: 100%;
+    background-color: #ebebeb;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: #333 1px solid;
+    align-items: center;
+    flex-wrap: wrap;}
 
 .specs label
     {display: block;
@@ -139,9 +150,9 @@ width: 90vw;
     text-align-last: center;
     border: 1px solid #888;}
 
- .form-label{
-    width: 100%;
- }   
+ .form-label
+    {width: 100%;
+    padding: 10px;}   
 
 /* Tamaño de los talles */
 .size-checkboxes
@@ -159,30 +170,14 @@ width: 90vw;
 .button-container
     {display: flex;
     justify-content: space-between;
-    width: 100%;}
-
-/* Borrar producto Button */
-.deleteButton
-    {padding: 10px;
-    display: block;
     width: 100%;
-    background-color: #FF6969;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    font-weight: 900;
-    font-size: medium;
-    border-radius: 10px;}
-
-.deleteButton:hover
-    {background-color: #E97777;}
+    margin-bottom: 15px;}
 
 /* Cancelar producto Button */
 .cancelButton
     {padding: 10px;
     display: block;
-    width: 100%;
+    width: 40%;
     background-color: #888;
     color: white;
     border: none;
@@ -197,11 +192,11 @@ width: 90vw;
 .cancelButton:hover
     {background-color: #333;}
 
-/* Upload Button */
+/* New product Button */
 .newProductButton
     {padding: 10px;
     display: block;
-    width: 100%;
+    width: 40%;
     background-color: rgba(22, 198, 204, 1);
     color: white;
     border: none;

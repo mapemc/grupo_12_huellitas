@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesEditProfile", title:"Editar Perfil"}) %>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+
+    <main>
+        <h2 class="title">Editar Perfil</h2>
+        <form class="form" action="/users/editProfile/<%= userToEdit.id %>" method="POST" enctype="multipart/form-data">
+            <div class="columns">
+            <!-- Columna Izquierda -->
+                <div class="left-column">
+                    <div class="input-boxes">
+                        <label for="username" class="form-label">Nombre</label>
+                        <input type="text" name="username" id="username" value="<%= userToEdit.username %>" readonly>
+                    </div>
+                    <div class="input-boxes">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" value="<%= userToEdit.email %>" readonly>
+                    </div>
+                    <div class="input-boxes">
+                        <label for="birthday">Cumpleaños</label>
+                        <input type="date" name="date" id="date">
+                    </div>
+                    <div class="input-boxes">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" name="phone" id="phone">
+                    </div>
+                    <div class="password-change">
+                        <div class="input-boxes">
+                            <h3>Cambiar Contraseña</h3>
+                            <label for="current-password">Contraseña Actual</label>
+                            <input type="password" name="current-password" id="current-password">
+                    
+                            <label for="new-password">Nueva Contraseña</label>
+                            <input type="password" name="new-password" id="new-password">
+                    
+                            <label for="confirm-password">Confirmar Nueva Contraseña</label>
+                            <input type="password" name="confirm-password" id="confirm-password">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Media -->
+                <div class="middle-column">
+                    <div class="avatar">
+                        <label for="avatar" class="form-label">Foto de Perfil</label>
+                        <div class="thumbnail-container">
+                            <img id="preview-avatar" src="#" alt="Miniatura de la imagen">
+                        </div>
+                        <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar-input" class="form-input">
+                    </div>
+                </div>
+
+                <!--Divisor-->
+                <div class = "divider"></div>
+
+                <!--Columna Derecha-->
+                <div class="right-column">
+                    <h4 class="subtitle-right">Mi Dirección</h4>
+                    <div class="input-boxes">
+                        <label for="street" class="form-label">Calle</label>
+                        <input type="text" name="street" id="street" value="<%= userToEdit.street %>">
+                    </div>
+                    <div class="address-group">
+                        <div class="input-boxes">
+                            <label for="address" class="form-label">Número</label>
+                            <input type="number" name="address" id="address" class="small-input" value="<%= userToEdit.address %>">
+                        </div>
+                        <div class="input-boxes">
+                            <label for="floor" class="form-label">Piso</label>
+                            <input type="number" name="floor" id="floor" class="small-input" value="<%= userToEdit.floor %>">
+                        </div>
+                    </div>
+                    <div class="address-group">
+                        <div class="input-boxes">
+                            <label for="flat" class="form-label">Departamento</label>
+                            <input type="text" name="flat" id="flat" class="small-input" value="<%= userToEdit.flat %>">
+                        </div>
+                        <div class="input-boxes">
+                            <label for="postal" class="form-label">CP</label>
+                            <input type="number" name="postal" id="postal" class="small-input" value="<%= userToEdit.postal %>">
+                        </div>
+                    </div>
+                    <div class="input-boxes">
+                        <label for="location" class="form-label">Provincia</label>
+                        <input type="text" name="location" id="location" value="<%= userToEdit.location %>">
+                    </div>
+                    <h4 class="subtitle-right">Mis Métodos de Pago</h4>
+                        <div class="card">
+                            <div class="visa-card">
+                                <div class="card-logo">
+                                    <img src="visa_logo.png" alt="Visa Logo">
+                                </div>
+                                <div class="card-details">
+                                    <p class="card-number">**** **** **** 1234</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class = "button-container">
+                <!--Boton borrar producto-->
+                <button type = "submit" id = "deleteButton" class = "deleteButton">Eliminar</button>
+                <!--Boton borrar contenido y volver para atras-->
+                <a href = "/products/products" class = "cancelButton">Cancelar</a>
+                <!--Boton editar aplicar cambios-->
+                <button type = "submit" id = "editProductButton" class = "editProductButton">Aplicar Cambios</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <%- include('partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
