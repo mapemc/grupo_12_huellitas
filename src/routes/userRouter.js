@@ -6,12 +6,19 @@ const userController = require("../controllers/userController.js");
 
 /*Agregado multer*/
 const multer = require('multer');
+const generateFileName = (user, originalname) => {
+    const fileNameWithoutExtension = path.parse(originalname).name;
+    const fileExt = path.extname(originalname);
+    const timestamp = new Date();
+    return `${fileNameWithoutExtension}_${timestamp}${fileExt}`;
+};
 const storage = multer.diskStorage(
     {destination: function(req, file, cb)
         {let folder = path.join(__dirname, '../../public/img/avatars');
         cb(null, folder);}, /*folder where saved*/
-        filename: function(req, file, cb)
-        {let imageName = Date.now() + path.extname(file.originalname);
+        filename: function(req, file, cb) {
+            const userToEdit = req.userToEdit || {};
+            const imageName = generateFileName(userToEdit, file.originalname);    
             cb(null, imageName);} /*File name*/
     });
 const uploadFile = multer({storage}); /*Execution saved*/
