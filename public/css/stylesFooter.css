@@ -1,45 +1,66 @@
-/* II. M.V.A. Quitado de estilos a toda la vista
 *{
-    font-family: 'Roboto';
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
-FF. M.V.A.*/
+
 footer{
+    font-family: 'Open Sans', sans-serif; /* Tipo de fuente */
+    font-size: large; /* Tamaño de la fuente */
+    font-size: 8px;
     background-color: #16C6CC;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 8px;
-    padding: 8px;
+    padding: 8pxpx;
+
 }
 .contenido{
     display: flex;
-    flex-grow: 1;
     flex-direction: row;
-
+    justify-content: space-around;
+    margin: 4 px;
+    padding: 8px;
 }
 .logobox {
+   /*  background-color:blue; */
+    height: 100%;
+    width: 20%vw;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
-    padding: 16px;
+    justify-content: start;
+    align-items: center;
+    padding: 8px;
+    
 }
 .logo {
-
-    max-width: 200px;
+    max-width: 15em;
 }
 
 .listabox{
+ /*    background-color: blueviolet; */
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items:start;
-    gap: 60px;
+    align-items: start;
+    justify-content: start;
+    gap: 200px;
+    padding: 8px;
+    padding-left: 30px;
 }
 .titulos{
     font-weight: bold;
+}
+.derechos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -----ANIMACIONES------ */
+.titulos:hover {
+    text-shadow: 15px 15px 4px (0,0,0,0.5);
+    color: blanchedalmond;
 }
 
 /*-----------------MEDIAQUERY----------------------------------------------------------------------- */
