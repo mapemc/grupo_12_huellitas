@@ -49,7 +49,7 @@ const userController ={
         try {
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
             const id = req.params.id;
-            const {username, email, password, street, address, floor, flat, postal, location} = req.body;
+            const {username, email, password, birthday, phone, street, address, floor, flat, postal, location} = req.body;
             const avatar = req.file ? req.file.filename : '';
             const userIndex = users.findIndex(user => user.id == id);
     
@@ -59,6 +59,8 @@ const userController ={
             const updatedUser = {
                 username,
                 email,
+                birthday,
+                phone,
                 password,
                 street,
                 avatar,
