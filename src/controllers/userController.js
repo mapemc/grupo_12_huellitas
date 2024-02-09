@@ -18,16 +18,16 @@ const userController ={
             if (password !== confirmPassword) {
                 return res.status(400).send("Las contraseñas no coinciden");
             }
-                
+                let encriptedPass = bcrypt.hashSync(password, 10);
+
                 const newUser ={
                     id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
                     username,
                     email,
-                    password 
+                    password: encriptedPass
                 };
 
-                let encriptedPass = bcrypt.hashSync(password, 10);
-                console.log(encriptedPass)
+                
     
                 users.push(newUser);
                 fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
