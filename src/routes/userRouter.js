@@ -40,6 +40,9 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*EDIT PROFILE*/
 router.get("/editProfile/:id", userController.editProfile);
 router.post("/editProfile/:id", uploadFile.single('avatar'), userController.processEditProfile);
+/*DELETE*/
+router.delete("/editProfile/:id/delete", userController.delete);
+
 
 
 /*CONTACTO*/

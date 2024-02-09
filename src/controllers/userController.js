@@ -79,8 +79,20 @@ const userController ={
             console.error(error);
             res.status(500).send("No se pudo actualizar el perfil");
         }
-    },    
-
+    },
+    delete: (req, res) => {
+        try {
+            let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            users = users.filter(user => user.id != req.params.id);
+    
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+            res.redirect('/');
+            return
+        } catch (error) {
+            console.error('Error al eliminar el perfil:', error);
+            res.status(500).send("Hubo un error al eliminar tu perfil");
+        }
+    },
     /*II M.V.A. password reset*/
     resetPassword: (req, res) => {
         res.render("passwordRequest.ejs");
