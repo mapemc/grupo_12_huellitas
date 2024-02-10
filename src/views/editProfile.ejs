@@ -26,11 +26,11 @@
                     </div>
                     <div class="input-boxes">
                         <label for="birthday">Cumpleaños</label>
-                        <input type="date" name="date" id="date">
+                        <input type="date" name="birthday" id="birthday" value="<%= userToEdit.birthday %>">
                     </div>
                     <div class="input-boxes">
                         <label for="phone">Teléfono</label>
-                        <input type="tel" name="phone" id="phone">
+                        <input type="tel" name="phone" id="phone" value="<%= userToEdit.phone %>">
                     </div>
                     <div class="password-change">
                         <div class="input-boxes">
@@ -108,14 +108,19 @@
 
             <!-- Botones -->
             <div class = "button-container">
-                <!--Boton borrar producto-->
-                <button type = "submit" id = "deleteButton" class = "deleteButton">Eliminar</button>
-                <!--Boton borrar contenido y volver para atras-->
-                <a href = "/products/products" class = "cancelButton">Cancelar</a>
                 <!--Boton editar aplicar cambios-->
-                <button type = "submit" id = "editProductButton" class = "editProductButton">Aplicar Cambios</button>
+                <button type = "submit" id = "editButton" class = "editButton">Aplicar Cambios</button>
+                <!--Boton borrar contenido y volver para atras-->
+                <a href = "/" class = "cancelButton">Cancelar</a>
             </div>
         </form>
+        <!--Boton borrar usuario-->
+        <!-- Segundo formulario -->
+        <div class="button-container-delete">
+            <form action="/users/editProfile/<%= userToEdit.id %>/delete?_method=DELETE" method="POST">
+                <button type="submit" class="deleteButton">Eliminar</button>
+            </form>
+        </div>
     </main>
 
     <footer>

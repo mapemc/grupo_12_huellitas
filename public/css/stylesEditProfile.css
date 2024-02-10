@@ -117,9 +117,9 @@ input
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 15px;}
+    margin-bottom: 5px;}
 
-.deleteButton, .cancelButton, .editProductButton
+.cancelButton, .editButton
     {padding: 10px;
     display: block;
     width: 20%;
@@ -134,21 +134,42 @@ input
 
 .deleteButton
     {background-color: #FF6969;
-    color: white;}
+    color: white;
+    padding: 10px 100px;
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    font-weight: 900;
+    font-size: medium;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 5px;
+    margin-bottom: 15px;}
+
+.button-container-delete
+    {display: flex;
+    justify-content: center;
+    width: 100%;}
 
 .deleteButton:hover
-    {background-color: #E97777;}
+    {background-color: #E97777;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
 .cancelButton
     {background-color: #888;
     color: white;}
 
 .cancelButton:hover
-    {background-color: #333;}
+    {background-color: #333;
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
-.editProductButton
+.editButton
     {background-color: rgba(22, 198, 204, 1);
     color: white;}
 
-.editProductButton:hover
-    {background-color: rgba(17, 153, 158, 1);}
+.editButton:hover
+    {background-color: rgba(17, 153, 158, 1);
+    transition: background-color 0.3s, color 0.3s, border 0.1s;}
+    

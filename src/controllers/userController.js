@@ -18,16 +18,16 @@ const userController ={
             if (password !== confirmPassword) {
                 return res.status(400).send("Las contraseñas no coinciden");
             }
-                
+                let encriptedPass = bcrypt.hashSync(password, 10);
+
                 const newUser ={
                     id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
                     username,
                     email,
-                    password 
+                    password: encriptedPass
                 };
 
-                let encriptedPass = bcrypt.hashSync(password, 10);
-                console.log(encriptedPass)
+                
     
                 users.push(newUser);
                 fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
@@ -49,7 +49,7 @@ const userController ={
         try {
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
             const id = req.params.id;
-            const {username, email, password, street, address, floor, flat, postal, location} = req.body;
+            const {username, email, password, birthday, phone, street, address, floor, flat, postal, location} = req.body;
             const avatar = req.file ? req.file.filename : '';
             const userIndex = users.findIndex(user => user.id == id);
     
@@ -59,6 +59,8 @@ const userController ={
             const updatedUser = {
                 username,
                 email,
+                birthday,
+                phone,
                 password,
                 street,
                 avatar,
@@ -79,8 +81,20 @@ const userController ={
             console.error(error);
             res.status(500).send("No se pudo actualizar el perfil");
         }
-    },    
-
+    },
+    delete: (req, res) => {
+        try {
+            let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            users = users.filter(user => user.id != req.params.id);
+    
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+            res.redirect('/');
+            return
+        } catch (error) {
+            console.error('Error al eliminar el perfil:', error);
+            res.status(500).send("Hubo un error al eliminar tu perfil");
+        }
+    },
     /*II M.V.A. password reset*/
     resetPassword: (req, res) => {
         res.render("passwordRequest.ejs");
