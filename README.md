@@ -53,3 +53,13 @@ https://fonts.google.com/specimen/Roboto?query=roboto
 - [ ] Sprint 6: 01/02 - 27/02
 - [ ] Sprint 7: 27/02 - 12/03
 - [ ] Sprint 8: 12/03 - 26/03
+
+# Estructura de las bases de datos a utilizar (falta aprobación de Guido):
+
+- [x] users
+- [x] products
+- [x] pets
+- [x] services
+
+
+![alt text](image.png)
