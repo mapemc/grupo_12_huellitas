@@ -20,3 +20,9 @@
 **Dejar de hacer:**
 
 *SPRINT 4*
+**Comenzar a hacer:** Ir previendo los sprints venideros, para no dejar todo para el final. Organizar los tiempos de trabajo del grupo. Cada vez falta menos, y hay que enfocarse en los detalles y las cosas faltantes.
+**Hacer más:** Pedir ayuda / asesoramiento a los profes en las clases de práctica. 
+**Continuar haciendo:** Aprovechar los tiempos. Juntarnos para ver avances y trabas, para realizar tareas complejas juntos.
+**Hacer menos:** Dejar todo para ultimo momento. 
+**Dejar de hacer:** No dejar de hacer nada, venimos super bien.
+
