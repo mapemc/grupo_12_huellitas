@@ -31,10 +31,10 @@ router.post("/register", userController.processRegister);
 /*LOGIN*/
 router.get("/login", userController.login);
 router.post("/login", userController.processLogin);
-router.post('/login',[
+/* router.post('/login',[
     check('email').isEmail().withMessage('Email invalido'),
     check('password').isLength({min:8}).withMessage('Por fgavor crear una contraseña con al menos 4 caracteres')
-])
+]) */
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)

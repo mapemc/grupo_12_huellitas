@@ -5,7 +5,7 @@
 .slide {
     position: relative;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-    margin-top: 26px;
+    /* margin-top: 26px; */
 }
 
 .slide-inner {
@@ -13,6 +13,7 @@
     overflow: hidden;
     width: 100%;
     height: calc( 450px + 3em);
+    z-index: -2;
 }
 
 .slide-open:checked + .slide-item {
