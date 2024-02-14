@@ -2,11 +2,14 @@
     position: relative;
     background-color: #ebebeb;
     padding-bottom: 15px;
+    z-index: -2;
 }
 
 .img-catalogo{
-    width: 100vw;
+    width: 98vw;
     height: auto;
+    position: relative;
+    z-index: -1;
 }
 
 .text-overlay{
