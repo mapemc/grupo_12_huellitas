@@ -136,11 +136,11 @@ const userController ={
         res.render("register.ejs"); 
     },
     
-    renderNavbar: (req, res, next) => {
+    /*renderNavbar: (req, res, next) => {
         const userIsLoggedIn = req.isAuthenticated(); 
 
         res.render('navbar', { userIsLoggedIn });
-    },
+    },*/
 };
 
 

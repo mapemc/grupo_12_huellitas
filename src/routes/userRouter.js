@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const userController = require("../controllers/userController.js");
+const validationsRegister = require("../validators/userValidator.js");
 
 /*Agregado multer*/
 const multer = require('multer');
@@ -23,20 +24,17 @@ const storage = multer.diskStorage(
     });
 const uploadFile = multer({storage}); /*Execution saved*/
 
-/*NAVBAR*/
-router.get('/navbar', userController.renderNavbar);
+/*NAVBAR
+router.get('/navbar', userController.renderNavbar);*/
 
-/*REGISTER*/
+/*REGISTER con validaciones*/
 router.get("/register", userController.register);
 router.post("/register", userController.processRegister);
+
 
 /*LOGIN*/
 router.get("/login", userController.login);
 router.post("/login", userController.processLogin);
-/* router.post('/login',[
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({min:8}).withMessage('Por fgavor crear una contraseña con al menos 4 caracteres')
-]) */
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
