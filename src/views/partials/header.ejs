@@ -50,17 +50,34 @@
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-                    <div class = "dropdown">
-                        <div class = "icon">
-                            <i class = "fa fa-solid fa-user"></i>
+                    <% if (userIsLoggedIn) { %>
+                        <!--logged users-->
+                        <div class="dropdown">
+                            <div class="icon">
+                                <i class="fa fa-solid fa-user"></i>
+                            </div>
+                            <div class="dropdown-content">
+                                <!--avatar-->
+                                <li class="profile-picture">
+                                    <img src="<%= users.avatar %>" alt="Profile Picture">
+                                </li>
+                                <!--logged user-->
+                                <li><a href="/users/editProfile">Editar perfil</a></li>
+                                <li><a href="/users/logout" style="background-color: red;">Salir</a></li>
+                            </div>
                         </div>
-                        <div class = "dropdown-content">
-                            <a href = "/users/login" id = "login">Iniciar sesión</a>
-                            <a href = "/users/register" id = "register">Registrarse</a>
-                            <a href = "" id="my-account" style = "display: none;">Mi cuenta</a>
-                            <a href = "" id="logout" style = "display: none;">Cerrar sesión</a>
+                    <% } else { %>
+                        <!--non logged-->
+                        <div class="dropdown">
+                            <div class="icon">
+                                <i class="fa fa-solid fa-user"></i>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/users/login" id="login">Iniciar sesión</a>
+                                <a href="/users/register" id="register">Registrarse</a>
+                            </div>
                         </div>
-                    </div>
+                    <% } %>
                     <div class = "icon">
                         <a href="/products/cart"><i class = "fa fa-solid fa-cart-shopping"></i></a>
                     </div>

@@ -23,6 +23,8 @@ const storage = multer.diskStorage(
     });
 const uploadFile = multer({storage}); /*Execution saved*/
 
+/*NAVBAR*/
+router.get('/navbar', userController.renderNavbar);
 
 /*REGISTER*/
 router.get("/register", userController.register);

@@ -11,7 +11,11 @@ const app = express();
 app.use(express.urlencoded({ extended: false })); // Para tomar los datos del body
 app.use(express.json()); // Para tomar los datos del body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
-app.use(session({secret:'secreto'}) );
+app.use(session({
+    secret: 'secreto', // Cambia esto por una clave secreta más segura
+    resave: false,
+    saveUninitialized: true
+}));
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));

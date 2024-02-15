@@ -6,38 +6,38 @@ const bcrypt = require('bcryptjs');
 
 
 const userController ={
-    processRegister: (req, res) =>{
+    processRegister: (req, res) => {
         try {
-            const {username, email, password, confirmPassword} = req.body;
+            const { username, email, password, confirmPassword } = req.body;
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+            const existingUsername = users.find(user => user.username === username);
+            const existingEmail = users.find(user => user.email === email);
     
-            const existingUser = users.find(user => user.username === username);
-            if (existingUser) {
-                return res.status(400).send("El nombre de usuario o el correo electrónico ya están en uso");
-            }
+            if (existingUsername || existingEmail) {
+                return res.status(400).send("El nombre de usuario o el correo electrónico ya están en uso");}
+            
             if (password !== confirmPassword) {
-                return res.status(400).send("Las contraseñas no coinciden");
-            }
-                let encriptedPass = bcrypt.hashSync(password, 10);
-
-                const newUser ={
-                    id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
-                    username,
-                    email,
-                    password: encriptedPass
-                };
-
-                
+                return res.status(400).send("Las contraseñas no coinciden");}
     
-                users.push(newUser);
-                fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-                
-                res.redirect("/");
+            let encriptedPass = bcrypt.hashSync(password, 10);
+    
+            const newUser = {
+                id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
+                username,
+                email,
+                password: encriptedPass
+            };
+    
+            users.push(newUser);
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+    
+            res.redirect("/");
         } catch (error) {
             console.error(error);
             res.status(500).send("Error al registrarse");
         }
-    },
+    },    
     /*Register form*/
     editProfile: (req, res) => {
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -112,24 +112,34 @@ const userController ={
         res.render("login.ejs");
     },
 
-    processLogin: (req, res) =>{
-        try {
-            const { email, password } = req.body;
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    
-            const user = users.find(user => user.email === email && user.password === password);
-            if (!user) {
-                return res.status(401).send("El mail o la contraseña son incorrectas");
-            }
-            res.redirect("/");
-        } catch (error) {
-            console.error(error);
-            res.status(500).send("Error al iniciar sesión");
-        }
+    processLogin: (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        const user = users.find(user => user.email === email);
+        if (!user) {
+            return res.status(401).send("El correo electrónico o la contraseña son incorrectos");}
+
+        const passwordMatch = bcrypt.compareSync(password, user.password);
+        if (!passwordMatch) {
+            return res.status(401).send("El correo electrónico o la contraseña son incorrectos");}
+
+        res.redirect("/");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error al iniciar sesión");
+    }
     },
 
     register: (req, res) =>{
         res.render("register.ejs"); 
+    },
+    
+    renderNavbar: (req, res, next) => {
+        const userIsLoggedIn = req.isAuthenticated(); 
+
+        res.render('navbar', { userIsLoggedIn });
     },
 };
 
