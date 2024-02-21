@@ -3,7 +3,9 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const userController = require("../controllers/userController.js");
-const validationsRegister = require("../validators/userValidator.js");
+/*Validaciones*/
+const validationsRegisterUser = require('../validators/userRegisterValidator.js');
+const validationsLoginUser = require('../validators/userLoginValidator.js');
 
 /*Agregado multer*/
 const multer = require('multer');
@@ -29,12 +31,12 @@ router.get('/navbar', userController.renderNavbar);*/
 
 /*REGISTER con validaciones*/
 router.get("/register", userController.register);
-router.post("/register", userController.processRegister);
+router.post("/register", validationsRegisterUser, userController.processRegister);
 
 
 /*LOGIN*/
 router.get("/login", userController.login);
-router.post("/login", userController.processLogin);
+router.post("/login", validationsLoginUser, userController.processLogin);
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
