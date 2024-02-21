@@ -164,6 +164,7 @@ box-sizing: border-box;
 /* Estilos del Contenedor de Tarjetas */
 .cards-container {
 display: flex; /* Habilita Flexbox */
+flex-wrap: wrap; /* Asegura que las tarjetas se envuelvan */
 justify-content: space-around; /* Distribuye las tarjetas uniformemente */
 padding: 20px; /* Agrega algo de espacio alrededor */
 }
@@ -187,9 +188,7 @@ margin-top: 0;
 /* Otros estilos para el título */
 }
 
-.card-content p {
-/* Estilos para el párrafo */
-}
+
 
 .card img {
 width: 100%;
