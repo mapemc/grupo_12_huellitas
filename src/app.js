@@ -11,11 +11,9 @@ const app = express();
 app.use(express.urlencoded({ extended: false })); // Para tomar los datos del body
 app.use(express.json()); // Para tomar los datos del body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
-app.use(session({
-    secret: 'secreto', // Cambia esto por una clave secreta más segura
-    resave: false,
-    saveUninitialized: true
-}));
+/*app.use(session({
+    secret: 'huellasSecreto'
+}));*/
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
@@ -38,8 +36,8 @@ app.use("/products", productRouter);
 app.use("/contact", contactRouter);
 app.use("/services", servicesRouter);
 
-/*Not found*/
-app.use((req, res, next) => {res.status(404).render('notFound')})
+/*Not found
+app.use((req, res, next) => {res.status(404).render('notFound')})*/
 
 // * Servidor *// 
 app.listen(3456, () => {
