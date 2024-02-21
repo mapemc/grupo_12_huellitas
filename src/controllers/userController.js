@@ -16,12 +16,11 @@ const userController = {
         }
         
         try {
-            let { username, email, password } = req.body;
+            let {username, email, password, category} = req.body;
             username = username.toLowerCase().trim();
             email = email.toLowerCase().trim();
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     
-            // Verificar si el correo electrónico o el nombre de usuario ya existen
             const existingEmail = users.find(user => user.email === email);
             const existingUsername = users.find(user => user.username === username);
             if (existingEmail) {
@@ -37,9 +36,12 @@ const userController = {
                 id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
                 username,
                 email,
-                password: encriptedPass
+                password: encriptedPass,
+                category: "Customer"
             };
     
+            req.session.user = newUser;
+
             users.push(newUser);
             fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
     
@@ -59,6 +61,10 @@ const userController = {
         try {
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
             const id = req.params.id;
+            const loggedInUserId = req.session.user.id;
+            if (id !== loggedInUserId) {
+                return res.render('notFound');
+            }
             const {username, email, password, birthday, phone, street, address, floor, flat, postal, location} = req.body;
             const avatar = req.file ? req.file.filename : '';
             const userIndex = users.findIndex(user => user.id == id);
@@ -146,7 +152,9 @@ const userController = {
                 return res.render('login', { mensajesDeError: [{ msg: 'Contraseña incorrecta' }], old: req.body });
             }
     
-            req.session.user = user;
+            req.session.loggedUser = user;
+            console.log("Usuario guardado en la sesión:", req.session.loggedUser);
+
     
             res.redirect("/");
     
@@ -154,17 +162,21 @@ const userController = {
             console.error("Error al iniciar sesión:", error);
             res.status(500).send("Error al iniciar sesión");
         }
-    },    
+    },
+    
+    logout: (req, res) => {
+        req.session.user = null;
+        res.redirect("/");
+    },
 
     register: (req, res) =>{
         res.render("register.ejs"); 
     },
     
-    /*renderNavbar: (req, res, next) => {
-        const userIsLoggedIn = req.isAuthenticated(); 
-
-        res.render('navbar', { userIsLoggedIn });
-    },*/
+    navbarViews: (req, res, next) => {
+        req.session.user = req.isAuthenticated(); 
+        res.render('navbar', { user: req.session.user });
+    },    
 };
 
 

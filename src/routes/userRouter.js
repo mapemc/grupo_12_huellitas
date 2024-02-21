@@ -6,6 +6,9 @@ const userController = require("../controllers/userController.js");
 /*Validaciones*/
 const validationsRegisterUser = require('../validators/userRegisterValidator.js');
 const validationsLoginUser = require('../validators/userLoginValidator.js');
+const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
+
 
 /*Agregado multer*/
 const multer = require('multer');
@@ -27,11 +30,11 @@ const storage = multer.diskStorage(
 const uploadFile = multer({storage}); /*Execution saved*/
 
 /*NAVBAR
-router.get('/navbar', userController.renderNavbar);*/
+router.get('/navbar', userController.navbarViews);*/
 
 /*REGISTER con validaciones*/
-router.get("/register", userController.register);
-router.post("/register", validationsRegisterUser, userController.processRegister);
+router.get("/register", guestMiddleware, userController.register);
+router.post("/register", guestMiddleware, validationsRegisterUser, userController.processRegister);
 
 
 /*LOGIN*/
@@ -44,10 +47,15 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*FF M.V.A.*/
 
 /*EDIT PROFILE*/
-router.get("/editProfile/:id", userController.editProfile);
-router.post("/editProfile/:id", uploadFile.single('avatar'), userController.processEditProfile);
+router.get("/editProfile/:id", authMiddleware, (req, res) => {
+    // Agrega el console.log aquí para mostrar el contenido de la sesión
+    console.log("Contenido de la sesión:", req.session);
+    // Llama al controlador para mostrar el formulario de edición de perfil
+    userController.editProfile(req, res);
+});
+router.post("/editProfile/:id", authMiddleware, uploadFile.single('avatar'), userController.processEditProfile);
 /*DELETE*/
-router.delete("/editProfile/:id/delete", userController.delete);
+router.delete("/editProfile/:id/delete", authMiddleware, userController.delete);
 
 
 
