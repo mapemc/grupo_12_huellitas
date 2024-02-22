@@ -12,7 +12,7 @@
 
     <main>
         <h2 class="title">Editar Perfil</h2>
-        <form class="form" action="/users/editProfile/<%= userToEdit.id %>" method="POST" enctype="multipart/form-data">
+        <form class="form" action="/users/editProfile/<%= userToEdit.username %>" method="POST" enctype="multipart/form-data">
             <div class="columns">
             <!-- Columna Izquierda -->
                 <div class="left-column">
@@ -52,7 +52,7 @@
                     <div class="avatar">
                         <label for="avatar" class="form-label">Foto de Perfil</label>
                         <div class="thumbnail-container">
-                            <img id="preview-avatar" src='/img/avatars/<%= userToEdit.avatar ? userToEdit.avatar : 'card7.jpeg'  %>' alt="Miniatura de la imagen">
+                            <img id="preview-avatar" src='/img/avatars/<%= userToEdit.avatar ? userToEdit.avatar : 'defaultAvatar.jpeg'  %>' alt="Miniatura de la imagen">
                         </div>
                         <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar-input" class="form-input">
                     </div>
@@ -117,7 +117,7 @@
         <!--Boton borrar usuario-->
         <!-- Segundo formulario -->
         <div class="button-container-delete">
-            <form action="/users/editProfile/<%= userToEdit.id %>/delete?_method=DELETE" method="POST">
+            <form action="/users/editProfile/<%= userToEdit.username %>/delete?_method=DELETE" method="POST">
                 <button type="submit" class="deleteButton">Eliminar</button>
             </form>
         </div>
