@@ -19,7 +19,7 @@ main{
     height: 70px;
 
 }
-.contenedor{
+.container{
     display: flex;
     flex-direction: row;
 }
@@ -34,14 +34,14 @@ main{
     margin: 1rem;
     width: 40em;
 }
-.productVisual{
+.product-visual{
     display: flex;
     width: 10rem;
     height: 10rem;
     margin: 2em;
     
 }
-.productVisual img{
+.product-visual img{
     object-fit: cover;
     width: 100%;
 }
@@ -136,7 +136,7 @@ main{
     align-items: center;
     gap: 1em;
 }
-.precio{
+.price{
     font-size:2rem;;
     font-weight: 500;
     margin-inline-start: 1rem;
