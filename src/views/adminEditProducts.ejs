@@ -10,47 +10,61 @@
     </header>
 
     <main>
-        <h3 class = "title">Nuevo Producto</h3>
-        <form class="form" action = "/products/edit" method = "POST" class = "products-form">
+        <h3 class = "title">Editar Producto</h3>
+        <form class="form" action = "/products/edit/<%= productToEdit.name %>" method = "POST" class = "products-form" enctype="multipart/form-data">
         <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
-                    <input type = "text" name = "name" id = "name" class = "form-input" placeholder = "Ej: Collar rojo para perro">
-                <label for = "detail">Descripción</label>
-                    <textarea name = "detail" id = "detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
+                    <input type = "text" name = "name" id = "name" class = "form-input" value="<%= productToEdit.name %>">
+                <label for = "description">Descripción</label>
+                    <textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
             </div>
-            <div class = "photos">
-            <label for = "photos" class = "form-label">Fotos</label>
-                <input type = "file" name = "photos" accept = ".jpg, .png, .svg" id = "photos" class = "form-input">
-            </div>
+
+            <div class="image">
+                <label for="image" class="form-label">Fotos</label>
+                <div class="thumbnail-container">
+                    <% if (productToEdit.image && productToEdit.image.length > 0) { %>
+                        <% productToEdit.image.forEach(function(image) { %>
+                            <div class="thumbnail-item">
+                                <img src="/img/<%= image %>">
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+                <input type="file" name="image" multiple accept=".jpg, .png, .svg" id="image" class="form-input">
+            </div>            
+
             <div class = "price-stock">
             <label for = "price" class = "form-label">Precio</label>
-                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input">
+                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input" value="<%= productToEdit.price %>">
             <label for = "stock" class = "form-label">Stock</label>
-                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input">
+                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input" value="<%= productToEdit.stock %>">
             </div>
-            <div class = "category">
-                <label for = "category" class = "form-label">Categoría</label>
-                    <select name = "category" id = "category" class = "form-input">
-                        <option value = "default-cat">Categoría</option>
-                        <option value = "accesories">Accesorios</option>
-                        <option value = "food">Alimento</option>
-                        <option value = "sale">Oferta</option>
-                    </select>
+
+            <div class="category">
+                <label for="category" class="form-label">Categoría</label>
+                <select name="category" id="category" class="form-input">
+                    <option value="default-cat" <% if (productToEdit.category === 'default-cat') { %> selected <% } %>>Categoría</option>
+                    <option value="accesories" <% if (productToEdit.category === 'accesories') { %> selected <% } %>>Accesorios</option>
+                    <option value="food" <% if (productToEdit.category === 'food') { %> selected <% } %>>Alimento</option>
+                    <option value="sale" <% if (productToEdit.category === 'sale') { %> selected <% } %>>Oferta</option>
+                </select>
             </div>
+
             <div class = "specs">
-                <label for = "color" class = "form-label">Color</label>
-                    <select name = "color" id = "color" class = "form-input">
-                        <option value = "default-color">Color</option>
-                        <option value = "yellow">Amarillo</option>
-                        <option value = "blue">Azul</option>
-                        <option value = "white">Blanco</option>
-                        <option value = "black">Negro</option>
-                        <option value = "red">Rojo</option>
-                        <option value = "pink">Rosa</option>
-                        <option value = "green">Verde</option>                        
+                <label for="color" class="form-label">Color</label>
+                    <select name="color" id="color" class="form-input">
+                        <option value="default-color" <% if (productToEdit.color === 'default-color') { %> selected <% } %>>Color</option>
+                        <option value="yellow" <% if (productToEdit.color === 'yellow') { %> selected <% } %>>Amarillo</option>
+                        <option value="blue" <% if (productToEdit.color === 'blue') { %> selected <% } %>>Azul</option>
+                        <option value="white" <% if (productToEdit.color === 'white') { %> selected <% } %>>Blanco</option>
+                        <option value="black" <% if (productToEdit.color === 'black') { %> selected <% } %>>Negro</option>
+                        <option value="red" <% if (productToEdit.color === 'red') { %> selected <% } %>>Rojo</option>
+                        <option value="pink" <% if (productToEdit.color === 'pink') { %> selected <% } %>>Rosa</option>
+                        <option value="green" <% if (productToEdit.color === 'green') { %> selected <% } %>>Verde</option>
                     </select>
-                <label for = "product-size" class = "form-label">Tamaño</label>
+
+                <label for = "product-size" class = "form-label" value = "<%= productToEdit.color %>">Tamaño</label>
                     <div class = "size-checkboxes">
                         <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
                         <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>

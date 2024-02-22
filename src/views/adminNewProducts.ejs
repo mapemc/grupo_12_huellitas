@@ -11,7 +11,7 @@
 
     <main>
         <h3 class = "title">Nuevo Producto</h3>
-        <form class="form" action = "/products/create" method = "POST" class = "products-form">
+        <form class="form" action = "/products/create/<%= productToEdit.name %>" method = "POST" class = "products-form" enctype="multipart/form-data">
         <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
@@ -19,9 +19,12 @@
                 <label for = "detail">Descripción</label>
                     <textarea name = "detail" id = "detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
             </div>
-            <div class = "photos">
-            <label for = "photos" class = "form-label">Fotos</label>
-                <input type = "file" name = "photos" accept = ".jpg, .png, .svg" id = "photos" class = "form-input">
+            <div class = "image">
+                <label for = "image" class = "form-label">Fotos</label>
+                <div class="thumbnail-container">
+                    <img id="preview-image" src='/img/<%= productToEdit.image ? productToEdit.image : 'card7.jpeg'  %>' alt="Miniatura de la imagen">
+                </div>
+                    <input type = "file" name = "image" multiple accept = ".jpg, .png, .svg" id = "image" class = "form-input">
             </div>
             <div class = "price-stock">
             <label for = "price" class = "form-label">Precio</label>
