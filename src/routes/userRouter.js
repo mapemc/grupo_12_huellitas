@@ -1,11 +1,14 @@
 const express = require('express');
 /* const app = express(); */
+const fs = require('fs');
 const path = require('path');
 const router = express.Router();
+const usersFilePath = path.join(__dirname, "../data/users.json");
 const userController = require("../controllers/userController.js");
-/*Validaciones*/
+/*Validaciones y sesiones*/
 const validationsRegisterUser = require('../validators/userRegisterValidator.js');
 const validationsLoginUser = require('../validators/userLoginValidator.js');
+const validationsEditProfile = require('../validators/userEditValidator.js');
 const authMiddleware = require('../middlewares/authMiddleware.js');
 const guestMiddleware = require('../middlewares/guestMiddleware.js');
 
@@ -38,8 +41,8 @@ router.post("/register", guestMiddleware, validationsRegisterUser, userControlle
 
 
 /*LOGIN*/
-router.get("/login", userController.login);
-router.post("/login", validationsLoginUser, userController.processLogin);
+router.get("/login", guestMiddleware, userController.login);
+router.post("/login", guestMiddleware, validationsLoginUser, userController.processLogin);
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
@@ -47,15 +50,21 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*FF M.V.A.*/
 
 /*EDIT PROFILE*/
-router.get("/editProfile/:id", authMiddleware, (req, res) => {
-    // Agrega el console.log aquí para mostrar el contenido de la sesión
-    console.log("Contenido de la sesión:", req.session);
-    // Llama al controlador para mostrar el formulario de edición de perfil
-    userController.editProfile(req, res);
+router.get("/editProfile/:username", authMiddleware, validationsEditProfile, (req, res) => {
+    const username = req.params.username;
+    const loggedInUsername = req.session.user.username;
+
+    if (username !== loggedInUsername) {
+        return res.render('notFound');
+    }
+
+    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    const userToEdit = users.find(user => user.username === username);
+    res.render("editProfile", {userToEdit});
 });
-router.post("/editProfile/:id", authMiddleware, uploadFile.single('avatar'), userController.processEditProfile);
+router.post("/editProfile/:username", authMiddleware, validationsEditProfile, uploadFile.single('avatar'), userController.processEditProfile);
 /*DELETE*/
-router.delete("/editProfile/:id/delete", authMiddleware, userController.delete);
+router.delete("/editProfile/:username/delete", authMiddleware, userController.delete);
 
 
 

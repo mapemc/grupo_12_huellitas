@@ -15,11 +15,19 @@ app.use(express.json()); // Para tomar los datos del body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 app.use(session({
     secret: 'huellasSecreto',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 86400000, 
+        httpOnly: true, 
+        secure: false, 
+        sameSite: 'strict'
+    }
 }));
 app.use((req, res, next) => {
-    req.session.user = req.session.user;
+    if (req.session.user) {
+        console.log('Usuario autenticado:', req.session.user);} else {
+        console.log('Usuario no autenticado');}
     next();
 });
 ///////////TEMPLATE ENGINES//////////

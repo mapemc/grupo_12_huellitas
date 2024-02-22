@@ -1,5 +1,5 @@
 function adminMiddleware(req, res, next){
-    const loggedUser = req.session.loggedUser;
+    const loggedUser = req.session.user;
     if(loggedUser && loggedUser.category === "Admin") {
         next();
     } else {

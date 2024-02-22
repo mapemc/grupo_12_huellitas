@@ -52,32 +52,47 @@ const userController = {
     },    
     /*Register form*/
     editProfile: (req, res) => {
+        if (!req.session.user) {
+            return res.render('notFound');}
+    
+        const loggedInUsername = req.session.user.username;
+        const requestedUsername = req.params.username;
+    
+        if (loggedInUsername !== requestedUsername) {
+            return res.render('notFound');}
+    
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        const userToEdit = users.find(user => user.id == req.params.id);
-        res.render("editProfile", {userToEdit});
-    },
-
+        const userToEdit = users.find(user => user.username === requestedUsername);
+        if (!userToEdit) {
+            return res.render('notFound');}
+    
+        res.render("editProfile", { userToEdit });
+    },    
     processEditProfile: (req, res) => {
         try {
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            const id = req.params.id;
             const loggedInUserId = req.session.user.id;
-            if (id !== loggedInUserId) {
+            const loggedInUsername = req.session.user.username;
+            
+            const userIndex = users.findIndex(user => user.username == loggedInUsername);
+            if (userIndex === -1) {
+                return res.status(404).send("Usuario no encontrado");
+            }
+            const user = users[userIndex];
+    
+            if (user.username !== req.params.username) {
                 return res.render('notFound');
             }
-            const {username, email, password, birthday, phone, street, address, floor, flat, postal, location} = req.body;
-            const avatar = req.file ? req.file.filename : '';
-            const userIndex = users.findIndex(user => user.id == id);
     
-            if (userIndex === -1) {
-                return res.status(404).send("Usuario no encontrado");}
+            const { username, email, password, birthday, phone, street, address, floor, flat, postal, location } = req.body;
+            const avatar = req.file ? req.file.filename : user.avatar;
     
             const updatedUser = {
                 username,
                 email,
                 birthday,
                 phone,
-                password,
+                password: password || user.password,
                 street,
                 avatar,
                 address,
@@ -85,19 +100,24 @@ const userController = {
                 flat,
                 postal,
                 location};
-    
+
             users[userIndex] = {
                 ...users[userIndex], 
                 ...updatedUser};
     
             fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+
+            req.session.user = {
+                ...req.session.user,
+                ...updatedUser
+            };
     
-            res.redirect(`/users/editProfile/${id}`);
+            res.redirect(`/users/editProfile/${username}`);
         } catch (error) {
             console.error(error);
             res.status(500).send("No se pudo actualizar el perfil");
         }
-    },
+    },    
     delete: (req, res) => {
         try {
             let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -132,8 +152,8 @@ const userController = {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log("Errores de validación encontrados:", errors.array());
-            const mensajesDeError = errors.array().map(error => ({ msg: error.msg }));
-            return res.render('login', { mensajesDeError, old: req.body });
+            const mensajesDeError = errors.array().map(error => ({msg: error.msg}));
+            return res.render('login', {mensajesDeError, old: req.body});
         }
         try {
             let { email, password } = req.body;
@@ -145,15 +165,15 @@ const userController = {
             console.log(user.password);
     
             if (!user) {
-                return res.render('login', { mensajesDeError: [{ msg: 'Email no encontrado' }], old: req.body });
+                return res.render('login', {mensajesDeError: [{msg: 'Email no encontrado'}], old: req.body});
             }
     
             if (!bcrypt.compareSync(password, user.password)) {
-                return res.render('login', { mensajesDeError: [{ msg: 'Contraseña incorrecta' }], old: req.body });
+                return res.render('login', {mensajesDeError: [{msg: 'Contraseña incorrecta' }], old: req.body});
             }
     
-            req.session.loggedUser = user;
-            console.log("Usuario guardado en la sesión:", req.session.loggedUser);
+            req.session.user = user;
+            console.log("Usuario guardado en la sesión:", req.session.user);
 
     
             res.redirect("/");
