@@ -40,7 +40,8 @@ const mainRouter = require("./routes/mainRouter");
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
 const contactRouter = require("./routes/contactRouter");
-const servicesRouter = require("./routes/servicesRouter")
+const servicesRouter = require("./routes/servicesRouter");
+const cartRouter= require ("./routes/cartRouter");
 
 
 app.use(express.static("public"));
@@ -51,6 +52,7 @@ app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/contact", contactRouter);
 app.use("/services", servicesRouter);
+app.use ("/cart", cartRouter);
 
 /*Not found
 app.use((req, res, next) => {res.status(404).render('notFound')})*/
