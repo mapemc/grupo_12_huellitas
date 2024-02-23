@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
         id: {
-            type: dataTypes.INT(11).UNSIGNED,
+            type: dataTypes.BIGINT(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -20,14 +20,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         stock: {
-            type: dataTypes.INT(11),
+            type: dataTypes.BIGINT(11),
             allowNull: false
         },
         photo: {
             type: dataTypes.STRING(255),
             allowNull: false
         },
-        colour: {
+        color: {
             type: dataTypes.STRING(255),
             allowNull: true
         },
@@ -46,9 +46,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        timestamps: false,
         deletedAt: false
     }
     

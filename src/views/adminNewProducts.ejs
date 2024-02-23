@@ -28,15 +28,22 @@
                 <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input">
             <label for = "stock" class = "form-label">Stock</label>
                 <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input">
-            </div>
+            
+                
+            
+            </div>           
+           
             <div class = "category">
                 <label for = "category" class = "form-label">Categoría</label>
                     <select name = "category" id = "category" class = "form-input">
                         <option value = "default-cat">Categoría</option>
                         <option value = "accesories">Accesorios</option>
                         <option value = "food">Alimento</option>
-                        <option value = "sale">Oferta</option>
                     </select>
+                    <div class = "size-checkboxes">
+                        <label for = "inSale"><input type = "checkbox" id = "inSale" name = "inSale" value = "inSale">En Oferta</label>
+                    </div>
+            
             </div>
             <div class = "specs">
                 <label for = "color" class = "form-label">Color</label>
@@ -44,20 +51,18 @@
                         <option value = "default-color">Color</option>
                         <option value = "yellow">Amarillo</option>
                         <option value = "blue">Azul</option>
-                        <option value = "white">Blanco</option>
                         <option value = "black">Negro</option>
                         <option value = "red">Rojo</option>
-                        <option value = "pink">Rosa</option>
                         <option value = "green">Verde</option>                        
                     </select>
                 <label for = "product-size" class = "form-label">Tamaño</label>
                     <div class = "size-checkboxes">
-                        <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
                         <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
                         <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
                         <label for = "sizeL"><input type = "checkbox" id = "sizeL" name = "sizes" value = "L">L</label>
-                        <label for = "sizeXL"><input type = "checkbox" id = "sizeXL" name = "sizes" value = "XL">XL</label>
                     </div>
+
+                
             </div>
             <div class = "button-container">
                 <!--Boton borrar contenido y volver para atras-->

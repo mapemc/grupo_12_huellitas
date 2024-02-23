@@ -1,13 +1,23 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+//////Llamado a los modelos///////////
+const Pet = db.Pet;
+const Product = db.Product;
+const Service = db.Service;
+const User = db.User;
+
 
 const productController = {
 
-    productsAll: (req, res) =>{
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-      res.render("products", {products})
-
+    productsAll: async (req, res) =>{
+      await db.Product.findAll()
+      .then(products =>{
+        res.render("products.ejs", {products})
+      })
     },
 
     create: (req, res) =>{
@@ -15,26 +25,30 @@ const productController = {
           
     },
 
-    processCreate: (req, res) =>{
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    processCreate: async (req, res) =>{
+      try{
+        //console.log("Entrando en la función create");
+        const insaleValue = req.body.inSale === 'true' ? 1 : 0;
 
-      const newproduct ={
-        id: products[products.length - 1].id + 1,
+        await db.Product.create({
         name: req.body.name,
-        detail: req.body.detail,
-        photos: req.body.photos,
+        category: req.body.category,
         price: req.body.price,
         stock: req.body.stock,
-        category: req.body.category,
+        photo: req.body.photo,
         color: req.body.color,
-        sizes: req.body.sizes,
-      }
+        size: req.body.size,
+        description: req.body.description,
+        insale: insaleValue,
+        });
 
-      products.push(newproduct);
+        console.log("Producto creado con éxito");
 
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-      res.redirect("/");
+        res.redirect("/products")
+    }
+    catch(error){
+        res.send(error);
+    } 
     },
 
     detail: (req, res) => {
