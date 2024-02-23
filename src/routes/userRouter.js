@@ -9,8 +9,8 @@ const userController = require("../controllers/userController.js");
 const validationsRegisterUser = require('../validators/userRegisterValidator.js');
 const validationsLoginUser = require('../validators/userLoginValidator.js');
 const validationsEditProfile = require('../validators/userEditValidator.js');
-const authMiddleware = require('../middlewares/authMiddleware.js');
-const guestMiddleware = require('../middlewares/guestMiddleware.js');
+/* const authMiddleware = require('../middlewares/authMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js'); */
 
 
 /*Agregado multer*/
@@ -36,13 +36,13 @@ const uploadFile = multer({storage}); /*Execution saved*/
 router.get('/navbar', userController.navbarViews);*/
 
 /*REGISTER con validaciones*/
-router.get("/register", guestMiddleware, userController.register);
-router.post("/register", guestMiddleware, validationsRegisterUser, userController.processRegister);
+router.get("/register", userController.register);
+router.post("/register", validationsRegisterUser, userController.processRegister);
 
 
 /*LOGIN*/
-router.get("/login", guestMiddleware, userController.login);
-router.post("/login", guestMiddleware, validationsLoginUser, userController.processLogin);
+router.get("/login", userController.login);
+router.post("/login", validationsLoginUser, userController.processLogin);
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
@@ -50,7 +50,7 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*FF M.V.A.*/
 
 /*EDIT PROFILE*/
-router.get("/editProfile/:username", authMiddleware, validationsEditProfile, (req, res) => {
+router.get("/editProfile/:username", validationsEditProfile, (req, res) => {
     const username = req.params.username;
     const loggedInUsername = req.session.user.username;
 
@@ -62,9 +62,9 @@ router.get("/editProfile/:username", authMiddleware, validationsEditProfile, (re
     const userToEdit = users.find(user => user.username === username);
     res.render("editProfile", {userToEdit});
 });
-router.post("/editProfile/:username", authMiddleware, validationsEditProfile, uploadFile.single('avatar'), userController.processEditProfile);
+router.post("/editProfile/:username", validationsEditProfile, uploadFile.single('avatar'), userController.processEditProfile);
 /*DELETE*/
-router.delete("/editProfile/:username/delete", authMiddleware, userController.delete);
+router.delete("/editProfile/:username/delete", userController.delete);
 
 
 

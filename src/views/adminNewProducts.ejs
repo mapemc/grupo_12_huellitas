@@ -11,7 +11,7 @@
 
     <main>
         <h3 class = "title">Nuevo Producto</h3>
-        <form class="form" action = "/products/create/<%= productToEdit.name %>" method = "POST" class = "products-form" enctype="multipart/form-data">
+        <form action = "/products/create" method = "POST" class = "products-form" >
         <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
@@ -22,7 +22,7 @@
             <div class = "image">
                 <label for = "image" class = "form-label">Fotos</label>
                 <div class="thumbnail-container">
-                    <img id="preview-image" src='/img/<%= productToEdit.image ? productToEdit.image : 'card7.jpeg'  %>' alt="Miniatura de la imagen">
+                    <img id="preview-image" src='/img/default.jpg'  %>' alt="Miniatura de la imagen">
                 </div>
                     <input type = "file" name = "image" multiple accept = ".jpg, .png, .svg" id = "image" class = "form-input">
             </div>
@@ -38,7 +38,6 @@
                         <option value = "default-cat">Categoría</option>
                         <option value = "accesories">Accesorios</option>
                         <option value = "food">Alimento</option>
-                        <option value = "sale">Oferta</option>
                     </select>
             </div>
             <div class = "specs">
@@ -47,19 +46,15 @@
                         <option value = "default-color">Color</option>
                         <option value = "yellow">Amarillo</option>
                         <option value = "blue">Azul</option>
-                        <option value = "white">Blanco</option>
                         <option value = "black">Negro</option>
                         <option value = "red">Rojo</option>
-                        <option value = "pink">Rosa</option>
                         <option value = "green">Verde</option>                        
                     </select>
                 <label for = "product-size" class = "form-label">Tamaño</label>
-                    <div class = "size-checkboxes">
-                        <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
+                    <div class = "size-checkboxes">        
                         <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
                         <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
                         <label for = "sizeL"><input type = "checkbox" id = "sizeL" name = "sizes" value = "L">L</label>
-                        <label for = "sizeXL"><input type = "checkbox" id = "sizeXL" name = "sizes" value = "XL">XL</label>
                     </div>
             </div>
             <div class = "button-container">

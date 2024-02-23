@@ -57,20 +57,17 @@
                         <option value="default-color" <% if (productToEdit.color === 'default-color') { %> selected <% } %>>Color</option>
                         <option value="yellow" <% if (productToEdit.color === 'yellow') { %> selected <% } %>>Amarillo</option>
                         <option value="blue" <% if (productToEdit.color === 'blue') { %> selected <% } %>>Azul</option>
-                        <option value="white" <% if (productToEdit.color === 'white') { %> selected <% } %>>Blanco</option>
                         <option value="black" <% if (productToEdit.color === 'black') { %> selected <% } %>>Negro</option>
                         <option value="red" <% if (productToEdit.color === 'red') { %> selected <% } %>>Rojo</option>
-                        <option value="pink" <% if (productToEdit.color === 'pink') { %> selected <% } %>>Rosa</option>
                         <option value="green" <% if (productToEdit.color === 'green') { %> selected <% } %>>Verde</option>
                     </select>
 
                 <label for = "product-size" class = "form-label" value = "<%= productToEdit.color %>">Tamaño</label>
                     <div class = "size-checkboxes">
-                        <label for = "sizeXS"><input type = "checkbox" id = "sizeXS" name = "sizes" value = "XS">XS</label>
                         <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
                         <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
                         <label for = "sizeL"><input type = "checkbox" id = "sizeL" name = "sizes" value = "L">L</label>
-                        <label for = "sizeXL"><input type = "checkbox" id = "sizeXL" name = "sizes" value = "XL">XL</label>
+                    
                     </div>
             </div>
             <div class = "button-container">
