@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require ('express-session');
+const userController = require("./controllers/userController");
+
 /////////EXPRESS//////////
 const app = express();
 
@@ -12,10 +14,22 @@ app.use(express.urlencoded({ extended: false })); // Para tomar los datos del bo
 app.use(express.json()); // Para tomar los datos del body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 app.use(session({
-    secret: 'secreto', // Cambia esto por una clave secreta más segura
-    resave: false,
-    saveUninitialized: true
+    secret: 'huellasSecreto',
+    resave: true,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 86400000, 
+        httpOnly: true, 
+        secure: false, 
+        sameSite: 'strict'
+    }
 }));
+app.use((req, res, next) => {
+    if (req.session.user) {
+        console.log('Usuario autenticado:', req.session.user);} else {
+        console.log('Usuario no autenticado');}
+    next();
+});
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
@@ -38,8 +52,8 @@ app.use("/products", productRouter);
 app.use("/contact", contactRouter);
 app.use("/services", servicesRouter);
 
-/*Not found*/
-app.use((req, res, next) => {res.status(404).render('notFound')})
+/*Not found
+app.use((req, res, next) => {res.status(404).render('notFound')})*/
 
 // * Servidor *// 
 app.listen(3456, () => {

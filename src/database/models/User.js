@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
         id: {
-            type: dataTypes.INT(11).UNSIGNED,
+            type: dataTypes.BIGINT(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        adress: {
+        address: {
             type: dataTypes.STRING(20),
             allowNull: false
         },
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },
         post_code: {
-            type: dataTypes.INT(11),
+            type: dataTypes.BIGINT(11),
             allowNull: true
         },
         category: {
@@ -54,9 +54,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        timestamps: false,
         deletedAt: false
     }
     

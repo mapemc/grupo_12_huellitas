@@ -61,7 +61,7 @@ main
     margin-left: 10px;}
 
 /* Fotos */
-.photos
+.image
     {width: 100%;
     margin-bottom: 15px;
     background-color: #ebebeb;
@@ -71,9 +71,25 @@ main
     border-radius: 10px;
     border: #333 1px solid;}
 
-.photos label
+.image label
     {display: block;
     margin-bottom: 5px;}
+
+.image input[type="file"]
+    {border: none;
+    outline: none;}
+
+.thumbnail-container
+    {width: 100px;
+    height: 100px; 
+    overflow: hidden;
+    border: 1px solid #ccc;}
+    
+.thumbnail-container img
+    {width: 100%;
+    height: auto; 
+    display: block;}
+    
 
 /* Precio y stock */
 .price-stock

@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Service';
     let cols = {
         id: {
-            type: dataTypes.INT(11).UNSIGNED,
+            type: dataTypes.BIGINT(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -23,9 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        timestamps: false,
         deletedAt: false
     }
     const Service = sequelize.define(alias, cols, config); 
