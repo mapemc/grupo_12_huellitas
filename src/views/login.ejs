@@ -13,13 +13,6 @@
     </header>
     <main>
         <h3 class = "title">Iniciar Sesión</h3>
-
-        <% if (locals && locals.mensajesDeError) {%>
-            <% for (let error in mensajesDeError) {%>
-                <p class = "errors"> <%= mensajesDeError[error].msg %> </p>
-            <% } %>
-        <% } %>
-        
         <form action = "/users/login" method = "POST" class = "login-form">
             <div class = "columns">
                 <!--Campos del formulario-->

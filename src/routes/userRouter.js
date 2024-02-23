@@ -1,17 +1,9 @@
 const express = require('express');
 /* const app = express(); */
-const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const usersFilePath = path.join(__dirname, "../data/users.json");
 const userController = require("../controllers/userController.js");
-/*Validaciones y sesiones*/
-const validationsRegisterUser = require('../validators/userRegisterValidator.js');
-const validationsLoginUser = require('../validators/userLoginValidator.js');
-const validationsEditProfile = require('../validators/userEditValidator.js');
-/* const authMiddleware = require('../middlewares/authMiddleware.js');
-const guestMiddleware = require('../middlewares/guestMiddleware.js'); */
-
+const validationsRegister = require("../validators/userValidator.js");
 
 /*Agregado multer*/
 const multer = require('multer');
@@ -33,16 +25,16 @@ const storage = multer.diskStorage(
 const uploadFile = multer({storage}); /*Execution saved*/
 
 /*NAVBAR
-router.get('/navbar', userController.navbarViews);*/
+router.get('/navbar', userController.renderNavbar);*/
 
 /*REGISTER con validaciones*/
 router.get("/register", userController.register);
-router.post("/register", validationsRegisterUser, userController.processRegister);
+router.post("/register", userController.processRegister);
 
 
 /*LOGIN*/
 router.get("/login", userController.login);
-router.post("/login", validationsLoginUser, userController.processLogin);
+router.post("/login", userController.processLogin);
 
 /*II M.V.A. password reset*/
 router.get("/resetting/request", userController.resetPassword)
@@ -50,21 +42,10 @@ router.get("/resetting/check-email", userController.resetPasswordEmail) /*check-
 /*FF M.V.A.*/
 
 /*EDIT PROFILE*/
-router.get("/editProfile/:username", validationsEditProfile, (req, res) => {
-    const username = req.params.username;
-    const loggedInUsername = req.session.user.username;
-
-    if (username !== loggedInUsername) {
-        return res.render('notFound');
-    }
-
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    const userToEdit = users.find(user => user.username === username);
-    res.render("editProfile", {userToEdit});
-});
-router.post("/editProfile/:username", validationsEditProfile, uploadFile.single('avatar'), userController.processEditProfile);
+router.get("/editProfile/:id", userController.editProfile);
+router.post("/editProfile/:id", uploadFile.single('avatar'), userController.processEditProfile);
 /*DELETE*/
-router.delete("/editProfile/:username/delete", userController.delete);
+router.delete("/editProfile/:id/delete", userController.delete);
 
 
 

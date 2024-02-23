@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Pet';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(11).UNSIGNED,
+            type: dataTypes.INT(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -26,7 +26,9 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        timestamps: false,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
         deletedAt: false
     }
     const Pet = sequelize.define(alias, cols, config); 

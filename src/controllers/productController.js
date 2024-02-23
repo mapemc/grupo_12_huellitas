@@ -1,46 +1,19 @@
-//const path = require('path');
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-
-//Llamamos a los modelos
-const Pet = db.Pet;
-const Product = db.Product;
-const Service = db.Service;
-const User = db.User;
+const fs = require('fs');
+const path = require('path');
+const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 
 const productController = {
 
-    //Listar productos
-    productsAll: async (req, res) =>{
-      try{
-        await db.Product.findAll()
-        .then(products => {
-            res.render('products.ejs', {products})
-        })
-      }
-      catch (error){
-        res.send(error);
-      }
+    productsAll: (req, res) =>{
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+      res.render("products", {products})
+
     },
 
     create: (req, res) =>{
-        res.render('adminNewProducts.ejs');
+      res.render("adminNewProducts.ejs")
+          
     },
-        
-   /*  detail: (req, res) => {
-     
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  
-      const singleProduct = products.find(product => {
-        return product.id == req.params.id
-      })
-      
-      res.render("productDetail.ejs", {singleProduct});
-    }, */
-
-
-   /*  
 
     processCreate: (req, res) =>{
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -64,7 +37,16 @@ const productController = {
       res.redirect("/");
     },
 
-    
+    detail: (req, res) => {
+     
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+  
+      const singleProduct = products.find(product => {
+        return product.id == req.params.id
+      })
+      
+      res.render("productDetail.ejs", {singleProduct});
+    },
 
     edit: (req, res) =>{
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -116,7 +98,7 @@ const productController = {
 
       res.redirect("/products/products");
     },
-     */
+    
 
 };
 
