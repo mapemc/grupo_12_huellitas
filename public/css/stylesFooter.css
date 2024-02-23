@@ -10,7 +10,7 @@ footer{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 8pxpx;
+    padding: 8px;
 
 }
 .contenido{
@@ -23,7 +23,7 @@ footer{
 .logobox {
    /*  background-color:blue; */
     height: 100%;
-    width: 20%vw;
+    width: 20%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -39,7 +39,7 @@ footer{
 .listabox{
  /*    background-color: blueviolet; */
     height: 100%;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: start;
