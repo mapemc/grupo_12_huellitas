@@ -2,6 +2,11 @@
 * 
     {font-family: 'Roboto', sans-serif;}
 
+/*Errores*/
+.errors
+    {color: red;
+    text-transform: none !important;}
+
 body 
     {margin: 8px;
     padding: 0px;
