@@ -68,7 +68,7 @@ router.delete("/editProfile/:username/delete", userController.delete);
 
 
 
-/*CONTACTO*/
-router.get("/contact", userController.contact);
+/*CONTACTO
+router.get("/contact", userController.contact);*/
 
 module.exports = router; 

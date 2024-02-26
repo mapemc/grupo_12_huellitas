@@ -140,10 +140,6 @@ const userController = {
         res.render("passwordRequestEmail.ejs");
     },
     /*FF*/
-    contact: (req, res) =>{
-        res.render("contact.ejs");
-    },
-
     login: (req, res) =>{
         res.render("login.ejs");
     },

@@ -24,12 +24,12 @@ app.use(session({
         sameSite: 'strict'
     }
 }));
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     if (req.session.user) {
         console.log('Usuario autenticado:', req.session.user);} else {
         console.log('Usuario no autenticado');}
     next();
-});
+});*/
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
@@ -39,7 +39,7 @@ app.set("views", path.resolve(__dirname, "views"));
 const mainRouter = require("./routes/mainRouter");
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
-const contactRouter = require("./routes/contactRouter");
+/*const contactRouter = require("./routes/contactRouter");*/
 const servicesRouter = require("./routes/servicesRouter");
 const cartRouter= require ("./routes/cartRouter");
 
@@ -50,7 +50,7 @@ app.use(express.static("public"));
 app.use("/", mainRouter);
 app.use("/users", userRouter);
 app.use("/products", productRouter);
-app.use("/contact", contactRouter);
+/*app.use("/contact", contactRouter);*/
 app.use("/services", servicesRouter);
 app.use ("/cart", cartRouter);
 
