@@ -17,11 +17,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         street: {
             type: dataTypes.STRING(100),
-            allowNull: false
+            allowNull: true
         },
-        adress: {
+        address: {
             type: dataTypes.STRING(20),
-            allowNull: false
+            allowNull: true
         },
         floor: {
             type: dataTypes.STRING(5),
@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         location: {
             type: dataTypes.STRING(255),
-            allowNull: false
+            allowNull: true
         },
         avatar: {
             type: dataTypes.STRING(255),
