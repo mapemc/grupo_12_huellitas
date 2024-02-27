@@ -57,6 +57,14 @@ input
     text-align: left;
     width: calc(100% - 60px);}
 
+
+#remember-me-label
+    {display: flex;
+    align-items: center;
+    margin-right: 10px;}
+    
+    
+      
 .forgot-password
     {font-style: italic;
     display: flex;
