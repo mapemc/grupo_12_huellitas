@@ -14,7 +14,7 @@
         <section class="fotos-de-artículos">
                 
             <article class="caja-img-ppal">
-                    <img src= "/img/<%= singleProduct.image %>">
+                    <img src= "/img/<%= product.photo %>">
             </article>
 
             <div class="otras-fotos-del-articulo">
@@ -41,7 +41,7 @@
         <div class="caja-agrupamiento-precios-selecciones">  
             <section>
 
-                <h2 class="nombre-producto"><%= singleProduct.name %></h2>
+                <h2 class="nombre-producto"><%= product.name %></h2>
                 
                 
                 <div>
@@ -71,8 +71,8 @@
 
             <section class="precios">
                 <div class="oferta"><h4>Oferta </h4></div>
-                <div class="precio-oferta"><h2>$<%= Math.round(singleProduct.price * 0.8) %></h2></div> 
-                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: $<%= singleProduct.price %></h5></div>
+                <div class="precio-oferta"><h2>$<%= Math.round(product.price * 0.8) %></h2></div> 
+                <div class="precio-de-lista"><h5 class="precio-de-lista">Precio de lista: $<%= product.price %></h5></div>
                 <div>
                     <h4 class="compra-cuotas-transferencia"><i class="fa-regular fa-credit-card"></i>3 cuotas sin interés</h4>
                     <h4 class="compra-cuotas-transferencia"><i class="fa-solid fa-money-bill-transfer"></i>20% de descuento en toda la tienda</h4>
@@ -131,12 +131,16 @@
             
             <section class="caja-editar-borrar">
                 <div class="caja-boton-edit">
-                    <a href = "/products/edit/<%= singleProduct.id %>" class="boton-editar" type="submit"> EDITAR </a>
+                    <form action="/products/edit/<%= product.id %>" method="GET">
+                        <a href = "../edit/<%= product.id %>" class="boton-editar">
+                        <button type="submit"> EDITAR </button>
+                        </a>
+                    </form>
                 </div>
 
             
                 <div class="caja-boton-edit">
-                    <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST">
+                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                         <button class="boton-enviar" type="submit">
                             <span>ELIMINAR</span>
                         </button>
@@ -149,10 +153,8 @@
     <section class="caja-descripcion">
         <div class="titulo-descripcion-producto">DESCRIPCIÓN DEL PRODUCTO</div>
         <div></div>
-        <p class="descripcion-producto">Este ingenioso hueso es el accesorio esencial para los dueños de mascotas con estilo y conciencia ambiental. 
-                Fabricado con materiales de alta calidad y diseñado pensando en la comodidad y la funcionalidad, el Hueso Porta Bolsas es resistente y duradero. 
-                Este accesorio compacto y liviano se conecta fácilmente al collar o correa de tu mascota, asegurándote de que siempre tengas bolsas disponibles para mantener limpios los espacios públicos. Además, su diseño atractivo hace que sea un regalo perfecto para los amantes de los animales.
-                ¡Añade el Hueso Porta Bolsas para Mascotas a tu rutina diaria y haz que cada paseo sea una experiencia cómoda, práctica y llena de estilo para ti y tu peludo compañero!                
+        <p class="descripcion-producto">
+            <%= product.description %>
         </p>
     </section>
 

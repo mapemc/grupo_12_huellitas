@@ -11,8 +11,8 @@ const servicesController = {
         res.render("formPeluqueria");
     },
 
-    veterinarios: (req, res) =>{
-        res.render("formVeterinarios");
+    veterinaria: (req, res) =>{
+        res.render("formVeterinaria");
     },
 }
 

@@ -11,58 +11,69 @@
 
     <main>
         <h3 class = "title">Editar Producto</h3>
-        <form class="form" action = "/products/edit/<%= productToEdit.name %>" method = "POST" class = "products-form" enctype="multipart/form-data">
-        <!--Cuerpo-->
+        <form class="form" action = "/products/edit/<%= product.id %>" method = "POST" class = "products-form" enctype="multipart/form-data" >
+        
+            <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
-                    <input type = "text" name = "name" id = "name" class = "form-input" value="<%= productToEdit.name %>">
+                    <input type = "text" name = "name" id = "name" class = "form-input" value="<%= product.name %>">
                 <label for = "description">Descripción</label>
-                    <textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
+                    <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
             </div>
 
+           <!--  <div class="image">
+                <label for="image" class="form-label">Fotos</label>
+                <div class="thumbnail-container">
+                    <input type="file" name="photo" accept=".jpg, .png, .svg" id="image" class="form-input">
+                </div>   
+            </div>  -->     
+            
             <div class="image">
                 <label for="image" class="form-label">Fotos</label>
                 <div class="thumbnail-container">
-                    <% if (productToEdit.image && productToEdit.image.length > 0) { %>
-                        <% productToEdit.image.forEach(function(image) { %>
-                            <div class="thumbnail-item">
-                                <img src="/img/<%= image %>">
-                            </div>
-                        <% }); %>
+                    <% if (product.photo && product.photo.length > 0) { %>
+                        <!-- Muestra la imagen existente -->
+                        <img src="/img/<%= product.photo[0] %>">
+                        <!-- Agrega un campo oculto con el nombre de la imagen existente -->
+                        <input type="hidden" name="existingPhoto" value="<%= product.photo[0] %>">
                     <% } %>
-                </div>
-                <input type="file" name="image" multiple accept=".jpg, .png, .svg" id="image" class="form-input">
-            </div>            
+                    <!-- Agrega el campo de entrada de archivo solo si se desea actualizar la imagen -->
+                    <input type="file" name="photo" accept=".jpg, .png, .svg" id="image" class="form-input">
+                </div>   
+            </div>
+            
+
+
 
             <div class = "price-stock">
             <label for = "price" class = "form-label">Precio</label>
-                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input" value="<%= productToEdit.price %>">
+                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input" value="<%= product.price %>">
             <label for = "stock" class = "form-label">Stock</label>
-                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input" value="<%= productToEdit.stock %>">
+                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input" value="<%= product.stock %>">
             </div>
 
             <div class="category">
                 <label for="category" class="form-label">Categoría</label>
                 <select name="category" id="category" class="form-input">
-                    <option value="default-cat" <% if (productToEdit.category === 'default-cat') { %> selected <% } %>>Categoría</option>
-                    <option value="accesories" <% if (productToEdit.category === 'accesories') { %> selected <% } %>>Accesorios</option>
-                    <option value="food" <% if (productToEdit.category === 'food') { %> selected <% } %>>Alimento</option>
-                    <option value="sale" <% if (productToEdit.category === 'sale') { %> selected <% } %>>Oferta</option>
+                    <option value="default-cat" <% if (product.category === 'default-cat') { %> selected <% } %>>Categoría</option>
+                    <option value="accesories" <% if (product.category === 'accesories') { %> selected <% } %>>Accesorios</option>
+                    <option value="food" <% if (product.category === 'food') { %> selected <% } %>>Alimento</option>
+                    <option value="sale" <% if (product.category === 'sale') { %> selected <% } %>>Oferta</option>
                 </select>
             </div>
 
             <div class = "specs">
                 <label for="color" class="form-label">Color</label>
                     <select name="color" id="color" class="form-input">
-                        <option value="default-color" <% if (productToEdit.color === 'default-color') { %> selected <% } %>>Color</option>
-                        <option value="yellow" <% if (productToEdit.color === 'yellow') { %> selected <% } %>>Amarillo</option>
-                        <option value="blue" <% if (productToEdit.color === 'blue') { %> selected <% } %>>Azul</option>
-                        <option value="black" <% if (productToEdit.color === 'black') { %> selected <% } %>>Negro</option>
-                        <option value="red" <% if (productToEdit.color === 'red') { %> selected <% } %>>Rojo</option>
-                        <option value="green" <% if (productToEdit.color === 'green') { %> selected <% } %>>Verde</option>
+                        <option value="default-color" <% if (product.color === 'default-color') { %> selected <% } %>>Color</option>
+                        <option value="yellow" <% if (product.color === 'yellow') { %> selected <% } %>>Amarillo</option>
+                        <option value="blue" <% if (product.color === 'blue') { %> selected <% } %>>Azul</option>
+                        <option value="black" <% if (product.color === 'black') { %> selected <% } %>>Negro</option>
+                        <option value="red" <% if (product.color === 'red') { %> selected <% } %>>Rojo</option>
+                        <option value="green" <% if (product.color === 'green') { %> selected <% } %>>Verde</option>
                     </select>
 
-                <label for = "product-size" class = "form-label" value = "<%= productToEdit.color %>">Tamaño</label>
+                <label for = "product-size" class = "form-label" value = "<%= product.color %>">Tamaño</label>
                     <div class = "size-checkboxes">
                         <label for = "sizeS"><input type = "checkbox" id = "sizeS" name = "sizes" value = "S">S</label>
                         <label for = "sizeM"><input type = "checkbox" id = "sizeM" name = "sizes" value = "M">M</label>
@@ -76,7 +87,7 @@
                 <!--Boton borrar contenido y volver para atras-->
                 <a href = "/products/products" class = "cancelButton">Cancelar</a>
                 <!--Boton editar aplicar cambios-->
-                <button type = "submit" id = "editProductButton" class = "editProductButton">Aplicar Cambios</button>
+                <button type="submit" id = "editProductButton" class = "editProductButton">Aplicar Cambios</button>
             </div>
         </form>
     </main>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("./partials/head.ejs", {cssSheet:"stylesFormPeluqueria", title:"Veterinarios"}) %>
+    <%- include("./partials/head.ejs", {cssSheet:"stylesFormVeterinaria", title:"Veterinaria"}) %>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 
   <section>
     <h2>Formulario de Contacto</h2>
-    <form action="/enviarConsultaVeterinario" method="post">
+    <form action="/enviarConsultaVeterinaria" method="post">
       <label for="nombre">Nombre y Apellido:</label>
       <input type="text" id="nombre" name="nombre" required>
 

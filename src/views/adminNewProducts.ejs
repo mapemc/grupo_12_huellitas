@@ -11,17 +11,17 @@
 
     <main>
         <h3 class = "title">Nuevo Producto</h3>
-        <form class="form" action = "/products/create" method = "POST" class = "products-form">
+        <form class="form" action = "/products/create" method = "POST" class = "products-form" enctype="multipart/form-data">
         <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
                     <input type = "text" name = "name" id = "name" class = "form-input" placeholder = "Ej: Collar rojo para perro">
                 <label for = "detail">Descripción</label>
-                    <textarea name = "detail" id = "detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
+                    <textarea name = "description" id = "detail" class = "form-input" placeholder = "Agregá una descripción copada"></textarea>
             </div>
             <div class = "photos">
             <label for = "photos" class = "form-label">Fotos</label>
-                <input type = "file" name = "photos" accept = ".jpg, .png, .svg" id = "photos" class = "form-input">
+                <input type = "file" name = "photo" accept = ".jpg, .png, .svg" id = "photos" class = "form-input">
             </div>
             <div class = "price-stock">
             <label for = "price" class = "form-label">Precio</label>

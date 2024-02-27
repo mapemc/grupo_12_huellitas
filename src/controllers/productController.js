@@ -21,13 +21,13 @@ const productController = {
     },
 
     create: (req, res) =>{
-      res.render("adminNewProducts.ejs")
-          
+      res.render("adminNewProducts.ejs")     
     },
 
     processCreate: async (req, res) =>{
       try{
         //console.log("Entrando en la función create");
+        
         const insaleValue = req.body.inSale === 'true' ? 1 : 0;
 
         await db.Product.create({
@@ -35,85 +35,94 @@ const productController = {
         category: req.body.category,
         price: req.body.price,
         stock: req.body.stock,
-        photo: req.body.photo,
+        photo: req.file.filename,
         color: req.body.color,
         size: req.body.size,
         description: req.body.description,
         insale: insaleValue,
         });
 
-        console.log("Producto creado con éxito");
+        //console.log("Producto creado con éxito");
 
-        res.redirect("/products")
-    }
-    catch(error){
+        res.redirect("/products/products")
+      }
+      catch(error){
         res.send(error);
-    } 
+      } 
     },
 
     detail: (req, res) => {
-     
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  
-      const singleProduct = products.find(product => {
-        return product.id == req.params.id
-      })
-      
-      res.render("productDetail.ejs", {singleProduct});
+      db.Product.findByPk(req.params.id)
+          .then(product => {
+              res.render('productDetail.ejs', {product});
+          });
     },
 
-    edit: (req, res) =>{
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-    productToEdit = products.find(product =>{
-      return product.id == req.params.id;
-    })
-    res.render("adminEditProducts", {productToEdit});
-    },
-
-    processEdit: (req, res) => {
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-      const id = req.params.id;
-      let productToEdit = products.find(product => product.id == id);
-
-      productToEdit = {
-        id: productToEdit.id,
-        name: req.body.name,
-        detail: req.body.detail,
-        photos: req.body.photos,
-        price: req.body.price,
-        stock: req.body.stock,
-        category: req.body.category,
-        color: req.body.color,
-        sizes: req.body.sizes,
+    edit: async (req, res) =>{
+      try{
+        console.log("Entrando en la función edit");
+        const idProduct = req.params.id;
+        
+        const product = await db.Product.findByPk(idProduct);
+        
+            if(product) {
+                res.render('adminEditProducts.ejs', {product})
+            } else {
+                res.status(404).send('Producto no encontrado');
+            }}
+      catch(error){
+        res.send(error);
       }
-
-      let indice = products.findIndex(product =>{
-        return product.id == id
-      });
-
-      products[indice] = productToEdit;
-
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-		  
-      res.redirect("/products/products")
     },
 
-    
-    destroy: (req, res) =>{
-      let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    processEdit: async (req, res) => {
+      try{
+        const idProduct = req.params.id;
+        const product = await db.Product.findByPk(idProduct);
 
-      products = products.filter (product =>{
-        return product.id != req.params.id
-      });
+        const insaleValue = req.body.inSale === 'true' ? 1 : 0;
 
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-      res.redirect("/products/products");
+        if (product){
+            db.Product.update(
+                {
+                  name: req.body.name,
+                  category: req.body.category,
+                  price: req.body.price,
+                  stock: req.body.stock,
+                  photo: req.file.filename,
+                  color: req.body.color,
+                  size: req.body.size,
+                  description: req.body.description,
+                  insale: insaleValue,
+                },
+                {
+                    where: {id: idProduct}
+                });
+          res.redirect('/products/products')
+        }
+      }
+      catch(error){
+        console.error('Error:', error);
+        res.send(error);
+      };
     },
     
+    destroy: async (req, res) =>{
+      try{
+        const idProduct = req.params.id;
+        const product = await db.Product.findByPk(idProduct);
 
+        if(product){
+            db.Product.destroy({
+                where: {id: idProduct}
+            })        
+        res.redirect('/products/products')
+        }
+      }
+      catch(error){
+        res.send(error);
+      };
+    }, 
 };
 
 
