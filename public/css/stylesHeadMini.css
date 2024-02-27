@@ -1,0 +1,48 @@
+.header-top
+    {background-color: #1a237e;
+    color: white;
+    text-align: center;}
+
+.ascensor
+    {display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;}
+
+.mensaje
+    {display: inline-block;
+    opacity: 0;
+    animation-duration: 10s;
+    white-space: nowrap;
+    animation-iteration-count: infinite;}
+
+.mensaje-1
+    {animation-name: ascensor1;
+    animation-delay: 5s;}
+
+.mensaje-2
+    {animation-name: ascensor2;
+    animation-delay: 15s;}
+
+.mensaje-3
+    {animation-name: ascensor3;
+    animation-delay: 20s;}
+
+@keyframes ascensor1
+    {0% { opacity: 0; transform: translateY(2.5vh); } 
+    40% { opacity: 0; transform: translateY(2.5vh); } 
+    50% { opacity: 1; transform: translateY(0); } 
+    100% { opacity: 0; transform: translateY(-2vh); }}
+
+@keyframes ascensor2
+    {0% { opacity: 0; transform: translateY(2.5vh); }
+    50% { opacity: 0; transform: translateY(2.5vh); }
+    60% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(0); }}
+
+@keyframes ascensor3
+    {0% { opacity: 0; transform: translateY(2.5vh); }
+    60% { opacity: 0; transform: translateY(2.5vh); }
+    70% { opacity: 1; transform: translateY(-3vh); }
+    100% { opacity: 0; transform: translateY(-3.5vh); }}
