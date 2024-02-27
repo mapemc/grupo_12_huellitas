@@ -32,6 +32,7 @@
     display: block;
     height: auto;
     max-width: 100%;
+    scroll-snap-align: center;
 }
 
 .slide-control {
@@ -195,4 +196,26 @@ width: 100%;
 height: auto;
 object-fit: cover;
 border-radius: 10px 10px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    .slide-inner {
+        height: calc(50vw + 3em);
+    }
+    .slide-control {
+        font-size: 8vw;
+        height: 8vw;
+        line-height: 7vw;
+        width: 8vw;
+    }
+    .slide-item img{
+        max-width: 200%;
+    }
+    .text-overlay{
+        font-size: 2em
+    }
+    .slide-circulo {
+        font-size: 7vw;
+    }
 }
