@@ -25,6 +25,11 @@ router.get("/edit/:id", productController.edit);
 router.post("/edit/:id", uploadFile.single("photo"), productController.processEdit);
 router.delete("/delete/:id", productController.destroy); 
 
+/////rutas por categoría de productos/////
+router.get("/insale", productController.ofertas)
+router.get("/accesories", productController.accesorios)
+router.get("/food", productController.alimentos)
+
 
 
 

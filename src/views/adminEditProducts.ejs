@@ -58,9 +58,13 @@
                     <option value="default-cat" <% if (product.category === 'default-cat') { %> selected <% } %>>Categoría</option>
                     <option value="accesories" <% if (product.category === 'accesories') { %> selected <% } %>>Accesorios</option>
                     <option value="food" <% if (product.category === 'food') { %> selected <% } %>>Alimento</option>
-                    <option value="sale" <% if (product.category === 'sale') { %> selected <% } %>>Oferta</option>
                 </select>
             </div>
+
+            <div class = "size-checkboxes">
+                <label for = "insale"><input type = "checkbox" id = "insale" name = "insale" value = "1">En Oferta</label>
+            </div>
+
 
             <div class = "specs">
                 <label for="color" class="form-label">Color</label>
