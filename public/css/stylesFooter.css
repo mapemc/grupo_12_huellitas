@@ -51,7 +51,16 @@ footer{
     margin: 0;
     text-align: center;
 }
-
+.logosredes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+}
+.logito{
+   font-size: 20px;
+}
 .derechos {
     display: flex;
     flex-direction: column;
@@ -62,7 +71,6 @@ footer{
 /* -----ANIMACIONES------ */
 .titulos:hover {
     text-shadow: 15px 15px 4px (0,0,0,0.5);
-    color: blanchedalmond;
 }
 .logo:hover {
     max-width: 42vw;
@@ -110,6 +118,16 @@ footer {
 }
 .listaContácto{
     text-align: start;
+}
+.logosredes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20%;
+}
+.logito{
+   font-size: 40px;
 }
 /* -----ANIMACIONES------ */
 .logo:hover {
