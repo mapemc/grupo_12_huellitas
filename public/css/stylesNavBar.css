@@ -8,7 +8,7 @@
     /*position: fixed; /* Fija la navbar en la parte superior */
     top: 0; /* Posición superior */
     width: 100%; /* Ancho completo */
-    height:60px; /* Altura *
+    height: 3.2vw /* Altura *
     /*z-index: 1000; /* Asegura que la navbar se mantenga en la parte superior */
 }
 
@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
     display: flex; /* Distribución horizontal de los elementos */
-    justify-content: left; /* Centrado horizontal */
+    justify-content: space-around; /* Centrado horizontal */
 }
 
 .navbar nav ul li {
@@ -28,7 +28,7 @@
     display: inline-block; /* Bloques en línea para los enlaces */
     color: white; /* Color del texto */
     font-family: 'Open Sans', sans-serif; /* Tipo de fuente */
-    font-size: large; /* Tamaño de la fuente */
+    font-size: 1vw; /* Tamaño de la fuente */
     text-align: center; /* Alineación del texto */
     padding: 14px 16px; /* Espaciado alrededor del texto */
     text-decoration: none; /* Remueve el subrayado del enlace */
@@ -70,7 +70,7 @@ a
     {text-decoration: none;
     color: white}
 a:hover
-    {color: black;}
+    {filter: drop-shadow(3px 3px 3px #FFFFFF);}
 
 /*Products dropdown*/
 .dropdown-products-content
