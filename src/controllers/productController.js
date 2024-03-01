@@ -20,6 +20,60 @@ const productController = {
       })
     },
 
+    ofertas: async (req, res) =>{
+    
+      let products = await db.Product.findAll();
+      let productosEnOferta = [];
+
+      try{
+      products.forEach(product => {
+        if(product.insale === 1){
+          productosEnOferta.push(product)} 
+      });
+      res.render("productsInsale.ejs", { productosEnOferta});
+      }
+       
+      catch(error){
+        res.send(error);
+      }   
+    },  
+
+    accesorios: async (req, res) =>{
+    
+      let products = await db.Product.findAll();
+      let accesorios = [];
+
+      try{
+      products.forEach(product => {
+        if(product.category === "accesories"){
+          accesorios.push(product)} 
+      });
+      res.render("accesorios.ejs", { accesorios});
+      }
+       
+      catch(error){
+        res.send(error);
+      }   
+    },  
+
+    alimentos: async (req, res) =>{
+    
+      let products = await db.Product.findAll();
+      let alimentos = [];
+
+      try{
+      products.forEach(product => {
+        if(product.category === "food"){
+          alimentos.push(product)} 
+      });
+      res.render("alimentos.ejs", { alimentos});
+      }
+       
+      catch(error){
+        res.send(error);
+      }   
+    },  
+
     create: (req, res) =>{
       res.render("adminNewProducts.ejs")     
     },
@@ -28,7 +82,7 @@ const productController = {
       try{
         //console.log("Entrando en la función create");
         
-        const insaleValue = req.body.inSale === 'true' ? 1 : 0;
+        //const insaleValue = req.body.inSale === 1 ? 1 : 0;
 
         await db.Product.create({
         name: req.body.name,
@@ -39,7 +93,7 @@ const productController = {
         color: req.body.color,
         size: req.body.size,
         description: req.body.description,
-        insale: insaleValue,
+        insale: req.body.insale,
         });
 
         //console.log("Producto creado con éxito");
@@ -80,23 +134,32 @@ const productController = {
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
 
-        const insaleValue = req.body.inSale === 'true' ? 1 : 0;
+        //const insaleValue = req.body.inSale === 1 ? 1 : 0;
 
-        if (product){
-            db.Product.update(
-                {
-                  name: req.body.name,
-                  category: req.body.category,
-                  price: req.body.price,
-                  stock: req.body.stock,
-                  photo: req.file.filename,
-                  color: req.body.color,
-                  size: req.body.size,
-                  description: req.body.description,
-                  insale: insaleValue,
-                },
-                {
-                    where: {id: idProduct}
+                if (product) {
+                  const updateData = {
+                    name: req.body.name,
+                    category: req.body.category,
+                    price: req.body.price,
+                    stock: req.body.stock,
+                    color: req.body.color,
+                    size: req.body.size,
+                    description: req.body.description,
+                    insale: req.body.insale,
+                  };
+            
+                 
+                if (req.file) {
+                  // Si se ha subido una nueva imagen, utiliza la nueva imagen
+                  updateData.photo = req.file.filename;
+                } else {
+                  // Si no mantiene la imagen existente
+                  updateData.photo = product.photo;
+                }
+
+                //  actualización en la base de datos
+                await db.Product.update(updateData, {
+                  where: { id: idProduct },
                 });
           res.redirect('/products/products')
         }
