@@ -51,14 +51,27 @@
                         </form>
                     </div>
                     <div class="dropdown">
-                        <div class="icon">
-                            <i class="fa fa-solid fa-user"></i>
-                        </div>
+                        <% if (locals.userIsLogged && locals.userIsAdmin) { %>
+                            <div class="icon">
+                                <img src="<%= locals.user.avatar %>">
+                            </div>
+                        <% } else { %>
+                            <div class="icon">
+                                <i class="fa fa-solid fa-user"></i>
+                            </div>
+                        <% } %>
                         <div class="dropdown-content">
-                            <a href="/users/login" id="login">Iniciar sesión</a>
-                            <a href="/users/register" id="register">Registrarse</a>
-                        </div>
+                            <% if (!locals.userIsLogged) { %>
+                                <a href="/users/editProfile/<%= locals.userIsLogged%>">Editar perfil</a>
+                                <!--aca es userToEdit para que vaya a la vista-->
+                                <a href="/logout">Cerrar sesión</a>
+                            <% } else { %>
+                                <a href="/users/login">Iniciar sesión</a>
+                                <a href="/users/register">Registrarse</a>
+                            <% } %>
+                        </div>                        
                     </div>
+                    
                     <div class = "icon">
                         <a href="/cart/productCart"><i class = "fa fa-solid fa-cart-shopping"></i></a>
                     </div>
