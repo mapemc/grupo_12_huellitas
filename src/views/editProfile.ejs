@@ -12,8 +12,9 @@
 
     <main>
         <h2 class="title">Editar Perfil</h2>
-        <form class="form" action="/users/editProfile/<%= userToEdit.username %>" method="POST" enctype="multipart/form-data">
-            <div class="columns">
+        <% if (userToEdit) { %>
+            <form class="form" action="/users/editProfile/<%= userToEdit.username %>" method="POST" enctype="multipart/form-data">
+                <div class="columns">
             <!-- Columna Izquierda -->
                 <div class="left-column">
                     <div class="input-boxes">
@@ -71,11 +72,11 @@
                     <div class="address-group">
                         <div class="input-boxes">
                             <label for="address" class="form-label">Número</label>
-                            <input type="number" name="address" id="address" class="small-input" value="<%= userToEdit.address %>">
+                            <input type="text" name="address" id="address" class="small-input" value="<%= userToEdit.address %>">
                         </div>
                         <div class="input-boxes">
                             <label for="floor" class="form-label">Piso</label>
-                            <input type="number" name="floor" id="floor" class="small-input" value="<%= userToEdit.floor %>">
+                            <input type="text" name="floor" id="floor" class="small-input" value="<%= userToEdit.floor %>">
                         </div>
                     </div>
                     <div class="address-group">
@@ -85,7 +86,7 @@
                         </div>
                         <div class="input-boxes">
                             <label for="postal" class="form-label">CP</label>
-                            <input type="number" name="postal" id="postal" class="small-input" value="<%= userToEdit.postal %>">
+                            <input type="text" name="postal" id="postal" class="small-input" value="<%= userToEdit.postal %>">
                         </div>
                     </div>
                     <div class="input-boxes">
@@ -121,6 +122,9 @@
                 <button type="submit" class="deleteButton">Eliminar</button>
             </form>
         </div>
+        <% } else { %>
+            <p>Usuario no encontrado</p>
+        <% } %>
     </main>
 
     <footer>
