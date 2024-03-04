@@ -40,7 +40,7 @@
 }
 
 .logo img {
-    height: 35px; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
+    height: 2.3vw; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
     width: auto; /* Ancho automático */
 }
 
@@ -51,7 +51,10 @@
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;}
+    align-items: center;
+    width: auto;
+    height: 3vw;
+}
 
 .nav-right > div
     {margin-left: 10px;}
