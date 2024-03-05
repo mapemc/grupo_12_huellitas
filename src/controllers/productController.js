@@ -9,17 +9,18 @@ const Pet = db.Pet;
 const Product = db.Product;
 const Service = db.Service;
 const User = db.User;
-
+//----------------VALIDACIÓN--------------
+const {validationResult}= require('express-validator');
 
 const productController = {
 
-    productsAll: async (req, res) =>{
+     productsAll: async (req, res) =>{
       await db.Product.findAll()
       .then(products =>{
         res.render("products.ejs", {products})
       })
     },
-
+    
     ofertas: async (req, res) =>{
     
       let products = await db.Product.findAll();
@@ -77,6 +78,7 @@ const productController = {
     create: (req, res) =>{
       res.render("adminNewProducts.ejs")     
     },
+//------------VALIDACIÓN DE NUEVOS PRODUCTOS
 
     processCreate: async (req, res) =>{
       try{
@@ -163,12 +165,25 @@ const productController = {
                 });
           res.redirect('/products/products')
         }
+
       }
       catch(error){
         console.error('Error:', error);
         res.send(error);
       };
     },
+    //--------- VALIDACION DE EDICIÓN DE PRODUCTOS ----------------
+    validacionEdit: (req, res) => {
+      const resultadosdeValidacion = validationResult(req);
+      if (resultadosdeValidacion.errors.length > 0 ){
+        return res.render('adminEditProducts.ejs', {
+          errors: resultadosdeValidacion.mapped(),
+          oldData: req.body
+        });
+      }
+      
+    },
+
     
     destroy: async (req, res) =>{
       try{
