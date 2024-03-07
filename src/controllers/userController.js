@@ -1,13 +1,19 @@
 const fs = require('fs');
 const path = require('path');
-const usersFilePath = path.join(__dirname, "../data/users.json");
+/*const usersFilePath = path.join(__dirname, "../data/users.json");*/
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 /*Encriptado*/
 const bcrypt = require('bcryptjs');
 /*Validaciones*/
 const {validationResult} = require('express-validator');
 
+/*Modelo*/
+const User = db.User;
+
 const userController = {
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log("Errores de validación encontrados:", errors.array());
@@ -19,10 +25,12 @@ const userController = {
             let {username, email, password, category} = req.body;
             username = username.toLowerCase().trim();
             email = email.toLowerCase().trim();
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            /*const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));*/
     
-            const existingEmail = users.find(user => user.email === email);
-            const existingUsername = users.find(user => user.username === username);
+            const existingEmail = await User.findOne({ where: { email: email } });
+            const existingUsername = await User.findOne({ where: { username: username } });
+
+
             if (existingEmail) {
                 return res.render('register', { mensajesDeError: [{ msg: 'El correo ya fue registrado' }], old: req.body });
             }
@@ -30,107 +38,119 @@ const userController = {
                 return res.render('register', { mensajesDeError: [{ msg: 'El nombre de usuario ya está en uso' }], old: req.body });
             }
     
-            let encriptedPass = bcrypt.hashSync(password, 10);
-    
-            const newUser = {
-                id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
+            let encriptedPass = await bcrypt.hash(password, 10);
+
+            const newUser = await User.create({
                 username,
                 email,
                 password: encriptedPass,
                 category: "Customer"
-            };
+            });
     
             req.session.user = newUser;
 
-            users.push(newUser);
-            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+            /* User.push(newUser); */
+            /*fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));*/
     
             res.redirect("/");
         } catch (error) {
             res.status(500).send("Error al registrarse");
         }
     },    
-    /*Register form*/
-    editProfile: (req, res) => {
-        if (!req.session.user) {
-            return res.render('notFound');}
-    
-        const loggedInUsername = req.session.user.username;
-        const requestedUsername = req.params.username;
-    
-        if (loggedInUsername !== requestedUsername) {
-            return res.render('notFound');}
-    
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        const userToEdit = users.find(user => user.username === requestedUsername);
-        if (!userToEdit) {
-            return res.render('notFound');}
-    
-        res.render("editProfile", { userToEdit });
-    },    
-    processEditProfile: (req, res) => {
+    /*Edit form*/
+    editProfile: async (req, res) => {
         try {
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            const loggedInUserId = req.session.user.id;
-            const loggedInUsername = req.session.user.username;
-            
-            const userIndex = users.findIndex(user => user.username == loggedInUsername);
-            if (userIndex === -1) {
-                return res.status(404).send("Usuario no encontrado");
-            }
-            const user = users[userIndex];
-    
-            if (user.username !== req.params.username) {
+            if (!req.session || !req.session.user) {
                 return res.render('notFound');
             }
-    
-            const { username, email, password, birthday, phone, street, address, floor, flat, postal, location } = req.body;
-            const avatar = req.file ? req.file.filename : user.avatar;
-    
-            const updatedUser = {
+            
+            const loggedInUser = req.session.user || {}; 
+            res.render("editProfile", { user: loggedInUser });
+
+            
+        } catch (error) {
+            console.error(error);
+            return res.status(500).send("Internal Server Error");
+
+        }
+    },
+      
+    processEditProfile: async (req, res) => {
+        try {
+            const loggedInUser = req.session.user.username;
+            console.log("Nombre de usuario en sesión:", loggedInUser); 
+            const {username, email, password, birthday, phone, street, address, floor, flat, post_code, location } = req.body;
+            const avatar = req.file ? req.file.filename : req.session.user.avatar;
+            const updatedPostCode = post_code !== '' ? post_code : null;
+
+            
+            await User.update({
                 username,
                 email,
-                birthday,
-                phone,
-                password: password || user.password,
+                password: password || User.password,
                 street,
-                avatar,
                 address,
                 floor,
                 flat,
-                postal,
-                location};
-
-            users[userIndex] = {
-                ...users[userIndex], 
-                ...updatedUser};
+                post_code: updatedPostCode,
+                location,
+                avatar,
+                phone,
+                birthday,                
+            }, {
+                where: {
+                    username: loggedInUser
+                }
+            });
     
-            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-
+            // Consulta para obtener el usuario actualizado
+            const updatedUser = await User.findOne({
+                where: {
+                    username: loggedInUser
+                }
+            });
+    
+            if (!updatedUser) {
+                throw new Error('No se pudo encontrar el usuario actualizado.');
+            }
+    
             req.session.user = {
                 ...req.session.user,
-                ...updatedUser
+                ...updatedUser.dataValues
             };
     
-            res.redirect(`/users/editProfile/${username}`);
+            res.redirect(`/users/editProfile/${loggedInUser}`);
         } catch (error) {
             console.error(error);
+            console.error('Error al eliminar el perfil:', error);
             res.status(500).send("No se pudo actualizar el perfil");
         }
-    },    
-    delete: (req, res) => {
+    },
+           
+    delete: async (req, res) => {
         try {
-            let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            users = users.filter(user => user.id != req.params.id);
+            const usernameToDelete = req.params.username;
+            const userToDelete = await User.findOne({ where: { username: usernameToDelete } });
+            
+            if (!userToDelete) {
+                return res.status(404).send("Usuario no encontrado");
+            }
     
-            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-            res.redirect('/');
-            return
+            await userToDelete.destroy();
+
+            req.session.destroy((err) => {
+                if (err) {
+                    console.error('Error al cerrar la sesión:', err);
+                    res.status(500).send("Hubo un error al cerrar la sesión");
+                } else {
+                    res.redirect('/');
+                }
+            });            
         } catch (error) {
             console.error('Error al eliminar el perfil:', error);
             res.status(500).send("Hubo un error al eliminar tu perfil");
         }
-    },
+    },    
     /*II M.V.A. password reset*/
     resetPassword: (req, res) => {
         res.render("passwordRequest.ejs");
@@ -140,11 +160,11 @@ const userController = {
         res.render("passwordRequestEmail.ejs");
     },
     /*FF*/
-    login: (req, res) =>{
-        res.render("login.ejs");
-    },
+    login: (req, res) => {
+        res.render("login", { user: req.session.user });
+    },    
 
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log("Errores de validación encontrados:", errors.array());
@@ -153,12 +173,8 @@ const userController = {
         }
         try {
             let { email, password } = req.body;
-            email = email.toLowerCase().trim();
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            console.log(users);
-    
-            const user = users.find(user => user.email === email);
-            console.log(user.password);
+            email = email.toLowerCase().trim(); 
+            const user = await User.findOne({where: {email}});
     
             if (!user) {
                 return res.render('login', {mensajesDeError: [{msg: 'Email no encontrado'}], old: req.body});
@@ -171,28 +187,24 @@ const userController = {
             req.session.user = user;
             console.log("Usuario guardado en la sesión:", req.session.user);
 
-    
-            res.redirect("/");
+            res.redirect('/');
     
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             res.status(500).send("Error al iniciar sesión");
         }
-    },
+    },    
     
     logout: (req, res) => {
         req.session.user = null;
         res.redirect("/");
     },
 
-    register: (req, res) =>{
-        res.render("register.ejs"); 
-    },
-    
-    navbarViews: (req, res, next) => {
-        req.session.user = req.isAuthenticated(); 
-        res.render('navbar', { user: req.session.user });
+    register: (req, res) => {
+        res.render("register", { user: req.session.user });
     },    
+    
+ 
 };
 
 

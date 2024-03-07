@@ -31,8 +31,8 @@ const validationsRegisterUser = [
             return true;
         }),
     check('password')
-        .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 })
-        .withMessage('El campo contraseña debe contener al menos 6 caracteres: 1 minúscula, 1 mayúscula, 1 número, 1 símbolo')
+        .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 })
+        .withMessage('El campo contraseña debe contener al menos 8 caracteres: 1 minúscula, 1 mayúscula, 1 número, 1 símbolo')
         .bail(),
     check('confirmPassword')
         .custom((value, { req }) => {

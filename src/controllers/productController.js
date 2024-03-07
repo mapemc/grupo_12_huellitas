@@ -17,7 +17,8 @@ const productController = {
      productsAll: async (req, res) =>{
       await db.Product.findAll()
       .then(products =>{
-        res.render("products.ejs", {products})
+        const user = req.session.user;
+        res.render("products.ejs", {products, user})
       })
     },
     

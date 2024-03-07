@@ -50,27 +50,29 @@
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
+
                     <div class="dropdown">
-                        <% if (locals.userIsLogged && locals.userIsAdmin) { %>
+                        <% if (user && user.username) { %>
                             <div class="icon">
-                                <img src="<%= locals.user.avatar %>">
+                                <img src="<%= user.avatar ? '/img/avatars/' + user.avatar : '/img/avatars/defaultAvatar.jpeg' %>" alt="Avatar">
                             </div>
+                        
                         <% } else { %>
                             <div class="icon">
                                 <i class="fa fa-solid fa-user"></i>
                             </div>
                         <% } %>
                         <div class="dropdown-content">
-                            <% if (!locals.userIsLogged) { %>
-                                <a href="/users/editProfile/<%= locals.userIsLogged%>">Editar perfil</a>
-                                <!--aca es userToEdit para que vaya a la vista-->
-                                <a href="/logout">Cerrar sesión</a>
+                            <% if (user && user.username) { %>
+                                <a href="/users/editProfile/<%= user.username %>">Editar perfil</a>
+                                <!-- Aquí deberías usar user.username para el enlace -->
+                                <a href="/users/logout">Cerrar sesión</a>
                             <% } else { %>
                                 <a href="/users/login">Iniciar sesión</a>
                                 <a href="/users/register">Registrarse</a>
                             <% } %>
                         </div>                        
-                    </div>
+                    </div>         
                     
                     <div class = "icon">
                         <a href="/cart/productCart"><i class = "fa fa-solid fa-cart-shopping"></i></a>
