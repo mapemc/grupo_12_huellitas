@@ -7,31 +7,33 @@
 
 <body>
     <header>
-        <%- include('partials/header.ejs') %>
-    </header>
+            <%- include('partials/header.ejs') %>
+        
+        
+            </header>
 
     <main>
         <h2 class="title">Editar Perfil</h2>
-        <% if (userToEdit) { %>
-            <form class="form" action="/users/editProfile/<%= userToEdit.username %>" method="POST" enctype="multipart/form-data">
+        <% if (user) { %>
+            <form class="form" action="/users/editProfile/<%= user.username %>" method="POST" enctype="multipart/form-data">
                 <div class="columns">
             <!-- Columna Izquierda -->
                 <div class="left-column">
                     <div class="input-boxes">
                         <label for="username" class="form-label">Nombre</label>
-                        <input type="text" name="username" id="username" value="<%= userToEdit.username %>" readonly>
+                        <input type="text" name="username" id="username" value="<%= user.username %>" readonly>
                     </div>
                     <div class="input-boxes">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" value="<%= userToEdit.email %>" readonly>
+                        <input type="email" name="email" id="email" value="<%= user.email %>" readonly>
                     </div>
                     <div class="input-boxes">
                         <label for="birthday">Cumpleaños</label>
-                        <input type="date" name="birthday" id="birthday" value="<%= userToEdit.birthday %>">
+                        <input type="date" name="birthday" id="birthday" value="<%= user.birthday %>">
                     </div>
                     <div class="input-boxes">
                         <label for="phone">Teléfono</label>
-                        <input type="tel" name="phone" id="phone" value="<%= userToEdit.phone %>">
+                        <input type="tel" name="phone" id="phone" value="<%= user.phone %>">
                     </div>
                     <div class="password-change">
                         <div class="input-boxes">
@@ -53,7 +55,7 @@
                     <div class="avatar">
                         <label for="avatar" class="form-label">Foto de Perfil</label>
                         <div class="thumbnail-container">
-                            <img id="preview-avatar" src='/img/avatars/<%= userToEdit.avatar ? userToEdit.avatar : 'defaultAvatar.jpeg'  %>' alt="Miniatura de la imagen">
+                            <img id="preview-avatar" src='/img/avatars/<%= user.avatar ? user.avatar : 'defaultAvatar.jpeg'  %>' alt="Miniatura de la imagen">
                         </div>
                         <input type="file" name="avatar" accept=".jpg, .png, .svg" id="avatar-input" class="form-input">
                     </div>
@@ -67,31 +69,31 @@
                     <h4 class="subtitle-right">Mi Dirección</h4>
                     <div class="input-boxes">
                         <label for="street" class="form-label">Calle</label>
-                        <input type="text" name="street" id="street" value="<%= userToEdit.street %>">
+                        <input type="text" name="street" id="street" value="<%= user.street %>">
                     </div>
                     <div class="address-group">
                         <div class="input-boxes">
                             <label for="address" class="form-label">Número</label>
-                            <input type="text" name="address" id="address" class="small-input" value="<%= userToEdit.address %>">
+                            <input type="text" name="address" id="address" class="small-input" inputmode="numeric" value="<%= user.address !== null ? user.address : '' %>">
                         </div>
                         <div class="input-boxes">
                             <label for="floor" class="form-label">Piso</label>
-                            <input type="text" name="floor" id="floor" class="small-input" value="<%= userToEdit.floor %>">
+                            <input type="text" name="floor" id="floor" class="small-input" value="<%= user.floor %>">
                         </div>
                     </div>
                     <div class="address-group">
                         <div class="input-boxes">
                             <label for="flat" class="form-label">Departamento</label>
-                            <input type="text" name="flat" id="flat" class="small-input" value="<%= userToEdit.flat %>">
+                            <input type="text" name="flat" id="flat" class="small-input" value="<%= user.flat %>">
                         </div>
                         <div class="input-boxes">
-                            <label for="postal" class="form-label">CP</label>
-                            <input type="text" name="postal" id="postal" class="small-input" value="<%= userToEdit.postal %>">
+                            <label for="post_code" class="form-label">CP</label>
+                            <input type="text" name="post_code" id="post_code" class="small-input" inputmode="numeric" pattern="[0-9]*" value="<%= user.post_code !== null ? user.post_code : '' %>">
                         </div>
                     </div>
                     <div class="input-boxes">
                         <label for="location" class="form-label">Provincia</label>
-                        <input type="text" name="location" id="location" value="<%= userToEdit.location %>">
+                        <input type="text" name="location" id="location" value="<%= user.location %>">
                     </div>
                     <h4 class="subtitle-right">Mis Métodos de Pago</h4>
                         <div class="card">
@@ -103,6 +105,7 @@
                                     <p class="card-number">**** **** **** 1234</p>
                                 </div>
                             </div>
+<!--                             SETHROGEN1234@GMAIL.COM -->
                         </div>
                 </div>
             </div>
@@ -118,7 +121,7 @@
         <!--Boton borrar usuario-->
         <!-- Segundo formulario -->
         <div class="button-container-delete">
-            <form action="/users/editProfile/<%= userToEdit.username %>/delete?_method=DELETE" method="POST">
+            <form action="/users/editProfile/<%= user.username %>/delete?_method=DELETE" method="POST">
                 <button type="submit" class="deleteButton">Eliminar</button>
             </form>
         </div>
