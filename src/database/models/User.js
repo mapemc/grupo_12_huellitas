@@ -55,6 +55,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
+        birthday: {
+            type: dataTypes.DATE,
+            allowNull: true
+        },
         
     };
     let config = {
