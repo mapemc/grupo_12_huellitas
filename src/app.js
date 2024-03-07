@@ -24,12 +24,12 @@ app.use(session({
         sameSite: 'strict'
     }
 }));
-/*app.use((req, res, next) => {
-    if (req.session.user) {
-        console.log('Usuario autenticado:', req.session.user);} else {
-        console.log('Usuario no autenticado');}
+app.use((req, res, next) => {
+    res.locals.user = req.session.user || null;
     next();
-});*/
+});
+
+
 ///////////TEMPLATE ENGINES//////////
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
