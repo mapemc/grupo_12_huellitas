@@ -39,10 +39,9 @@
     color: black; /* Color del texto al pasar el ratón */
 }
 
-.logo img {
-    height: 2.3vw; /* Altura */; /* Ajusta esto según el tamaño de tu logo */
-    width: auto; /* Ancho automático */
-}
+.logo img
+    {height: 2.3vw; 
+    width: auto;}
 
 /*II. M.V.A. Agregado navbar derecha*/
 /*Navbar Derecha*/
@@ -54,7 +53,8 @@
     align-items: center;
     width: auto;
     height: 3vw;
-}
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1vw;}
 
 .nav-right > div
     {margin-left: 10px;}
@@ -69,6 +69,12 @@
     {margin-right: 30px;
     margin-left: 120px}
 
+.icon img
+    {height: 2.3vw; 
+    width: 2.3vw; 
+    border-radius: 50%; 
+    object-fit: cover;}
+    
 a
     {text-decoration: none;
     color: white}
@@ -183,4 +189,3 @@ a:hover
     {display: block;}
 
 /*FF*/
-
