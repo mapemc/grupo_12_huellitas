@@ -3,7 +3,8 @@ const path = require("path");
 
 const mainController ={
     index: (req, res) =>{
-        res.render("index.ejs");
+        const loggedInUser = req.session.user; 
+        res.render("index.ejs", { user: loggedInUser });
     },
     enviarMensaje: (nombre, email, mensaje) =>{
         return new Promise((resolve, reject) => {
