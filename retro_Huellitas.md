@@ -26,3 +26,26 @@
 **Hacer menos:** Dejar todo para ultimo momento. 
 **Dejar de hacer:** No dejar de hacer nada, venimos super bien.
 
+*SPRINT 5*
+
+**Comenzar a hacer:** Establecer sesiones de brainstorming para generar nuevas ideas que puedan mejorar el proyecto. Incluir espacios de feedback constructivo entre los miembros para mejorar personalmente y como equipo.
+**Hacer más:** Reforzar la utilización de herramientas de gestión de proyectos para tener un mejor seguimiento de las tareas y plazos. Aumentar el reconocimiento y la celebración de los logros personales y del equipo.
+**Continuar haciendo:** Mantener la buena práctica de distribuir equitativamente las tareas y apoyarse mutuamente. Seguir utilizando el chat para fortalecer la comunicación y coordinación.
+**Hacer menos:** Reducir las reuniones innecesarias o que no aporten valor al proyecto, optimizando así nuestro tiempo.
+Dejar de hacer: Evitar postergar las tareas difíciles o desafiantes. Encararlas como una oportunidad de aprendizaje y crecimiento.
+
+*SPRINT 6*
+
+**Comenzar a hacer:** Implementar revisiones de progreso personales, permitiendo a cada miembro reflexionar sobre sus contribuciones y áreas de mejora.
+**Hacer más:** Incrementar el uso de sesiones de práctica enfocadas en problemas específicos del proyecto para afianzar conocimientos y habilidades.
+**Continuar haciendo:** Aprovechar los momentos de reunión para evaluar avances y superar obstáculos en conjunto, manteniendo un ambiente de colaboración.
+**Hacer menos:** Disminuir la cantidad de tareas asignadas en paralelo para evitar el sobrecargo y mejorar la calidad del trabajo entregado.
+**Dejar de hacer:** Abandonar las prácticas o hábitos que no agregan valor al proyecto o al desarrollo personal y profesional del equipo.
+
+*SPRINT 7*
+
+**Comenzar a hacer:** Organizar sesiones de retroalimentación específicas del proyecto con stakeholders para obtener perspectivas externas y mejorar el producto final.
+Hacer más: Fomentar la autogestión y la toma de decisiones dentro del equipo, promoviendo un mayor sentido de propiedad sobre el trabajo.
+**Continuar haciendo:** Seguir fomentando un ambiente de trabajo positivo donde todos se sientan valorados y motivados para contribuir.
+**Hacer menos:** Minimizar el tiempo dedicado a tareas que pueden ser automatizadas o simplificadas mediante el uso de tecnología o herramientas adecuadas.
+**Dejar de hacer:** Eliminar cualquier actividad que distraiga o desvíe al equipo de sus objetivos principales, enfocándose en lo que realmente importa para el éxito del proyecto.
