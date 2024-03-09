@@ -235,7 +235,7 @@ border-radius: 10px 10px 0 0;
 
 .button-link h3 {
     display: inline-block; /* Hace que el h2 se comporte como un botón */
-    background-color: #4CAF50; /* Color de fondo del botón */
+    background-color: #16c6cc; /* Color de fondo del botón */
     color: white; /* Color del texto */
     padding: 10px 20px; /* Espaciado interno para hacerlo más grande */
     text-align: center; /* Asegura que el texto esté centrado */
@@ -249,7 +249,7 @@ border-radius: 10px 10px 0 0;
   }
   
   .button-link h3:hover {
-    background-color: #45a049; /* Cambio de color al pasar el mouse */
+    background-color: #16c6cc; /* Cambio de color al pasar el mouse */
   }
   
   
