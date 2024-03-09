@@ -32,7 +32,7 @@
 **Hacer más:** Reforzar la utilización de herramientas de gestión de proyectos para tener un mejor seguimiento de las tareas y plazos. Aumentar el reconocimiento y la celebración de los logros personales y del equipo.
 **Continuar haciendo:** Mantener la buena práctica de distribuir equitativamente las tareas y apoyarse mutuamente. Seguir utilizando el chat para fortalecer la comunicación y coordinación.
 **Hacer menos:** Reducir las reuniones innecesarias o que no aporten valor al proyecto, optimizando así nuestro tiempo.
-Dejar de hacer: Evitar postergar las tareas difíciles o desafiantes. Encararlas como una oportunidad de aprendizaje y crecimiento.
+**Dejar de hacer:** Evitar postergar las tareas difíciles o desafiantes. Encararlas como una oportunidad de aprendizaje y crecimiento.
 
 *SPRINT 6*
 
