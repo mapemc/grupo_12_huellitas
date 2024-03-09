@@ -49,7 +49,7 @@ const userController = {
     
             req.session.user = newUser;
 
-            /* User.push(newUser); */
+            User.push(newUser); 
             /*fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));*/
     
             res.redirect("/");

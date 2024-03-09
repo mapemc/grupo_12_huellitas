@@ -7,13 +7,15 @@
 
 <body>
     <header>
-            <%- include('partials/header.ejs') %>
-        
-        
-            </header>
+            <%- include('partials/header.ejs') %>  
+    </header>
 
     <main>
         <h2 class="title">Editar Perfil</h2>
+
+        <ul class="errors alert-warning">
+        </ul>
+
         <% if (user) { %>
             <form class="form" action="/users/editProfile/<%= user.username %>" method="POST" enctype="multipart/form-data">
                 <div class="columns">
@@ -133,5 +135,8 @@
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
+
+    <script src="/js/editRegisterValidation.js"></script>
+
 </body>
 </html>

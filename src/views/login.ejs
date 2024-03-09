@@ -14,23 +14,28 @@
     <main>
         <h3 class = "title">Iniciar Sesión</h3>
 
+        <ul class="errors alert-warning">
+        </ul>
+
         <% if (locals && locals.mensajesDeError) {%>
             <% for (let error in mensajesDeError) {%>
                 <p class = "errors"> <%= mensajesDeError[error].msg %> </p>
             <% } %>
         <% } %>
         
-        <form action = "/users/login" method = "POST" class = "login-form">
+        <form action = "/users/login" method = "POST" class = "login-form" id="form">
             <div class = "columns">
                 <!--Campos del formulario-->
                 <div class = "login-left">
                     <div class = "input-boxes">
                         <label for = "email">Email</label>
                         <input type = "email" name = "email" id = "email">
+                        <p class="email-error"></p>
                     </div>
                     <div class = "input-boxes">    
                         <label for = "password">Contraseña</label>
                         <input type = "password" name = "password" id = "password">
+                        <p class="password-error"></p>
                     <div class="input-boxes">
                         <input type="checkbox" id="remember-me" name="remember-me">
                         <label for="remember-me" id="remember-me-label">Recordar</label>
@@ -90,4 +95,7 @@
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
+
+    <script src="/js/loginValidations.js"></script>
+
 </body>

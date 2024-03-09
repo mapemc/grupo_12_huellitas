@@ -11,8 +11,8 @@
     </header>
 
     <div class="encabezado-catalogo">
-      <img src="/img/peluqueria.jpeg" alt="imagen-catalogo" class="img-catalogo">
-      <div class="text-overlay">SERVICIO DE PELUQUERIA </div>
+      <img src="/img/peluqueria1.jpg" alt="imagen-catalogo" class="img-catalogo">
+      <div class="text-overlay">PELUQUERIA </div>
     </div>
 
     <ul class="texto-contacto">
@@ -24,7 +24,11 @@
     </ul>
 
     <div class="contenedor-form">
-      <form action="/services/peluqueria" method="post" class="estilos-form">
+
+      <ul class="errors alert-warning">
+      </ul>
+
+      <form action="/services/peluqueria" method="post" class="estilos-form" id="form">
         <label for="nombre" class="estilos-labels">Nombre:</label>
         <input class="estilos-inputs" type="text" id="nombre" name="nombre" required>
   
@@ -65,5 +69,7 @@
 <footer>
     <%- include('partials/footer.ejs') %>
 </footer>
+
+<script src="/js/formPeluqueriaValidation.js"></script>
 
 </html>
