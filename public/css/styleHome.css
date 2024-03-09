@@ -162,6 +162,12 @@ flex-wrap: wrap;
 box-sizing: border-box;
 }
 
+.card p {
+font-size: 1.2em;
+text-align: justify;
+}
+
+
 /* Estilos del Contenedor de Tarjetas */
 .cards-container {
 display: flex; /* Habilita Flexbox */
