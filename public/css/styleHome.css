@@ -168,6 +168,7 @@ text-align: justify;
 }
 
 
+
 /* Estilos del Contenedor de Tarjetas */
 .cards-container {
 display: flex; /* Habilita Flexbox */
@@ -192,7 +193,9 @@ padding: 20px; /* Espacio interno */
 /* Estilos para los títulos y párrafos si es necesario */
 .card-content h2 {
 margin-top: 0;
-/* Otros estilos para el título */
+font-size: 2em;
+justify-content: center;
+text-align: center;
 }
 
 
