@@ -162,6 +162,14 @@ flex-wrap: wrap;
 box-sizing: border-box;
 }
 
+.card p {
+    
+font-size: 1.2em;
+text-align: justify;
+}
+
+
+
 /* Estilos del Contenedor de Tarjetas */
 .cards-container {
 display: flex; /* Habilita Flexbox */
@@ -172,6 +180,9 @@ padding: 20px; /* Agrega algo de espacio alrededor */
 
 /* Estilos de Cada Tarjeta */
 .card {
+display: flex;
+justify-content: center; /* Centra horizontalmente en el contenedor flex */
+text-align: center; 
 flex: 1; /* Las tarjetas ocuparán un espacio igual */
 margin: 10px; /* Espacio entre las tarjetas */
 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para un efecto 3D */
@@ -186,7 +197,9 @@ padding: 20px; /* Espacio interno */
 /* Estilos para los títulos y párrafos si es necesario */
 .card-content h2 {
 margin-top: 0;
-/* Otros estilos para el título */
+font-size: 2em;
+justify-content: center;
+text-align: center;
 }
 
 
@@ -219,3 +232,24 @@ border-radius: 10px 10px 0 0;
         font-size: 7vw;
     }
 }
+
+.button-link h3 {
+    display: inline-block; /* Hace que el h2 se comporte como un botón */
+    background-color: #16c6cc; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno para hacerlo más grande */
+    text-align: center; /* Asegura que el texto esté centrado */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    font-size: 16px; /* Tamaño del texto */
+    margin: 4px 2px; /* Margen externo para separación */
+    cursor: pointer; /* Cambia el cursor a la forma de un puntero */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    transition-duration: 0.4s; /* Hace que el cambio de color sea gradual */
+  }
+  
+  .button-link h3:hover {
+    background-color: #16c6cc; /* Cambio de color al pasar el mouse */
+  }
+  
+  

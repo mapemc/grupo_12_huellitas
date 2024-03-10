@@ -2,6 +2,31 @@
 <html lang = "es">
 <head>
     <%- include("./partials/head.ejs", {cssSheet:"stylesContacto", title:"Contacto"}) %>
+
+    <style>
+        .cuerpoContacto {
+            display: flex;
+            height: 100vh; /* Altura total de la ventana del navegador */
+            width: 75%;
+        }
+        .col-izquiera-margen-contacto, .col-dercha-margen-contacto {
+            flex: 1; /* Ambas partes ocuparán el mismo espacio */
+            border: 1px solid black; /* Bordes para visualización */
+        }
+
+        /*
+        .col-izquiera-margen-contacto {
+            background-color: lightblue; /* Color de fondo de la parte izquierda */
+        }
+         
+        /*
+        .col-dercha-margen-contacto {
+            background-color: lightgreen; /* Color de fondo de la parte derecha */
+        }   -->
+
+
+    </style>
+
 </head>
 
 <body>
@@ -19,6 +44,7 @@
 <div class="cuerpoContacto">
     <section class="formulario">
 
+        <!--Columna-Izquierda-->
         <div class="col-izquiera-margen-contacto">
 
         <form action="tu_servidor_de_procesamiento" method="POST">
@@ -48,6 +74,12 @@
 
         </div>
        
+        <!--Columna-Centro-->
+        <div class = "divider">
+            <div class="circle">H</div>
+        </div>
+
+        <!--Columna-Derecha-->
         <div class="col-dercha-margen-contacto">
             <h3>Centro de Atención al Cliente</h3>
             <br>
