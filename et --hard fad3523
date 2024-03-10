@@ -1,0 +1,77 @@
+[33mf63224d[m[33m ([m[1;36mHEAD -> [m[1;32m1[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33mfad3523[m HEAD@{1}: reset: moving to HEAD~1
+[33m52da4ee[m HEAD@{2}: pull: Merge made by the 'ort' strategy.
+[33mfad3523[m HEAD@{3}: commit: validaciones front users y vistas servicios
+[33mf63224d[m[33m ([m[1;36mHEAD -> [m[1;32m1[m[33m)[m HEAD@{4}: pull: Fast-forward
+[33mab9a2ba[m HEAD@{5}: pull: Fast-forward
+[33m07f8093[m HEAD@{6}: pull: Merge made by the 'ort' strategy.
+[33m864aec1[m HEAD@{7}: commit: desplegables
+[33m5b13b8b[m HEAD@{8}: commit: seguimos con CRUD-Multer
+[33m3f6da38[m HEAD@{9}: pull: Fast-forward
+[33m853460e[m HEAD@{10}: pull: Fast-forward
+[33m41ffb39[m HEAD@{11}: pull: Fast-forward
+[33mb099ab8[m HEAD@{12}: commit: crud isimo
+[33m7a48191[m HEAD@{13}: pull: Fast-forward
+[33mf304117[m HEAD@{14}: commit: comienzo del CRUD de Productos
+[33m4d45177[m HEAD@{15}: pull: Fast-forward
+[33me6705d6[m HEAD@{16}: pull: Fast-forward
+[33m7419da0[m HEAD@{17}: commit: Creación de carpeta Sequelize y archivos de modelos
+[33m305e39b[m HEAD@{18}: pull: Fast-forward
+[33m1c47f0e[m HEAD@{19}: commit: desplegables
+[33md7ed37d[m HEAD@{20}: pull: Fast-forward
+[33me120734[m HEAD@{21}: commit: vistas servicios
+[33ma74b230[m HEAD@{22}: pull: Fast-forward
+[33mbe45763[m HEAD@{23}: pull: Fast-forward
+[33m2622b63[m HEAD@{24}: commit: formularios de servicios, rutas y controllers
+[33mcbf06ea[m HEAD@{25}: commit: cambios ruteo services
+[33m3eac790[m HEAD@{26}: pull: Merge made by the 'ort' strategy.
+[33m272d36b[m HEAD@{27}: commit: ruteo para servicios
+[33m1782c3e[m HEAD@{28}: commit (merge): resolviendo conflictos
+[33mcb0c24f[m HEAD@{29}: commit: detalles
+[33m930e466[m HEAD@{30}: commit: estilos del catalogo de productos
+[33m633e2f7[m HEAD@{31}: commit: estilos del catalogo de productos
+[33m0cba9b1[m HEAD@{32}: pull: Fast-forward
+[33me2c8d4b[m HEAD@{33}: pull: Fast-forward
+[33m01c283e[m HEAD@{34}: pull: Fast-forward
+[33m9da99ff[m HEAD@{35}: commit: trabajo grupal - CRUD
+[33m60978fa[m HEAD@{36}: commit: detalles
+[33m2483ae1[m HEAD@{37}: commit: detalles que faltaban
+[33m4e73f0d[m HEAD@{38}: commit: trabajo grupal parte del CRUD
+[33m721138a[m HEAD@{39}: commit: json y todos los productos
+[33m9b07382[m HEAD@{40}: pull: Merge made by the 'ort' strategy.
+[33m8b564c7[m HEAD@{41}: commit: trabajo grupal - reorganizacion
+[33me7465cf[m HEAD@{42}: commit: trabajo en grupo - reorganización
+[33m8a058b8[m HEAD@{43}: commit: partial del head y algunas cosillas más
+[33m90fc639[m HEAD@{44}: pull: Fast-forward
+[33m897f0f1[m HEAD@{45}: pull: Fast-forward
+[33m177712d[m HEAD@{46}: pull: Fast-forward
+[33m1e5d4b2[m HEAD@{47}: commit: ruteo nuevos formularios
+[33mc85589f[m HEAD@{48}: pull: Fast-forward
+[33mc4bd07f[m HEAD@{49}: commit: trabajo en grupo - implementacion de ejs
+[33m83c6255[m HEAD@{50}: commit: trabajo grupal terminado MVC
+[33m943ed3c[m HEAD@{51}: pull: Merge made by the 'ort' strategy.
+[33m4c70791[m HEAD@{52}: commit: trabajo grupal organización de archivos MVC
+[33m18ac0e3[m HEAD@{53}: commit: productDetail mejorado
+[33mf5bb5b2[m HEAD@{54}: pull: Fast-forward
+[33m3ed96cb[m HEAD@{55}: pull: Fast-forward
+[33m7e2bb86[m HEAD@{56}: commit: avanzando en el productDetail
+[33m9800684[m HEAD@{57}: commit: arreglo del link a hoja de estilo
+[33m12a1c35[m HEAD@{58}: commit: reorganización carpetas
+[33ma1cc27b[m HEAD@{59}: commit: reorganización estructura de carpetas
+[33m50723b3[m HEAD@{60}: commit: probando
+[33m87db807[m HEAD@{61}: commit: eliminando public
+[33me3570fd[m HEAD@{62}: commit: avance productDetail
+[33m614d5ef[m HEAD@{63}: commit: cambios
+[33m7bf05ec[m HEAD@{64}: commit: terminando de armar estructura
+[33m12b09e1[m HEAD@{65}: pull: Fast-forward
+[33m8f3fc24[m HEAD@{66}: pull: Fast-forward
+[33m86872ee[m HEAD@{67}: checkout: moving from master to 1
+[33m34b193a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/34b193a[m[33m)[m HEAD@{68}: checkout: moving from 1 to master
+[33m86872ee[m HEAD@{69}: pull: Fast-forward
+[33mee7d627[m HEAD@{70}: pull: Fast-forward
+[33m514118e[m HEAD@{71}: commit: agregué las direcciones
+[33mdb4a4e8[m HEAD@{72}: pull: Fast-forward
+[33m266efc7[m HEAD@{73}: pull: Fast-forward
+[33m11e297f[m HEAD@{74}: pull: Fast-forward
+[33m8ed8ed6[m HEAD@{75}: pull: Fast-forward
+[33m4ef8c4e[m HEAD@{76}: pull: Fast-forward
