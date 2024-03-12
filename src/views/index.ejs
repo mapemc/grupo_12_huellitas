@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-    
-    <%- include("./partials/head.ejs", {cssSheet:"styleHome.css", title:"Home"}) %>
-
+    <%- include("./partials/head.ejs", {cssSheet:"styleHome", title:"Home"}) %>
 </head>
 
 <body>
@@ -13,54 +11,37 @@
         <%- include('partials/header.ejs', { user: user }) %>
         
     </header>
-    <main>
-        <section>
-
-
-
-            <div class="slide">
-                <div class="slide-inner">
-                    <input class="slide-open" type="radio" id="slide-1" 
-                          name="slide" aria-hidden="true" hidden="" checked="checked">
-                    <div class="slide-item">
-                        <img src="./img/foto3.jpeg">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-2" 
-                          name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="./img/foto6.jpeg">
-                        
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-3" 
-                          name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="./img/foto5.jpeg">
-                       
-                    </div>
-                    
-                    <label for="slide-3" class="slide-control prev control-1">‹</label>
-                    <label for="slide-2" class="slide-control next control-1">›</label>
-                    <label for="slide-1" class="slide-control prev control-2">‹</label>
-                    <label for="slide-3" class="slide-control next control-2">›</label>
-                    <label for="slide-2" class="slide-control prev control-3">‹</label>
-                    <label for="slide-1" class="slide-control next control-3">›</label>
-                    <ol class="slide-indicators">
-                        <li>
-                            <label for="slide-1" class="slide-bullet">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-2" class="slide-bullet">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-3" class="slide-bullet">•</label>
-                        </li>
-                </div>
-            </div>
-    
-        </section>
-    
-        <section>
-
+<main>
+    <section carrousel>
+        <input id="slide-0" name="carrousel" type="radio" checked/>
+        <div class="slide">
+          <label for="slide-3" class="back">◀</label>
+          <div class="slide-content">
+            <img src="./img/indexImgs/adopcion.mp4">
+          </div>
+          <label for="slide-1" class="forward">▶</label>
+        </div>
+        
+        <input id="slide-1" name="carrousel" type="radio" />
+        <div class="slide">
+          <label for="slide-0" class="back">◀</label>
+          <div class="slide-content">
+            <img src="./img/indexImgs/HuellitApp.pdf">
+          </div>
+          <label for="slide-2" class="forward">▶</label>
+        </div>
+        
+        <input id="slide-2" name="carrousel" type="radio" />
+        <div class="slide">
+          <label for="slide-1" class="back">◀</label>
+          <div class="slide-content">
+            <img src="./img/indexImgs/adopcion.mp4">
+          </div>
+          <label for="slide-3" class="forward">▶</label>
+        </div> 
+    </section>
+              
+    <section>
             <div class="cards-container">
                 <div class="card">
                     <div class="card-content">
@@ -95,7 +76,8 @@
                     </div>
                 </div>
                 
-
+            </section>
+            <section>
             <div class="cards-container">
                 <div class="card">
                     <div class="card-content">
@@ -127,7 +109,8 @@
                         <p>Aprovecha nuestras ofertas limitadas para darle a tu mascota el cuidado que se merece sin comprometer tu presupuesto. Desde descuentos en alimentos y accesorios hasta promociones en servicios de salud y bienestar.</p>
                         <a href="/products/insale" class="button-link">
                             <h3>Descubri nuestras ofertas</h3>
-                          </a>                    </div>
+                          </a>                   
+                    </div>
                 </div>
                 
             </div>
@@ -137,7 +120,6 @@
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
-    <script src=""></script>
 </body>
 
 </html>
