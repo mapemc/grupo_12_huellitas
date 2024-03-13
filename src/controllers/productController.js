@@ -14,7 +14,7 @@ const {validationResult}= require('express-validator');
 
 const productController = {
 
-     productsAll: async (req, res) =>{
+    productsAll: async (req, res) =>{
       await db.Product.findAll()
       .then(products =>{
         const user = req.session.user;
@@ -79,7 +79,7 @@ const productController = {
     create: (req, res) =>{
       res.render("adminNewProducts.ejs")     
     },
-//------------VALIDACIÓN DE NUEVOS PRODUCTOS
+     //------------VALIDACIÓN DE NUEVOS PRODUCTOS
 
     processCreate: async (req, res) =>{
       try{
@@ -123,7 +123,7 @@ const productController = {
         const product = await db.Product.findByPk(idProduct);
         
             if(product) {
-                res.render('adminEditProducts.ejs', {product})
+                res.render('adminEditProducts.ejs', { product : product })
             } else {
                 res.status(404).send('Producto no encontrado');
             }}
@@ -136,6 +136,7 @@ const productController = {
       try{
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
+        console.log(product)
 
         //const insaleValue = req.body.inSale === 1 ? 1 : 0;
 
@@ -173,19 +174,7 @@ const productController = {
         res.send(error);
       };
     },
-    //--------- VALIDACION DE EDICIÓN DE PRODUCTOS ----------------
-    validacionEdit: (req, res) => {
-      const resultadosdeValidacion = validationResult(req);
-      if (resultadosdeValidacion.errors.length > 0 ){
-        return res.render('adminEditProducts.ejs', {
-          errors: resultadosdeValidacion.mapped(),
-          oldData: req.body
-        });
-      }
-      
-    },
-
-    
+  
     destroy: async (req, res) =>{
       try{
         const idProduct = req.params.id;
@@ -195,14 +184,16 @@ const productController = {
             db.Product.destroy({
                 where: {id: idProduct}
             })        
-        res.redirect('/products/products')
+          res.redirect('/products/products')
         }
       }
+      
       catch(error){
         res.send(error);
       };
-    }, 
-};
 
+    }, 
+}
+  
 
 module.exports = productController;

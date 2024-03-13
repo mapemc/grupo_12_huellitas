@@ -28,7 +28,7 @@ main
     margin: auto;
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;}
+    }
 
 .title
     {margin-bottom: 10px;
@@ -41,7 +41,7 @@ input
     {width: 100%;
     padding: 20px;
     margin-bottom: 15px;
-    border: 1px solid #888;
+    border: 1px solid #8888888f;
     font-size: 12px;
     text-transform: uppercase;}
 
@@ -185,3 +185,99 @@ input:invalid + .error-message
 /*Desktop*/
 @media (min-width: 769px)
     {}
+
+
+
+/* //////////////validaciones/////////////// */
+
+.inputsIcon{
+    position:relative;
+    border: 3px solid transparent;
+    transition: .3s ease all;
+}
+
+.inputStyle:focus{
+    border: 3px solid #0075ff;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.aviso1{
+    font-size: 12 px;
+    margin: 0;
+    display: none; 
+}
+
+.aviso1-activo{
+    display: block;
+}
+
+.aviso2{
+    font-size: 12 px;
+    margin: 0;
+    display: none; 
+}
+
+.aviso2-activo{
+    display: block;
+}
+
+.iconoForm{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 18px;
+    margin-bottom: 16px;
+    opacity: 0;
+}
+
+/* /////warnings////// */
+
+
+/* p.aviso1.aviso1-activo.aviso2.aviso2-activo {
+    color: #bb2929;
+    text-transform: none;
+    margin-bottom: 21px;
+    font-size: 14px;
+} */
+
+.inputboxes .aviso1.aviso1-activo,
+.inputboxes .aviso2.aviso2-activo {
+    color: #bb2929;
+    text-transform: none;
+    margin-bottom: 21px;
+    font-size: 14px;
+}
+
+.inputboxes__correcto .iconoForm{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.inputboxes__incorrecto .iconoForm{
+    color: #bb2929;
+    opacity: 1;
+    margin-bottom: 19px;
+
+}
+
+.inputboxes__incorrecto .labelForm{
+    color: #bb2929;
+}
+
+.inputboxes__incorrecto .inputStyle{
+    border: 3px solid #bb2929;
+}
+
+.mensajeExito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.mensajeExito-activo {
+	display: block;
+}
+
+
+

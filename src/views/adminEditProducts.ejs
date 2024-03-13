@@ -16,7 +16,7 @@
             <!--Cuerpo-->
             <div class = "name-description">
                 <label for = "name" class = "form-label">Nombre</label>
-                    <input type = "text" name = "nombre" id = "name" class = "form-input <% locals.errors && errors.nombre ? 'is-invalid' : null %>" value="<%= product.name %> <% locals.oldData ? errors.nombre : null %>">
+                    <input type = "text" name = "name" id = "name" class = "form-input <% locals.errors && errors.nombre ? 'is-invalid' : null %>" value="<%= product.name %> <% locals.oldData ? errors.nombre : null %>">
                     <% if (locals.errors && errors.nombre) { %>
                         <div class="tex-danger">
                             <% errors.nombre.msg %>

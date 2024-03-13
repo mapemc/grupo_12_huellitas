@@ -26,32 +26,60 @@
         <% } %>
             
 
-        <form action = "/users/register" method = "POST" class = "register-form" id="form">
+        <form action = "/users/register" method="POST" class="formulario" id="formulario">
             <div class = "columns">
                 <!--Campos del formulario-->
                 <div class = "register-left">
-                    <div class = "input-boxes">
-                        <label for = "username">Nombre de usuari@</label>
-                        <input type="text" name="username" id="username" value="<%= locals.old && locals.old.username ? locals.old.username : '' %>">
+                    
+                    <div class = "inputboxes" id="inputboxesUsuario">
+                        <label for = "username" class="labelForm">Nombre de usuari@</label>
+                        <div class="inputsIcon">
+                            <input type="text" class="inputStyle" name="username" id="username" placeholder="Ingrese un nombre de usuario">
+                            <i class="iconoForm fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <p class="aviso1">"Debes escribir un nombre de usuario"</p>
+                        <p class="aviso2">"El campo usuario debe contener entre 4 y 16 caracteres"</p>
                     </div>
-                    <div class = "input-boxes">
-                        <label for = "email">Email</label>
-                        <input type = "email" name = "email" id = "email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>">
+                    
+                    <div class = "inputboxes" id="inputboxesemail">
+                        <label for = "email" class="labelForm">Email</label>
+                        <div class="inputsIcon">
+                            <input type = "email" class="inputStyle" name = "email" id = "email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>" placeholder="Ingrese un email">
+                            <i class="iconoForm fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <p class="aviso1">"Debes escribir un email"</p>
+                        <p class="aviso2">"Debes escribir un formato válido"</p>
+
                     </div>
-                    <div class = "input-boxes">    
-                        <label for = "password">Contraseña</label>
-                        <input type = "password" name = "password" id = "password">
+                    
+                    <div class = "inputboxes" id="inputboxespassword">    
+                        <label for = "password" class="labelForm">Contraseña</label>
+                        <div class="inputsIcon">
+                            <input type = "password" class="inputStyle" name = "password" id = "password" placeholder="Ingrese una contraseña">
+                            <i class="iconoForm fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <p class="aviso1">"Debes escribir una contraseña"</p>
+                        <p class="aviso2">"La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial"</p>
                     </div>
-                    <div class = "input-boxes">
-                        <label for = "confirmPassword">Confirmar contraseña</label>
-                        <input type = "password" name = "confirmPassword" id = "confirmPassword">
+                    
+                    <div class = "inputboxes" id="inputboxespassword2">
+                        <label for = "confirmPassword" class="labelForm">Confirmar contraseña</label>
+                        <div class="inputsIcon">
+                            <input type = "password" class="inputStyle" name = "confirmPassword" id = "confirmPassword" placeholder="Repita la contraseña">
+                            <i class="iconoForm fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <p class="aviso1">"Las contraseñas no coinciden"</p>
                     </div>
 
                     <!--Botones formulario-->
                     <div class = "submit-button-box">
                         <button type = "submit" id = "registerButton">Registrarse</button>
                     </div>
-                </div>    
+                    <p class="mensajeExito" id="mensajeExito">Formulario enviado exitosamente!</p>
+                </div>   
+                
+                
+                
         </form>
 
         <!--Divisor-->
@@ -97,5 +125,6 @@
     </footer>
 
     <script src="/js/registerValidation.js"></script>
+    <script src="https://kit.fontawesome.com/1d45e21563.js" crossorigin="anonymous"></script>
 
 </body>

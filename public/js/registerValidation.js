@@ -1,54 +1,128 @@
-window.addEventListener("load", () => {
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
-    let form = document.querySelector("#form");
-    //console.log(form.username);
-    
-    let errorsHTML = document.querySelector(".errors");
+console.log(formulario);
+console.log(inputs);
 
-    form.addEventListener("submit", (event) => {
-        //console.log("se envió");
-       
+const expresiones = {
+	password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/,
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
 
-        let errorsList = [];
 
-        ////username////
-        if (form.username.value == "") {
-            errorsList.push("Debes escribir un nombre de usuario");
-        } else if (form.username.value.length < 2) {
-            errorsList.push("El nombre debe tener al menos 4 caracteres");
+const campos = {
+	username: false,
+	email: false,
+	password: false,
+	confirmPassword: false,
+}
+
+const validarFormulario = (e) =>{
+    console.log(e);
+    switch (e.target.name) {
+        case "username":
+            if (e.target.value == "") {
+                document.getElementById("inputboxesUsuario").classList.add('inputboxes__incorrecto')
+                document.getElementById("inputboxesUsuario").classList.remove('inputboxes__correcto')
+                document.querySelector("#inputboxesUsuario .aviso1").classList.add('aviso1-activo')
+                
+                campos[username] = false;
+
+            } else if (e.target.value.length < 4 || e.target.value.length > 16) {
+                document.getElementById("inputboxesUsuario").classList.add('inputboxes__incorrecto')
+                document.getElementById("inputboxesUsuario").classList.remove('inputboxes__correcto')
+                document.querySelector("#inputboxesUsuario .aviso2").classList.add('aviso2-activo')
+                campos[username] = false;
+
+            } else {
+                document.getElementById("inputboxesUsuario").classList.remove('inputboxes__incorrecto')
+                document.getElementById("inputboxesUsuario").classList.remove('inputboxes__correcto')
+                document.querySelector("#inputboxesUsuario .aviso1").classList.remove('aviso1-activo')
+                document.querySelector("#inputboxesUsuario .aviso2").classList.remove('aviso2-activo')
+                campos[username] = true;
+              
+            }
+        break;
+        case "email":
+          
+                
+                if (e.target.value == "") {
+                    document.getElementById("inputboxesemail").classList.add('inputboxes__incorrecto')
+                    document.getElementById("inputboxesemail").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxesemail .aviso1").classList.add('aviso1-activo')
+                    campos[email] = false;
+
+                } else if (!expresiones.email.test(e.target.value)) {
+                    document.getElementById("inputboxesemail").classList.add('inputboxes__incorrecto');
+                    document.getElementById("inputboxesemail").classList.remove('inputboxes__correcto');
+                    document.querySelector("#inputboxesemail .aviso2").classList.add('aviso2-activo');
+                    campos[email] = false;
+                } else{
+                    document.getElementById("inputboxesemail").classList.remove('inputboxes__incorrecto')
+                    document.getElementById("inputboxesemail").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxesemail .aviso1").classList.remove('aviso1-activo')
+                    document.querySelector("#inputboxesemail .aviso2").classList.remove('aviso2-activo')
+                    campos[email] = true;
+                }          
+                
+        break;
+
+        case "password":
+           
+                if (e.target.value == "") {
+                    document.getElementById("inputboxespassword").classList.add('inputboxes__incorrecto')
+                    document.getElementById("inputboxespassword").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxespassword .aviso1").classList.add('aviso1-activo')
+                    campos[password] = false;
+
+                 } else if (!expresiones.password.test(e.target.value)) {
+                    document.getElementById("inputboxespassword").classList.add('inputboxes__incorrecto');
+                    document.getElementById("inputboxespassword").classList.remove('inputboxes__correcto');
+                    document.querySelector("#inputboxespassword .aviso2").classList.add('aviso2-activo');
+                    campos[password] = false;
+
+                } else{
+                    document.getElementById("inputboxespassword").classList.remove('inputboxes__incorrecto')
+                    document.getElementById("inputboxespassword").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxespassword .aviso1").classList.remove('aviso1-activo')
+                    document.querySelector("#inputboxespassword .aviso2").classList.remove('aviso2-activo')
+                    campos[password] = true;
+                }     
+        break;
+        case "confirmPassword":
+
+                const inputPassword1 = document.getElementById('password');
+	            const inputPassword2 = document.getElementById('confirmPassword');
+
+	            if(inputPassword1.value !== inputPassword2.value){
+                    document.getElementById("inputboxespassword2").classList.add('inputboxes__incorrecto')
+                    document.getElementById("inputboxespassword2").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxespassword2 .aviso1").classList.add('aviso1-activo')
+                    campos[confirmPassword] = false;
+                
+	            } else {
+		            document.getElementById("inputboxespassword2").classList.remove('inputboxes__incorrecto')
+                    document.getElementById("inputboxespassword2").classList.remove('inputboxes__correcto')
+                    document.querySelector("#inputboxespassword2 .aviso1").classList.remove('aviso1-activo')
+                    campos[confirmPassword] = true;
+	            }
+        break;
         }
-
-       
-        ////email/////
-        // Regex simple
-        let reg1 = /\S+@\S+\.\S+/;
-        
-        if (form.email.value == "") {
-            errorsList.push("Debes escribir un email");
-        } else if (!reg1.test(form.email.value)) {
-            errorsList.push("El email debe tener un formato válido");
-        }
+    }
 
 
-        ////contrasenia///////
-        let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
-        if (form.password.value == "") {
-            errorsList.push("La contraseña no debe estar vacia");
-        } else if (!passwordPattern.test(form.password.value)) {
-            errorsList.push("La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial");
-        }
+
+        inputs.forEach((input) => {
+        input.addEventListener('keyup', (e) => validarFormulario(e)); 
+        input.addEventListener('blur', (e) => validarFormulario(e)); 
+});
 
 
-        // Si el array no está vacio, tenemos errores
-        if (errorsList.length > 0) {
-            event.preventDefault();
-            errorsHTML.innerHTML = "";
-            errorsList.forEach(error => {
-                errorsHTML.innerHTML += "<li>" + error + "</li>"
-            })
-        }
-        console.log("Se envia el formulario!");
+formulario.addEventListener('submit', (e)=>{
+    //e.preventDefault();
 
-    })
+    if((campos.username && campos.email && campos.password && campos.confirmPassword) === true) {
+        document.getElementById('mensajeExito').classList.add('mensajeExito-activo');
+    }
 })
-    
