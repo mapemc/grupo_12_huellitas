@@ -174,19 +174,7 @@ input:invalid + .error-message
 
 
 /*----------Breakpoints----------*/
-/*Phones*/
-@media (max-width: 480px)
-    {}
-
-/*Tablets*/
-@media (min-width: 480px) and (max-width:768px)
-    {}
-
-/*Desktop*/
-@media (min-width: 769px)
-    {}
-
-
+git reset --hard origin/master
 
 /* //////////////validaciones/////////////// */
 
