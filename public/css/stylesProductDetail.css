@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+   /*  margin: 0;
+    padding: 0; */
     box-sizing: border-box;
 }
 
@@ -71,10 +71,12 @@ body{
 }
 
 .nombre-producto{
-    font-size: 24px;
-    padding: 10px;
-    color: rgba(41, 53, 51, 1);
-    margin-top: 25px;
+  font-size: 24px;
+  padding: 10px;
+  color: rgba(41, 53, 51, 1);
+  margin-top: 50px;
+  margin-left: 35px;
+  margin-bottom: 0px;
 }
 
 /* ///////////////////////////////////ESTRELLITAS//////////////////////////////////////////////////////////////// */
@@ -96,13 +98,13 @@ body{
 
 
 .formulario-estrellitas{
-    display: flex;
-    flex-direction: row-reverse;
-    align-content: stretch;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 25px;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: stretch;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 52px;
+  margin-bottom: 15px;
 }
 
 .formulario-estrellitas::before{
@@ -158,13 +160,12 @@ body{
 }
 
 .precios{
-    display: flex;
-    
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 46px;
-    line-height: 30px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+  line-height: 0px;
+  margin-bottom: 20px;
 }
 
 .oferta{
@@ -376,10 +377,11 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 95%;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 16px;
+  margin: 22px;
 }
 
 .caja-descripcion{
@@ -502,25 +504,30 @@ body{
     width: 50%;
   }
 
+  .caja-boton-carrito{
+    display: flex;
+    justify-content: center;
+  }
+
   .caja-carrito {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
-    margin: 54px;
+    /* margin: 54px; */
   }
 
   .vistos-recientemente {
     display: flex;
     background-color: #585f5bb3;
     color: #dcdddf;
-    width: 95%;
+    width: 100%;
     height: 37px;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    left: 19px;
+    /* left: 19px; */
   }
 
   .section-otros-productos {
@@ -545,11 +552,15 @@ body{
 
   .fotos-de-artículos {
     display: flex;
-    width: 50%;
+    width: 48%;
     justify-content: center;
     flex-wrap: wrap;
     background-color: #ebebeb;
     padding-top: 11px;
+    padding-bottom: 11px;
+    margin-top: 25px;
+    margin-left: 10px;
+    border: 1px solid #80808033;
   }
 
 .detalle-producto-selección {
@@ -573,14 +584,17 @@ body{
   }
 
   .caja-img-ppal{
-    width: 65%;
+    width: fit-content;
   }
-  
+
   .section-otros-productos {
     width: 100%;
     background-color: #ebebeb;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 10px;
+    padding-bottom: 33px;
+    padding-top: 25px;
   }
 
 }

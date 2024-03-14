@@ -233,14 +233,6 @@ input:invalid + .error-message
 
 /* /////warnings////// */
 
-
-/* p.aviso1.aviso1-activo.aviso2.aviso2-activo {
-    color: #bb2929;
-    text-transform: none;
-    margin-bottom: 21px;
-    font-size: 14px;
-} */
-
 .inputboxes .aviso1.aviso1-activo,
 .inputboxes .aviso2.aviso2-activo {
     color: #bb2929;

@@ -11,13 +11,14 @@
 
     
     <div class="orden">
+
         <section class="fotos-de-artículos">
                 
             <article class="caja-img-ppal">
                     <img src= "/img/<%= product.photo %>">
             </article>
 
-            <div class="otras-fotos-del-articulo">
+          <!--   <div class="otras-fotos-del-articulo">
                 <ul class="caja-img-secundarias">
                     <li class="cajita">
                         <img src= "/img/bolsitas2.jpg">
@@ -32,7 +33,7 @@
                             <img src= "/img/bolsitas5.jpg">
                     </li>
                 </ul>
-            </div>
+            </div> -->
 
         </section>
 
@@ -79,7 +80,7 @@
                 </div>
             </section>
 
-            <section class="selección-colores-talles">
+           <!--  <section class="selección-colores-talles">
                     
                 <div>
                     <p class="colores-disponibles">Colores disponibles</p>
@@ -104,12 +105,13 @@
                 </section>
 
 
-            </section>
-
-        </div>
-    </div>    
-           
+            </section> -->
             <section>
+                <div class="caja-boton-carrito">
+                    <button class="boton-enviar" type="submit">
+                        <i class="fa-solid fa-cart-shopping"></i> <span>AGREGAR AL CARRITO</span>
+                    </button>
+                </div>
                 <div class="caja-carrito">
                     <div class="algo-contador">
                         <div class="contador">
@@ -120,20 +122,25 @@
                                     <span class="ascendente"> + </span>
                                 </div>
                             </div>
-                            <div class="caja-boton-carrito">
-                            <button class="boton-enviar" type="submit">
-                                <i class="fa-solid fa-cart-shopping"></i> <span>AGREGAR AL CARRITO</span>
-                            </button>
-                        </div>
+                           
                     </div>        
                 </div>
             </section> 
+
+
+        </div>
+    </div>    
+           
+
             
-            <section class="caja-editar-borrar">
+    <section class="caja-editar-borrar">
+                
                 <div class="caja-boton-edit">
                     <form action="/products/edit/<%= product.id %>" method="GET">
-                        <a href = "../edit/<%= product.id %>" class="boton-editar">
-                        <button type="submit"> EDITAR </button>
+                        <a href = "../edit/<%= product.id %>" >
+                        <button class="boton-enviar" type="submit"> 
+                            EDITAR
+                        </button>
                         </a>
                     </form>
                 </div>
@@ -164,16 +171,16 @@
     <section class="section-otros-productos">    
         
         <div class="contenedor-articulos">
-            <article class="producto"   >  
+            <article class="producto">  
+                
                 <img src="/img/otrosProductos1.jpg" alt="Imagen de correa reforzada">
                                
                 <div class="caja-descripcion-1">
-                    <p class="tipografia-precios">$3500</p>
-                    <P class="tipografia-descuentos">20% off</P>
-                </div>
-        
-                <div>   
-                    <P class="tipografia-descripciones">Correa Reforzada</P>
+                    <a href="/products/detail/24">
+                        <p class="tipografia-precios">$12320</p>
+                        <P class="tipografia-descuentos">20% off</P>  
+                        <P class="tipografia-descripciones">Correa paseo</P>
+                    </a>
                 </div>
                 
             </article>
@@ -183,13 +190,12 @@
             <article class="producto">  
                 <img src="/img/otrosProductos2.jpg" alt="Imagen de arenero con palita">
                     
-                <div class="caja-descripcion-1">                                    
-                    <p class="tipografia-precios">$4500</p>
-                    <P class="tipografia-descuentos">20% off</P>
-                </div>
-        
-                <div>
-                    <P class="tipografia-descripciones">Arenero con palita</P>
+                <div class="caja-descripcion-1">   
+                    <a href="/products/detail/38">                                
+                        <p class="tipografia-precios">$8800</p>
+                        <P class="tipografia-descuentos">20% off</P>
+                        <P class="tipografia-descripciones">Arenero con palita</P>
+                    </a> 
                 </div>        
             </article>
         </div>
@@ -199,13 +205,12 @@
                 <img src="/img/otrosProductos3.jpg" alt="Imagen de cepillo saca pelos">
                     
                     
-                <div class="caja-descripcion-1" >                                             
-                    <p class="tipografia-precios">$2500</p>
-                    <P class="tipografia-descuentos">10% off</P>
-                </div>
-        
-                <div>
-                    <P class="tipografia-descripciones">Cepillo saca pelos</P>
+                <div class="caja-descripcion-1" >
+                    <a href="/products/detail/39">                                         
+                        <p class="tipografia-precios">$5000</p>
+                        <P class="tipografia-descuentos">20% off</P>
+                        <P class="tipografia-descripciones">Cepillo saca pelos</P>
+                    </a>
                 </div>
         
             </article>
@@ -216,13 +221,11 @@
                 <img src="/img/otrosProductos4.jpg" alt="Imagen de collar con cascabel">
                     
                     
-                <div class="caja-descripcion-1">                                               
-                    <p class="tipografia-precios">$2000</p>
-                    <P class="tipografia-descuentos">15% off</P>
-                </div>
-        
-                <div>
-                    <P class="tipografia-descripciones">Collar con cascabel</P>
+                <div class="caja-descripcion-1"> 
+                    <a href="/products/detail/7">                                              
+                    <p class="tipografia-precios">$15000</p>
+                    <P class="tipografia-descuentos">20% off</P>
+                    <P class="tipografia-descripciones">Collar para gato con cascabel</P>
                 </div>
         
             </article>
