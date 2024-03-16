@@ -168,7 +168,9 @@ main
 
  .form-label
     {width: 100%;
-    padding: 10px;}   
+    padding: 10px;
+    margin-bottom: 50%;
+}   
 
 /* Tamaño de los talles */
 .size-checkboxes
@@ -224,6 +226,15 @@ main
 
 .newProductButton:hover
     {background-color: rgba(17, 153, 158, 1);}
+/* -------------------------CUANDO TENGAMOS ERRORES DE VALIDACIÓN------------------------ */
+.is-invalid{
+    border-color: red;
+    border-bottom-color: red;
+}    
+.errors {
+    color: red;
+    padding: 3%;
+}
 
 /*----------Breakpoints----------*/
 /*Phones*/
