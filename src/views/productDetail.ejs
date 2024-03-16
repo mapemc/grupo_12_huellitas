@@ -147,8 +147,8 @@
 
             
                 <div class="caja-boton-edit">
-                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                        <button class="boton-enviar" type="submit">
+                    <form id="deleteForm" action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <button class="boton-enviar" type="button" onclick="confirmarEliminar()">
                             <span>ELIMINAR</span>
                         </button>
                     </form>
@@ -240,7 +240,14 @@
 
 
 
-    
+    <script>
+        function confirmarEliminar() {
+            if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+                // Si confirma, envía el formulario 
+                document.getElementById("deleteForm").submit();
+            }
+        }
+    </script>
 
 </body>
 </html>

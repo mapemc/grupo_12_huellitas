@@ -47,7 +47,7 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "accesories"){
+        if(product.category === "accesorios"){
           accesorios.push(product)} 
       });
       res.render("accesorios.ejs", { accesorios});
@@ -65,7 +65,7 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "food"){
+        if(product.category === "alimentos"){
           alimentos.push(product)} 
       });
       res.render("alimentos.ejs", { alimentos});
@@ -133,32 +133,41 @@ const productController = {
     },
 
     processEdit: async (req, res) => {
-      try{
+  
+      try {
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
         console.log(product)
 
-        //const insaleValue = req.body.inSale === 1 ? 1 : 0;
+          if (product) {
+            const updateData = {
+              name: req.body.name,
+              category: req.body.category,
+              price: req.body.price,
+              stock: req.body.stock,
+              color: req.body.color,
+              size: req.body.size,
+              description: req.body.description,
+              insale: req.body.insale,
+              };
+        
+       
+          if (req.file) {
+            // Si se ha subido una nueva imagen, utiliza la nueva imagen
+            updateData.photo = req.file.filename;
+          } else {
+            // Si no mantiene la imagen existente
+            updateData.photo = product.photo;
+          }
 
-                if (product) {
-                  const updateData = {
-                    name: req.body.name,
-                    category: req.body.category,
-                    price: req.body.price,
-                    stock: req.body.stock,
-                    color: req.body.color,
-                    size: req.body.size,
-                    description: req.body.description,
-                    insale: req.body.insale,
-                  };
-            
-                 
-                if (req.file) {
-                  // Si se ha subido una nueva imagen, utiliza la nueva imagen
-                  updateData.photo = req.file.filename;
-                } else {
-                  // Si no mantiene la imagen existente
-                  updateData.photo = product.photo;
+          const resultValidation = validationResult(req);
+
+                if (resultValidation.errors.length > 0){
+                  return res.render('adminEditProducts', {/*  usar el return para salir de la función después de redirigir */
+                    product: product,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                  });
                 }
 
                 //  actualización en la base de datos
@@ -171,7 +180,7 @@ const productController = {
       }
       catch(error){
         console.error('Error:', error);
-        res.send(error);
+        return res.send(error);
       };
     },
   

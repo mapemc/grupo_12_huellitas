@@ -11,76 +11,93 @@
 
     <main>
         <h3 class = "title">Editar Producto</h3>
-        <form class="form" action = "/products/edit/<%= product.id %>" method = "POST" class = "products-form" enctype="multipart/form-data" >
+        <form class="form" action = "/products/edit/<%= product.id %>?_method=PUT" method = "POST" class = "products-form" enctype="multipart/form-data" >
         
             <!--Cuerpo-->
+            <!--Campo name-->
             <div class = "name-description">
-                <label for = "name" class = "form-label">Nombre</label>
-                    <input type = "text" name = "name" id = "name" class = "form-input <% locals.errors && errors.nombre ? 'is-invalid' : null %>" value="<%= product.name %> <% locals.oldData ? errors.nombre : null %>">
-                    <% if (locals.errors && errors.nombre) { %>
+                <label for= "name" class= "form-label">Nombre</label>
+                    <input 
+                    type ="text" 
+                    name = "name" 
+                    id = "name" 
+                    class = "form-input <%= locals.errors && errors.name ? 'is-invalid' : null %>" 
+                    value="<%= locals.oldData ? oldData.name : product.name %>">
+                    <% if (locals.errors && errors.name) { %>
                         <div class="tex-danger">
-                            <% errors.nombre.msg %>
+                            <%= errors.name.msg %>
                         </div>
                     <% } %> 
+                
+                  <!--Campo description-->   
                 <label for = "description">Descripción</label>
-                    <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
-              
-                    
+                <textarea name="description" id="description" class="form-input <%= locals.errors && errors.description ? 'is-invalid' : null %>"><%= locals.oldData ? oldData.description : product.description %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <div class="tex-danger">
+                        <%= errors.description.msg %>
+                    </div>
+                <% } %>      
             </div>
-
-           <!--  <div class="image">
-                <label for="image" class="form-label">Fotos</label>
-                <div class="thumbnail-container">
-                    <input type="file" name="photo" accept=".jpg, .png, .svg" id="image" class="form-input">
-                </div>   
-            </div>  -->     
             
+            <!-- campo photo -->
             <div class="image">
                 <label for="image" class="form-label">Fotos</label>
-                <div class="thumbnail-container">
-                    <% if (product.photo && product.photo.length > 0) { %>
-                        <!-- Muestra la imagen existente -->
-                        <img src="/img/<%= product.photo[0] %>">
-                        <!-- Agrega un campo oculto con el nombre de la imagen existente -->
-                        <input type="hidden" name="existingPhoto" value="<%= product.photo[0] %>">
-                    <% } %>
-                    <!-- Agrega el campo de entrada de archivo solo si se desea actualizar la imagen -->
-                    <input type="file" name="photo" accept=".jpg, .png, .svg" id="image" class="form-input">
-                </div>   
+                <input class="form-input" type="file" name="photo" value="<%= locals.oldData ? oldData.photo : "" %>">
+                <% if (locals.errors && errors.photo) { %>
+                    <div class="tex-danger">
+                        <%= errors.photo.msg %>
+                    </div>
+               <% } %>
             </div>
             
-
+           <!--  campo price -->
             <div class = "price-stock">
-            <label for = "price" class = "form-label">Precio</label>
-                <input type = "number" step = 0.01 min = 0 name = "price" id = "price" class = "form-input <% locals.errors && errors.price ? 'is-invalid' : null %>" value="<%= product.price %>">
+            <label for= "price" class= "form-label">Precio</label>
+                <input type= "number" step= 0.01 min= 0 name= "price" id= "price" 
+                class= "form-input <%= locals.errors && errors.price ? 'is-invalid' : null %>" 
+                value="<%= locals.oldData ? oldData.price : product.price %>">
                 <% if (locals.errors && errors.price) { %>
                     <div class="tex-danger">
-                        <% errors.price.msg %>
+                        <%= errors.price.msg %>
                     </div>
                 <% } %> 
-            <label for = "stock" class = "form-label">Stock</label>
-                <input type = "number" min = 0 name = "stock" id = "stock" class = "form-input <% locals.errors && errors.stock ? 'is-invalid' : null %>" value="<%= product.stock %>">
+
+           
+           <!--  campo stock   -->      
+            <label for= "stock" class= "form-label">Stock</label>
+                <input type= "number" min= 0 name= "stock" id= "stock" 
+                class= "form-input <%= locals.errors && errors.stock ? 'is-invalid' : null %>" 
+                value="<%= locals.oldData ? oldData.stock : product.stock %>">
                 <% if (locals.errors && errors.stock) { %>
                     <div class="tex-danger">
-                        <% errors.stock.msg %>
+                        <%= errors.stock.msg %>
                     </div>
                 <% } %> 
             </div>
+          
 
             <div class="category">
                 <label for="category" class="form-label">Categoría</label>
-                <select name="category" id="category" class="form-input <% locals.errors && errors.category ? 'is-invalid' : null %>">
-                    <option value="default-cat" <% if (product.category === 'default-cat') { %> selected <% } %>>Categoría</option>
-                    <option value="accesories" <% if (product.category === 'accesories') { %> selected <% } %>>Accesorios</option>
-                    <option value="food" <% if (product.category === 'food') { %> selected <% } %>>Alimento</option>
+                <select 
+                    name="category" id="category" 
+                    class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+                    <option value="">Elige una categoría</option>
+                    <% 
+                        let categories = ['Sin categoría', 'Accesorios', 'Alimentos']
+                    %>
+                    <% for (const category of categories){ %>
+                        <option value="<%= category %>"
+                        <%= locals.oldData && (category === oldData.category) ? 'selected' : null %>>
+                        <%= category %> </option>
+                    <% }  %> 
                 </select>
-                <% if (locals.errors && errors.category) { %>
-                    <div class="tex-danger">
-                        <% errors.category.msg %>
-                    </div>
-                <% } %> 
-            </div>
-
+                <% if(locals.errors && errors.category){ %>
+                <div>
+                    <%= errors.category.msg %>
+                </div>
+                 <% }  %>
+            </div>     
+                
             <div class = "size-checkboxes">
                 <label for = "insale"><input type = "checkbox" id = "insale" name = "insale" value = "1">En Oferta</label>
             </div>

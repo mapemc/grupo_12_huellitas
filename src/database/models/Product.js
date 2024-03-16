@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         insale: {
             type: dataTypes.TINYINT(1),
-            allowNull: false
+            allowNull: true
         },
         
     };

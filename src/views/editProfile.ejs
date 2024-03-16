@@ -123,8 +123,8 @@
         <!--Boton borrar usuario-->
         <!-- Segundo formulario -->
         <div class="button-container-delete">
-            <form action="/users/editProfile/<%= user.username %>/delete?_method=DELETE" method="POST">
-                <button type="submit" class="deleteButton">Eliminar</button>
+            <form id="deleteUserForm" action="/users/editProfile/<%= user.username %>/delete?_method=DELETE" method="POST">
+                <button type="button" class="deleteButton" onclick="confirmarEliminarUsuario()">Eliminar</button>
             </form>
         </div>
         <% } else { %>
@@ -137,6 +137,13 @@
     </footer>
 
     <script src="/js/editRegisterValidation.js"></script>
-
+    <script>
+        function confirmarEliminarUsuario() {
+            if (confirm("¿Estás seguro de que deseas eliminar tu perfil de usuario? Esta acción no se puede deshacer.")) {
+                // Si el usuario confirma, envía el formulario de eliminación de usuario
+                document.getElementById("deleteUserForm").submit();
+            }
+        }
+    </script>
 </body>
 </html>
