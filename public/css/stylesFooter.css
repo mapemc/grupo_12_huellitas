@@ -1,87 +1,106 @@
-*{
-    box-sizing: border-box;
-}
+/*total*/
+footer
+    {font-family: 'Roboto', sans-serif;
+    background-color: #16c6cc;
+    padding: 5px 0;}
 
-footer{
-    font-family: 'Open Sans', sans-serif; /* Tipo de fuente */
-    font-size: 12px;
-    background-color: #16C6CC;
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-}
-.contenido{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;/*  solo debe ir en dispositivos pequeños  */
-    padding: 8px;
-}
-.logobox {
-   /*  background-color:blue; */
-    height: 100%;
-    width: 30%;
-    display: flex;
+.footer-box
+    {display: flex;
+    align-items: center;}
+
+/*logo*/
+.logobox-footer
+    {margin-right: 10px;}
+
+.logo-footer
+    {max-width: 100%;}
+
+/*contenido*/
+.content-footer
+    {display: flex;}
+
+.categories-footer
+    {display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.logo {
-    max-width: 40vw;
-    opacity: 80%;
-}
+    gap: 10px;}
 
-.listabox{
- /*    background-color: blueviolet; */
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.titulos{
-    font-weight: bold;
-    text-align: center;
-}
-.listaContácto{
-    list-style-type:none;
+.sections-footer
+    {flex: 1;}
+
+.title-footer
+    {font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;}
+
+.navList-footer,
+.aboutList-footer,
+.contactList-footer
+    {list-style: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
-}
-.logosredes{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20%;
-}
-.logito{
-   font-size: 20px;
-}
-.derechos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: bold;
-}
+    font-size: 14px;}
 
+.navList-footer li,
+.aboutList-footer li,
+.contactList-footer li
+    {margin-bottom: 5px;}
+
+.sitesLogos-footer
+    {display: flex;
+    gap: 10px;}
+
+.sitesLogos-footer a
+    {color: #F8F8F8;}
+
+.newsletter-input-footer
+    {display: flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 3px;
+    text-transform: capitalize !important;}
+
+.mailbox-footer
+    {flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 10px;
+    text-transform: capitalize !important;}
+
+.submit-button-footer
+    {background-color: #34322F;
+    color: #F8F8F8;
+    border: none;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;}
+
+.submit-button-footer i
+    {font-size: 12px}    
+
+/*copyright*/
+.reservados-footer
+    {text-align: center;
+    font-size: 12px;
+    color: #F8F8F8;
+    width: 85%;
+    margin-top: 20px;}
+    
+    
 /* -----ANIMACIONES------ */
-.titulos:hover {
+/* .titulos:hover {
     text-shadow: 15px 15px 4px (0,0,0,0.5);
-}
+} 
 .logo:hover {
     max-width: 42vw;
     opacity: 100%;
 }
-
-/*-----------------MEDIAQUERY----------------------------------------------------------------------- */
-@media (min-width: 480px) {
+ 
+/*-----------------MEDIAQUERY----------------------------------------------------------------------- 
+/* @media (min-width: 480px) {
 
 }
-/*-------------TABLET---------------------*/
+/*-------------TABLET---------------------
 @media (min-width: 768px) {
 
 footer {
@@ -95,7 +114,7 @@ footer {
     padding: 8px;
 }
 .listabox{
-    /*    background-color: blueviolet; */
+    /*    background-color: blueviolet; 
        height: 100%;
        width: 80%;
        display: flex;
@@ -116,7 +135,7 @@ footer {
 .titulos{
     text-align: start;
 }
-.listaContácto{
+.listaContacto{
     text-align: start;
 }
 .logosredes{
@@ -130,14 +149,14 @@ footer {
    font-size: 40px;
 }
 /* -----ANIMACIONES------ */
-.logo:hover {
+/* .logo:hover {
     max-width: 21vw;
    
     /* border: 2px solid black;
-    border-radius: 5%;  */  /* jugando con estos valores */ 
-} 
+    border-radius: 5%;  */  /* jugando con estos valores 
 }
-/* ------------------------------------Desk----------------------------------------------------- */
+}
+/* ------------------------------------Desk----------------------------------------------------- 
 @media (min-width: 992px){
 
-}
+} */

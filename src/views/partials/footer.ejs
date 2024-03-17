@@ -1,50 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/stylesFooter.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/fde7fb228b.js" crossorigin="anonymous"></script>
     <title>Footer</title>
-</head> -->
-
-<%- include("head.ejs", {cssSheet:"stylesFooter", title:"Footer"}) %>
-
+    <link href="/css/stylesFooter.css" rel="stylesheet">
+</head>
 
 <footer>
-        <div class="contenido">
-            <div class="logobox">
-               <img class="logo" src="/img/logoHuellitas.png" alt="logo Huellitas">
-            </div>
-            <div class="listabox">
-                <div class="Contactanos">
-                    <p class="titulos">Contáctanos</p>
-                    <ul class="listaContácto">
-                        <li>01 800 321 65487</li>
-                        <li>01 800 321 65487</li>
-                        <li>huellitasDH@gmail.com</li>
-                        <li>calle 59 sur # 92 a 28</li>
+    <div class="footer-box">
+        <div class="content-footer">
+            <div class="sections-footer">
+                <div class="logobox-footer">
+                    <img class="logo-footer" src="/img/footer/logoHuellitasFooter.png">
+                </div>
+            </div> 
+            <div class="categories-footer">
+                <div class="sections-footer">
+                    <p class="title-footer">Navegación</p>
+                    <ul class="navList-footer">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">HuellitApp</a></li>
                     </ul>
                 </div>
-                <div class="Redes">
-                    <p class="titulos"> Nuestras redes </p>
-                    
-                    <div class="logosredes">
-                        <div class = "logito">
-                            <a href="https://web.facebook.com/?locale=es_LA&_rdc=1&_rdr"><i class= "fa-brands fa-facebook"></i></a>
+                <div class="sections-footer">
+                    <p class="title-footer">Nosotros</p>
+                    <ul class="aboutList-footer">
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="sections-footer">
+                    <p class="title-footer">Contacto</p>
+                    <ul class="contactList-footer">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="/contact">Contáctanos</a></li>
+                        <li><a href="#">Botón de arrepentimiento</a></li>
+                    </ul>
+                </div>
+                <div class="sections-footer">
+                    <p class="title-footer">Sigamos conectados</p>
+                    <div class="sitesLogos-footer">
+                        <div class="facebook">
+                            <a href="https://web.facebook.com/?locale=es_LA&_rdc=1&_rdr"><i class="fa-brands fa-facebook"></i></a>
                         </div>
-                        <div class = "logito">
-                            <a href="https://www.instagram.com/"><i class= "fa-brands fa-instagram"></i></a>
+                        <div class="instagram">
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <div class="huellitapp">
+                            <a href="/huellitapp"><i class="fa fa-solid fa-paw"></i></a>
                         </div>
                     </div> 
-
                 </div>
-        
+                <div class="sections-footer">
+                    <div class="title-footer">Newsletter</div>
+                    <div class="newsletter-input-footer">
+                        <input type="email" class="mailbox-footer" name="mailbox" id="mailbox" placeholder="EMAIL">
+                        <button class="submit-button-footer"><i class="fa fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                <div class="reservados-footer">
+                    <p>Copyright @ 2023 Huellitas - Derechos reservados</p>
+                </div>
             </div>
         </div>
-        <div class="derechos reservados">
-            <p>
-                Copyright @ 2023 Huellitas - Derechos reservados
-            </p>
-        </div>
+    </div>
 </footer>
+</html>
