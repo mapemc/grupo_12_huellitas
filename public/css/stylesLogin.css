@@ -30,7 +30,7 @@ main
     flex-direction: column;
     text-transform: uppercase;}
 
-.title
+.title-login
     {margin-bottom: 10px;
     display: flex;
     margin-top: 50px;
@@ -45,7 +45,7 @@ input
     font-size: 12px;
     text-transform: uppercase;}
 
-.input-boxes
+.input-boxes-login
     {margin-top: 1px;
     margin-bottom: 12px;
     display: flex;
@@ -58,14 +58,14 @@ input
     width: calc(100% - 60px);}
 
 
-#remember-me-label
+#remember-me-label-login
     {display: flex;
     align-items: center;
     margin-right: 10px;}
     
     
       
-.forgot-password
+.forgot-password-login
     {font-style: italic;
     display: flex;
     justify-content: right;
@@ -75,16 +75,16 @@ input
     left: -20px;
     cursor: pointer;}
 
-.forgot-password a
+.forgot-password-login a
     {text-decoration: none;
     color: #333;}
 
-.forgot-password a:hover
+.forgot-password-login a:hover
     {color: #333;
     text-decoration: underline;}
 
 /*Login Button*/
-#loginButton
+#loginButton-login
     {width: 60%;
     font-size: medium;
     font-weight: 900;
@@ -97,11 +97,11 @@ input
     position: relative;
     left: -20px;}
 
-#loginButton:hover
+#loginButton-login:hover
     {background-color: #555;
     transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
-.submit-button-box
+.submit-button-box-login
     {display: flex;
     justify-content: flex-end;}
 
@@ -112,12 +112,12 @@ input
     width: 50%;
     text-align: center;}
 
-.divider
+.divider-login
     {position: relative;
     width: 1px;
     background-color: #ccc;}
     
-.circle
+.circle-login
     {position: absolute;
     top: 35%;
     left: 50%;
@@ -133,14 +133,15 @@ input
     align-items: center;
     font-size: 14px;}
     
-.columns
+.columns-login
     {display: flex;}
 
 /*login right*/
-.logo
-    {height: auto;}
+.logo-login
+    {width: 50%;
+    height: 50%;}
 
-.button-container
+.button-container-login
     {display: flex;
     align-items: center;
     margin-left: 80px;
@@ -169,14 +170,14 @@ input
     align-items: center;}
 
 /*Register Button*/
-#registerButton a
+#registerButton-login a
     {text-decoration: none;
     color: #333;}
 
-#registerButton a:hover
+#registerButton-login a:hover
     {color: #333;}
 
-#registerButton
+#registerButton-login
     {padding: 20px;
     display: block;
     width: 30%;
@@ -189,7 +190,7 @@ input
     font-size: medium;
     text-transform: uppercase;}
     
-#registerButton:hover
+#registerButton-login:hover
     {background-color: #ccc;
     color: white;
     transition: background-color 0.3s, color 0.3s, border 0.1s;}

@@ -12,7 +12,7 @@
         <%- include('partials/header.ejs') %>
     </header>
     <main>
-        <h3 class = "title">Iniciar Sesión</h3>
+        <h3 class = "title-login">Iniciar Sesión</h3>
 
         <ul class="errors alert-warning">
         </ul>
@@ -24,43 +24,43 @@
         <% } %>
         
         <form action = "/users/login" method = "POST" class = "login-form" id="form">
-            <div class = "columns">
+            <div class = "columns-login">
                 <!--Campos del formulario-->
                 <div class = "login-left">
-                    <div class = "input-boxes">
+                    <div class = "input-boxes-login">
                         <label for = "email">Email</label>
                         <input type = "email" name = "email" id = "email">
                         <p class="email-error"></p>
                     </div>
-                    <div class = "input-boxes">    
+                    <div class = "input-boxes-login">    
                         <label for = "password">Contraseña</label>
                         <input type = "password" name = "password" id = "password">
                         <p class="password-error"></p>
-                    <div class="input-boxes">
+                    <div class="input-boxes-login">
                         <input type="checkbox" id="remember-me" name="remember-me">
                         <label for="remember-me" id="remember-me-label">Recordar</label>
                     </div>
 
                     </div>
-                    <div class = "forgot-password">    
+                    <div class = "forgot-password-login">    
                         <a href = "/users/resetting/request">Olvidé la contraseña</a>
                     </div>
 
                     <!--Botones formulario-->
-                    <div class = "submit-button-box">
-                        <button type = "submit" id = "loginButton">Iniciar Sesión</button>
+                    <div class = "submit-button-box-login">
+                        <button type = "submit" id = "loginButton-login">Iniciar Sesión</button>
                     </div>    
                 </div>
 
                 <!--Divisor-->
-                <div class = "divider">
-                    <div class="circle">O</div>
+                <div class = "divider-login">
+                    <div class="circle-login">O</div>
                 </div>
 
                 <!--Logo-->
                 <div class = "login-right">
-                    <img class = "logo" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-register">
-                    <div class="button-container">
+                    <img class = "logo-login" src = "/img/logo-huellitas-register.png" alt = "logo-huellitas-login">
+                    <div class="button-container-login">
                         <!--Boton Google-->
                         <script src="https://accounts.google.com/gsi/client" async></script>
                             <div id="g_id_onload"
@@ -85,7 +85,7 @@
         <!--Login-->
             <div class = "login-down">
                 <p>Nuevo Usuario</p>
-                <button class = "register-button-box" id = "registerButton">
+                <button class = "register-button-box-login" id = "registerButton-login">
                     <a href = "/users/register">Crear Cuenta</a>
                 </button>
             </div>
