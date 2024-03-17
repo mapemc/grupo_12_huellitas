@@ -30,22 +30,22 @@ main
     flex-direction: column;
     }
 
-.title
+.title-register
     {margin-bottom: 10px;
     display: flex;
     margin-top: 80px;
     color: #333}
 
 /*Register right*/
-input
-    {width: 100%;
+.inputStyle
+    {width: 90%;
     padding: 20px;
     margin-bottom: 15px;
     border: 1px solid #8888888f;
     font-size: 12px;
     text-transform: uppercase;}
 
-.input-boxes
+.input-boxes-register
     {margin-top: 1px;
     margin-bottom: 12px;
     display: flex;
@@ -65,7 +65,7 @@ input:invalid + .error-message
     {display: block;}
 
 /*Register Button*/
-#registerButton
+#registerButton-register
     {width: 60%;
     font-size: medium;
     font-weight: 900;
@@ -78,11 +78,11 @@ input:invalid + .error-message
     position: relative;
     left: -8px;}
 
-#registerButton:hover
+#registerButton-register:hover
     {background-color: #555;
     transition: background-color 0.3s, color 0.3s, border 0.1s;}
 
-.submit-button-box
+.submit-button-box-register
     {display: flex;
     justify-content: flex-end;}
 
@@ -93,12 +93,12 @@ input:invalid + .error-message
     width: 50%;
     margin: auto;}
 
-.divider
+.divider-register
     {width: 1px;
     background-color: #ccc;
     margin: 10px;}
 
-.circle
+.circle-register
     {position: absolute;
     top: 100%;
     left: 50%;
@@ -114,11 +114,11 @@ input:invalid + .error-message
     align-items: center;
     font-size: 14px;}
     
-.columns
+.columns-register
     {display: flex;}
 
 /*Register right*/
-.button-container
+.button-container-register
     {display: flex;
     align-items: center;
     margin-left: 40px;
@@ -147,14 +147,14 @@ input:invalid + .error-message
     align-items: center;}
 
 /*Login Button*/
-#loginButton a
+#loginButton-register a
     {text-decoration: none;
     color: #333;}
 
-#loginButton a:hover
+#loginButton-register a:hover
     {color: #333;}
 
-#loginButton
+#loginButton-register
     {padding: 20px;
     display: block;
     width: 30%;
@@ -168,7 +168,7 @@ input:invalid + .error-message
     text-transform: uppercase;
     position: relative;}
     
-#loginButton:hover
+#loginButton-register:hover
     {background-color: #ccc;
     transition: background-color 0.3s, color 0.3s, border 0.1s;}
 

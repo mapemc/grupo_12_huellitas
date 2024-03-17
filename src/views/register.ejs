@@ -14,7 +14,7 @@
         <img class = "banner" src = "/img/banner-register.jpeg" alt = "img-register-banner">
     </header>
     <main>
-        <h3 class = "title">¡Bienvenid@! Completa este formulario para registrarte</h3>
+        <h3 class = "title-register">¡Bienvenid@! Completa este formulario para registrarte</h3>
 
         <ul class="errors alert-warning">
         </ul>
@@ -27,11 +27,11 @@
             
 
         <form action = "/users/register" method="POST" class="formulario" id="formulario">
-            <div class = "columns">
+            <div class = "columns-register">
                 <!--Campos del formulario-->
                 <div class = "register-left">
                     
-                    <div class = "inputboxes" id="inputboxesUsuario">
+                    <div class = "inputboxes-register" id="inputboxesUsuario">
                         <label for = "username" class="labelForm">Nombre de usuari@</label>
                         <div class="inputsIcon">
                             <input type="text" class="inputStyle" name="username" id="username" placeholder="Ingrese un nombre de usuario">
@@ -41,7 +41,7 @@
                         <p class="aviso2">"El campo usuario debe contener entre 4 y 16 caracteres"</p>
                     </div>
                     
-                    <div class = "inputboxes" id="inputboxesemail">
+                    <div class = "inputboxes-register" id="inputboxesemail">
                         <label for = "email" class="labelForm">Email</label>
                         <div class="inputsIcon">
                             <input type = "email" class="inputStyle" name = "email" id = "email" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>" placeholder="Ingrese un email">
@@ -52,7 +52,7 @@
 
                     </div>
                     
-                    <div class = "inputboxes" id="inputboxespassword">    
+                    <div class = "inputboxes-register" id="inputboxespassword">    
                         <label for = "password" class="labelForm">Contraseña</label>
                         <div class="inputsIcon">
                             <input type = "password" class="inputStyle" name = "password" id = "password" placeholder="Ingrese una contraseña">
@@ -62,7 +62,7 @@
                         <p class="aviso2">"La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial"</p>
                     </div>
                     
-                    <div class = "inputboxes" id="inputboxespassword2">
+                    <div class = "inputboxes-register" id="inputboxespassword2">
                         <label for = "confirmPassword" class="labelForm">Confirmar contraseña</label>
                         <div class="inputsIcon">
                             <input type = "password" class="inputStyle" name = "confirmPassword" id = "confirmPassword" placeholder="Repita la contraseña">
@@ -72,8 +72,8 @@
                     </div>
 
                     <!--Botones formulario-->
-                    <div class = "submit-button-box">
-                        <button type = "submit" id = "registerButton">Registrarse</button>
+                    <div class = "submit-button-box-register">
+                        <button type = "submit" id = "registerButton-register">Registrarse</button>
                     </div>
                     <p class="mensajeExito" id="mensajeExito">Formulario enviado exitosamente!</p>
                 </div>   
@@ -83,13 +83,13 @@
         </form>
 
         <!--Divisor-->
-        <div class = "divider">
-            <div class="circle">O</div>
+        <div class = "divider-register">
+            <div class="circle-register">O</div>
         </div>
 
         <!--Logo-->
         <div class = "register-right">
-            <div class="button-container">
+            <div class="button-container-register">
             <!--Boton Google-->
                 <script src="https://accounts.google.com/gsi/client" async></script>
                 <div id="g_id_onload"
@@ -114,7 +114,7 @@
         
         <div class = "register-down">
             <p>Ya tengo una cuenta</p>
-            <button class = "login-button-box" id = "loginButton">
+            <button class = "login-button-box-register" id = "loginButton-register">
                 <a href = "/users/login">Iniciar sesión</a>
             </button>
         </div> 
