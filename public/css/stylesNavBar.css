@@ -185,6 +185,9 @@ a:hover
 .dropdown-content a:hover
     {background-color: #ddd;}
 
+.dropdown-content a[href="/users/logout"]:hover
+    {background-color: red;}
+
 .dropdown:hover > .dropdown-content
     {display: block;}
 
