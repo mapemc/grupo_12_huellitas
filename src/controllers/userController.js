@@ -49,12 +49,12 @@ const userController = {
     
             req.session.user = newUser;
 
-            User.push(newUser); 
-            /*fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));*/
+/*             User.push(newUser); 
+ */            /*fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));*/
     
             res.redirect("/");
         } catch (error) {
-            res.status(500).send("Error al registrarse");
+            res.status(500).send("Error al registrarse" + error.message);
         }
     },    
     /*Edit form*/
