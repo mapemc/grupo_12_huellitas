@@ -54,9 +54,8 @@ app.use("/products", productRouter);
 app.use("/services", servicesRouter);
 app.use ("/cart", cartRouter);
 
-/*Not found
-app.use((req, res, next) => {res.status(404).render('notFound')})*/
-
+/* Not found */
+app.use((req, res, next) => {res.status(404).render('notFound')})
 // * Servidor *// 
 app.listen(3456, () => {
     console.log('Servidor corriendo en http://localhost:3456');
