@@ -44,9 +44,16 @@ footer
 .contactList-footer li
     {margin-bottom: 5px;}
 
+.navList-footer a,
+.aboutList-footer a,
+.contactList-footer a
+    {color: #333}
+    
+
 .sitesLogos-footer
     {display: flex;
     gap: 10px;}
+
 
 .sitesLogos-footer a
     {color: #F8F8F8;}
