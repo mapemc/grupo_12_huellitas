@@ -271,4 +271,15 @@ input:invalid + .error-message
 }
 
 
+/* //////////VALIDACIONES FRONT////// */
 
+.errors{
+    color: #bb2929;
+    background-color: #ffbaba8c;
+    font-size: 14px;
+    list-style-type: none;
+    width: max-content;
+    text-transform: none;
+    padding: unset;
+    margin: 5px;
+}

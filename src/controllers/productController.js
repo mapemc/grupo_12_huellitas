@@ -47,14 +47,14 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "accesorios"){
+        if(product.category === "Accesorios"){
           accesorios.push(product)} 
       });
       res.render("accesorios.ejs", { accesorios});
       }
        
       catch(error){
-        res.send(error);
+        res.send(error); 
       }   
     },  
 
@@ -65,7 +65,7 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "alimentos"){
+        if(product.category === "Alimentos"){
           alimentos.push(product)} 
       });
       res.render("alimentos.ejs", { alimentos});

@@ -8,10 +8,12 @@ window.addEventListener("load", () => {
     
 
     //////////AVATAR////////////
-    const fileField = document.getElementById("avatar-input");
+    const fileField = document.querySelector("#avatar-input");
     
 
     fileField.addEventListener("change", (e) => {
+
+        console.log(e);
 
         const errorsAvatar = [];
         

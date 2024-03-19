@@ -40,7 +40,7 @@ main
     display: flex;
     flex-direction: column;
     border: #333 1px solid;
-    border-radius: 10px;
+   /*  border-radius: 10px; */
     background-color: #ebebeb;}
 
 .name-description label
@@ -57,7 +57,7 @@ main
     margin-bottom: 10px;
     border: 1px solid #888;
     font-size: 12px;
-    border-radius: 10px;
+ /*    border-radius: 10px; */
     margin-left: 10px;}
 
 /* Fotos */
@@ -68,7 +68,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+  /*   border-radius: 10px; */
     border: #333 1px solid;}
 
 .image label
@@ -100,7 +100,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+   /*  border-radius: 10px; */
     border: #333 1px solid;
     align-items: center;}
 
@@ -115,7 +115,7 @@ main
     box-sizing: border-box;
     border: 1px solid #888;
     font-size: 12px;
-    border-radius: 10px;
+  /*   border-radius: 10px; */
     text-align-last: center;
     text-align: center;}
 
@@ -127,7 +127,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+   /*  border-radius: 10px; */
     border: #333 1px solid;}
 
 .category label
@@ -150,7 +150,7 @@ main
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+  /*   border-radius: 10px; */
     border: #333 1px solid;
     align-items: center;
     flex-wrap: wrap;}
@@ -202,7 +202,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-    border-radius: 10px;}
+  /*   border-radius: 10px; */}
 
 .deleteButton:hover
     {background-color: #E97777;}
@@ -219,7 +219,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-    border-radius: 10px;
+   /*  border-radius: 10px; */
     text-decoration: none;
     text-align: center;}
 
@@ -238,7 +238,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-    border-radius: 10px;}
+   /*  border-radius: 10px; */}
 
 .editProductButton:hover
     {background-color: rgba(17, 153, 158, 1);}
