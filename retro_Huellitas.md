@@ -50,13 +50,18 @@
 
 **Comenzar a hacer:** Organizar sesiones de retroalimentación específicas del proyecto con stakeholders para obtener perspectivas externas y mejorar el producto final.
 Hacer más: Fomentar la autogestión y la toma de decisiones dentro del equipo, promoviendo un mayor sentido de propiedad sobre el trabajo.
+**Hacer más:** Incrementar el uso de sesiones de práctica enfocadas en problemas específicos del proyecto para afianzar conocimientos y habilidades.
 **Continuar haciendo:** Seguir fomentando un ambiente de trabajo positivo donde todos se sientan valorados y motivados para contribuir.
 **Hacer menos:** Minimizar el tiempo dedicado a tareas que pueden ser automatizadas o simplificadas mediante el uso de tecnología o herramientas adecuadas.
 **Dejar de hacer:** Eliminar cualquier actividad que distraiga o desvíe al equipo de sus objetivos principales, enfocándose en lo que realmente importa para el éxito del proyecto.
 
 *SPRINT 8 - APIs + React* 
 
-**Comenzar a hacer:** completar.
-**Continuar haciendo:** Completar
-**Hacer menos:** Completar.
-**Dejar de hacer:** Completar.
+**Comenzar a hacer:** Implementar revisiones de código entre pares. Documentar las API consumidas y los componentes de React desarrollados.
+**Hacer más:**Incorporar tiempos de aprendizaje y experimentación con nuevas tecnologías relacionadas con React y APIs para innovar y mejorar el producto.
+Mejorar la comunicación con los stakeholders para asegurar que las expectativas y los avances están alineados.
+**Continuar haciendo:** Sesiones de pair programming para tareas complejas. 
+**Hacer menos:** Trabajar en múltiples características simultáneamente. Sobrecarga de trabajo hacia el final del sprint.
+**Dejar de hacer:** Evitar discusiones técnicas profundas en reuniones generales. 
+
+
