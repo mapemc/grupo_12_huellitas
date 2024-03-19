@@ -216,6 +216,8 @@ input
     font-size: 14px;
     list-style-type: none;
     width: max-content;
+    text-transform: none;
+    padding: unset;
 }
 
 .email-error {

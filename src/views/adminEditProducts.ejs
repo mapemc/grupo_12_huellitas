@@ -11,7 +11,11 @@
 
     <main>
         <h3 class = "title">Editar Producto</h3>
-        <form class="form" action = "/products/edit/<%= product.id %>?_method=PUT" method = "POST" class = "products-form" enctype="multipart/form-data" >
+
+        <ul class="errors alert-warning"> 
+        </ul>
+
+        <form class="form" id="form" action = "/products/edit/<%= product.id %>?_method=PUT" method = "POST" class = "products-form" enctype="multipart/form-data" >
         
             <!--Cuerpo-->
             <!--Campo name-->
@@ -42,7 +46,18 @@
             <!-- campo photo -->
             <div class="image">
                 <label for="image" class="form-label">Fotos</label>
-                <input class="form-input" type="file" name="photo" value="<%= locals.oldData ? oldData.photo : "" %>">
+                <input class="form-input" type="file" name="photo" id="photo" value="<%= locals.oldData ? oldData.photo : "" %>">
+                
+                <!-- <script>
+                    const photoInput = document.querySelector("#photo");
+                    if (photoInput) {
+                        const photoInputId = photoInput.id;
+                        console.log("ID del input photo:", photoInputId);
+                    } else {
+                        console.error("El input con id 'photo' no se encuentra en el DOM.");
+                    }
+                </script> -->
+
                 <% if (locals.errors && errors.photo) { %>
                     <div class="tex-danger">
                         <%= errors.photo.msg %>
@@ -136,5 +151,8 @@
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
+
+    <script src="/js/editProductValidation.js"></script>
+
 </body>	
 </html>
