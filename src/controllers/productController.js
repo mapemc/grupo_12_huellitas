@@ -82,12 +82,19 @@ const productController = {
      //------------VALIDACIÓN DE NUEVOS PRODUCTOS
 
     processCreate: async (req, res) =>{
+      /* ----------------------- VALIDACION DE NUEVOS PRODUCTOS ---------------- */
+      const resultadosdeValidacion = validationResult(req);
+        if (resultadosdeValidacion.errors.length > 0 ){
+         return res.render('adminNewProducts.ejs', {
+          errors: resultadosdeValidacion.mapped(),
+          oldData: req.body
+        })
+      }
+
       try{
         //console.log("Entrando en la función create");
         
-        //const insaleValue = req.body.inSale === 1 ? 1 : 0;
-
-        await db.Product.create({
+                await db.Product.create({
         name: req.body.name,
         category: req.body.category,
         price: req.body.price,
@@ -127,9 +134,9 @@ const productController = {
             } else {
                 res.status(404).send('Producto no encontrado');
             }}
-      catch(error){
-        res.send(error);
-      }
+          catch(error){
+           res.send(error);
+          }
     },
 
     processEdit: async (req, res) => {
