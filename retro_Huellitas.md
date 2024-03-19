@@ -49,3 +49,10 @@ Hacer más: Fomentar la autogestión y la toma de decisiones dentro del equipo, 
 **Continuar haciendo:** Seguir fomentando un ambiente de trabajo positivo donde todos se sientan valorados y motivados para contribuir.
 **Hacer menos:** Minimizar el tiempo dedicado a tareas que pueden ser automatizadas o simplificadas mediante el uso de tecnología o herramientas adecuadas.
 **Dejar de hacer:** Eliminar cualquier actividad que distraiga o desvíe al equipo de sus objetivos principales, enfocándose en lo que realmente importa para el éxito del proyecto.
+
+*SPRINT 8*
+
+**Comenzar a hacer:** completar.
+**Continuar haciendo:** Completar
+**Hacer menos:** Completar.
+**Dejar de hacer:** Completar.
