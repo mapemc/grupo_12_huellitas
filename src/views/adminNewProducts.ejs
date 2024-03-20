@@ -17,10 +17,10 @@
                 <label for = "name" class = "form-label">Nombre</label>
                     <input 
                     type = "text" 
-                    name = "nombre" 
+                    name = "name" 
                     id = "name" 
                     class = "form-input <%= locals.errors && errors.name ? 'is-invalid border-red': null %>" 
-                    value="<%= locals.olData ? locals.olData.name : null %>"
+                    value="<%= locals.oldData ? oldData.name : null %>"
                     placeholder = "Ej: Collar rojo para perro"
                     >
                     <!-- ------------VALIDACION DEL NAME ------------------------------>
@@ -29,17 +29,12 @@
                                 <%= errors.name.msg%>
                             </div>
                         <% } %>
-                <label for = "detail">Descripción</label>
-                    <textarea name = "description" 
-                    id = "detail" 
-                    class = "form-input" 
-                    placeholder = "Agregá una descripción copada"
-                    value="<%= locals.olData ? olData.name : null %>"
-                    ></textarea>
+                <label for = "description">Descripción</label>
+                    <textarea name = "description" id = "description" class = "form-input" placeholder = "Agregá una descripción copada"><%= locals.oldData ? locals.oldData.description : null %></textarea>
                     <!-- ------------VALIDACION DE LA DESCRIPCIÓN ------------------------------>
-                    <% if (locals.errors && errors.detail) {%>
+                    <% if (locals.errors && errors.description) {%>
                         <div class = errors>
-                            <%= errors.detail.msg%>
+                            <%= errors.description.msg%>
                         </div>
                     <% } %>
             </div>
@@ -49,7 +44,7 @@
                     type = "file" 
                     name = "photo" 
                     accept = ".jpg, .png, .svg" 
-                    id = "photos" 
+                    id = "photo" 
                     class = "form-input"
                     >
 <!--     -------------------------------VALIDACIÓN DE LA FOTO------------------------ -->
@@ -69,7 +64,7 @@
                 name = "price" 
                 id = "price" 
                 class = "form-input"
-                value="<%= locals.olData ? olData.name : null %>"
+                value="<%= locals.oldData ? oldData.price : null %>"
                 >
                 <label for = "stock" class = "form-label">Stock</label>
                 <input 
@@ -78,6 +73,7 @@
                 name = "stock" 
                 id = "stock" 
                 class = "form-input"
+                value="<%= locals.oldData ? oldData.stock : null %>"
                 >
             </div>           
            <!-- ------------VALIDACION PRECIOS ------------------------------>
@@ -135,7 +131,7 @@
                 <!--Boton borrar contenido y volver para atras-->
                 <a href = "/products/products" class = "cancelButton">Cancelar</a>
                 <!--Boton nuevo-->
-                <button type = "submit" id = "newProductButton" class = "newProductButton">Agregar</button>
+                <button type= "submit" id = "newProductButton" class = "newProductButton">Agregar</button>
             </div>
         </form>
     </main>

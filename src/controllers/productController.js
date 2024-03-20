@@ -92,9 +92,9 @@ const productController = {
       }
 
       try{
-        //console.log("Entrando en la función create");
+        console.log("Entrando en la función create")
         
-                await db.Product.create({
+       await db.Product.create({
         name: req.body.name,
         category: req.body.category,
         price: req.body.price,
@@ -144,7 +144,7 @@ const productController = {
       try {
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
-        console.log(product)
+        /* console.log(product) */
 
           if (product) {
             const updateData = {

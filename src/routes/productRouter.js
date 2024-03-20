@@ -20,7 +20,7 @@ const {body} = require('express-validator');
 const validaciones = [
     body('name').notEmpty().withMessage ('Ingresa nombre de producto'),
     body('description').notEmpty() .withMessage ('Ingresa una descripción del producto'),
-    body('detail').notEmpty() .withMessage ('Ingresa una descripción del producto'),
+    /* body('detail').notEmpty() .withMessage ('Ingresa una descripción del producto'), */
     body('price').notEmpty() .withMessage ('Ingresa el valor del producto'),
     body('stock').notEmpty() .withMessage ('Ingresa la cantidad de productos en stock'),
     body("photo").custom((value, { req })=>{
