@@ -84,6 +84,7 @@ const productController = {
     processCreate: async (req, res) =>{
       /* ----------------------- VALIDACION DE NUEVOS PRODUCTOS ---------------- */
       const resultadosdeValidacion = validationResult(req);
+      
         if (resultadosdeValidacion.errors.length > 0 ){
          return res.render('adminNewProducts.ejs', {
           errors: resultadosdeValidacion.mapped(),
@@ -144,8 +145,7 @@ const productController = {
       try {
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
-        /* console.log(product) */
-
+        
           if (product) {
             const updateData = {
               name: req.body.name,

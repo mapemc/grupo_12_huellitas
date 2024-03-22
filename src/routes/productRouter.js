@@ -3,7 +3,9 @@ const router = express.Router();
 const path = require('path');
 const productController = require("../controllers/productController.js");
 const adminMiddleware = require('../middlewares/adminMiddleware.js');
-
+const { body } = require('express-validator');
+const validationsEditProduct = require('../validators/productEditValidator.js');
+const validationsNewProduct = require('../validators/productNewValidator.js');
 
 //--------------------*Agregado multer-----------------------*/
 const multer = require('multer');
@@ -17,38 +19,14 @@ const storage = multer.diskStorage(
 
 const uploadFile = multer({ storage:storage }); /*Execution saved*/
 
-//----------------VALIDATOR---------------------------------
-const {body} = require('express-validator');
-const validaciones = [
-    body('name').notEmpty().withMessage ('Ingresa nombre de producto'),
-    body('description').notEmpty() .withMessage ('Ingresa una descripción del producto'),
-    /* body('detail').notEmpty() .withMessage ('Ingresa una descripción del producto'), */
-    body('price').notEmpty() .withMessage ('Ingresa el valor del producto'),
-    body('stock').notEmpty() .withMessage ('Ingresa la cantidad de productos en stock'),
-    body("photo").custom((value, { req })=>{
-        let file= req.file
-        console.log(req.file)
-        let acceptedExtensions= [".jpg", ".png", ".jpeg", ".gif"];
-
-        if (!file) {
-          throw new Error ("Tienes que subir una imagen del producto");
-        }else{
-          let fileExtension = path.extname(file.originalname.toLowerCase());
-          if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error ("Las extensiones permitidas son .jpg, .png, .jpeg, .gif");
-          }
-        }
-        return true
-      })
-];
 
 //---------------------RUTAS---------------------------------------
 router.get("/products", productController.productsAll)
 router.get("/create", adminMiddleware, productController.create);
-router.post("/create", adminMiddleware, uploadFile.single("photo"),validaciones, productController.processCreate);
+router.post("/create", adminMiddleware, uploadFile.single("photo"),validationsNewProduct, productController.processCreate);
 router.get("/detail/:id", productController.detail);
 router.get("/edit/:id", adminMiddleware, productController.edit);
-router.put("/edit/:id", adminMiddleware, uploadFile.single("photo"), validaciones, productController.processEdit);
+router.put("/edit/:id", adminMiddleware, uploadFile.single("photo"), validationsEditProduct, productController.processEdit);
 router.delete("/delete/:id", adminMiddleware, productController.destroy); 
 
 /////rutas por categoría de productos/////
