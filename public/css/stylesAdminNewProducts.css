@@ -61,17 +61,18 @@ main
     margin-left: 10px;}
 
 /* Fotos */
-.image
+.photos
     {width: 100%;
     margin-bottom: 15px;
     background-color: #ebebeb;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 10%;
     border-radius: 10px;
     border: #333 1px solid;}
 
-.image label
+.photos label
     {display: block;
     margin-bottom: 5px;}
 
@@ -167,7 +168,7 @@ main
     border: 1px solid #888;}
 
  .form-label
-    {width: 100%;
+    {/* width: 100%; */
     padding: 10px;
     margin-bottom: 50%;
 }   
@@ -227,13 +228,12 @@ main
 .newProductButton:hover
     {background-color: rgba(17, 153, 158, 1);}
 /* -------------------------CUANDO TENGAMOS ERRORES DE VALIDACIÓN------------------------ */
-.is-invalid{
-    border-color: red;
-    border-bottom-color: red;
+.border-red{
+   border-color: red;
 }    
 .errors {
     color: red;
-    padding: 3%;
+    padding-left: 3%;
 }
 
 /*----------Breakpoints----------*/

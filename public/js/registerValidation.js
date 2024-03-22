@@ -7,7 +7,6 @@ console.log(inputs);
 const expresiones = {
 	password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/,
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
 
@@ -26,7 +25,6 @@ const validarFormulario = (e) =>{
                 document.getElementById("inputboxesUsuario").classList.add('inputboxes__incorrecto')
                 document.getElementById("inputboxesUsuario").classList.remove('inputboxes__correcto')
                 document.querySelector("#inputboxesUsuario .aviso1").classList.add('aviso1-activo')
-                
                 campos[username] = false;
 
             } else if (e.target.value.length < 4 || e.target.value.length > 16) {

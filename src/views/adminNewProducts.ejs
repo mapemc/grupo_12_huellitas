@@ -17,10 +17,10 @@
                 <label for = "name" class = "form-label">Nombre</label>
                     <input 
                     type = "text" 
-                    name = "nombre" 
+                    name = "name" 
                     id = "name" 
-                    class = "form-input <%= locals.errors && errors.name ? 'is-invalid': null %>" 
-                    value="<%= locals.olData ? olData.name : null %>"
+                    class = "form-input <%= locals.errors && errors.name ? 'is-invalid border-red': null %>" 
+                    value="<%= locals.oldData ? oldData.name : null %>"
                     placeholder = "Ej: Collar rojo para perro"
                     >
                     <!-- ------------VALIDACION DEL NAME ------------------------------>
@@ -29,17 +29,12 @@
                                 <%= errors.name.msg%>
                             </div>
                         <% } %>
-                <label for = "detail">Descripción</label>
-                    <textarea name = "description" 
-                    id = "detail" 
-                    class = "form-input" 
-                    placeholder = "Agregá una descripción copada"
-                    value="<%= locals.olData ? olData.name : null %>"
-                    ></textarea>
+                <label for = "description">Descripción</label>
+                    <textarea name = "description" id = "description" class = "form-input" placeholder = "Agregá una descripción copada"><%= locals.oldData ? locals.oldData.description : null %></textarea>
                     <!-- ------------VALIDACION DE LA DESCRIPCIÓN ------------------------------>
-                    <% if (locals.errors && errors.detail) {%>
+                    <% if (locals.errors && errors.description) {%>
                         <div class = errors>
-                            <%= errors.detail.msg%>
+                            <%= errors.description.msg%>
                         </div>
                     <% } %>
             </div>
@@ -49,12 +44,19 @@
                     type = "file" 
                     name = "photo" 
                     accept = ".jpg, .png, .svg" 
-                    id = "photos" 
+                    id = "photo" 
                     class = "form-input"
                     >
+<!--     -------------------------------VALIDACIÓN DE LA FOTO------------------------ -->
+                    <% if (locals.errors && errors.photo) { %>
+                        <div class="errors">
+                            <%= errors.photo.msg %>
+                        </div>
+                   <% } %>
             </div>
             <div class = "price-stock">
             <label for = "price" class = "form-label">Precio</label>
+                
                 <input 
                 type = "number" 
                 step = 0.01 
@@ -62,50 +64,50 @@
                 name = "price" 
                 id = "price" 
                 class = "form-input"
-                value="<%= locals.olData ? olData.name : null %>"
+                value="<%= locals.oldData ? oldData.price : null %>"
                 >
-                
-            <label for = "stock" class = "form-label">Stock</label>
+                <label for = "stock" class = "form-label">Stock</label>
                 <input 
                 type = "number" 
                 min = 0 
                 name = "stock" 
                 id = "stock" 
                 class = "form-input"
+                value="<%= locals.oldData ? oldData.stock : null %>"
                 >
-                
             </div>           
            <!-- ------------VALIDACION PRECIOS ------------------------------>
-           
-           <% if (locals.errors && errors.price) {%>
-            <div class = errors>
-                <%= errors.price.msg%>
-            </div>
+                
+            <% if (locals.errors && errors.price) {%>
+                <div class = errors>
+                    <%= errors.price.msg%>
+                </div>
             <% } %>
             <!-- ------------VALIDACION STOCK ------------------------------>
             <% if (locals.errors && errors.stock) {%>
-            <div class = errors>
-                <%= errors.stock.msg%>
-            </div>
+                <div class = errors>
+                    <%= errors.stock.msg%>
+                </div>
             <% } %>
 
             <div class = "category">
                 <label for = "category" class = "form-label">Categoría</label>
                     <select name = "category" id = "category" class = "form-input">
-                        <option value = "default-cat">Categoría</option>
-                        <option value = "accesories">Accesorios</option>
-                        <option value = "food">Alimento</option>
+                        <option value = "Sin categoría">Categoría</option>
+                        <option value = "Accesorios">Accesorios</option>
+                        <option value = "Alimentos">Alimento</option>
                     </select>
                     <div class = "size-checkboxes">
                         <label for = "insale"><input type = "checkbox" id = "insale" name = "insale" value = "1">En Oferta</label>
                     </div>
             </div>
-            <!-- ------------VALIDACION FRONT ------------------------------>
+            <!-- ------------VALIDACION  ------------------------------>
             <% if (locals.errors && errors.category) {%>
                 <div class = errors>
                     <%= errors.category.msg%>
                 </div>
             <% } %>
+<!--             -------------------------------------------------------------------------- -->
             <div class = "specs">
                 <label for = "color" class = "form-label">Color</label>
                     <select name = "color" id = "color" class = "form-input">
@@ -129,7 +131,7 @@
                 <!--Boton borrar contenido y volver para atras-->
                 <a href = "/products/products" class = "cancelButton">Cancelar</a>
                 <!--Boton nuevo-->
-                <button type = "submit" id = "newProductButton" class = "newProductButton">Agregar</button>
+                <button type= "submit" id = "newProductButton" class = "newProductButton">Agregar</button>
             </div>
         </form>
     </main>

@@ -20,6 +20,7 @@ const {body} = require('express-validator');
 const validaciones = [
     body('name').notEmpty().withMessage ('Ingresa nombre de producto'),
     body('description').notEmpty() .withMessage ('Ingresa una descripción del producto'),
+    /* body('detail').notEmpty() .withMessage ('Ingresa una descripción del producto'), */
     body('price').notEmpty() .withMessage ('Ingresa el valor del producto'),
     body('stock').notEmpty() .withMessage ('Ingresa la cantidad de productos en stock'),
     body("photo").custom((value, { req })=>{
@@ -42,7 +43,7 @@ const validaciones = [
 //---------------------RUTAS---------------------------------------
 router.get("/products", productController.productsAll)
 router.get("/create", productController.create);
-router.post("/create", uploadFile.single("photo"), productController.processCreate);
+router.post("/create", uploadFile.single("photo"),validaciones, productController.processCreate);
 router.get("/detail/:id", productController.detail);
 router.get("/edit/:id", productController.edit);
 router.put("/edit/:id", uploadFile.single("photo"), validaciones, productController.processEdit);

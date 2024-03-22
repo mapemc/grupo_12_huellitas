@@ -45,7 +45,7 @@
     object-fit:contain;}
 
 .slide-content img[src$=".gif"]
-    {width: 210%;
+    {width: 310%;
     height: 100%;}
 
 .back, .forward

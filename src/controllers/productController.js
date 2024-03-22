@@ -47,14 +47,14 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "accesorios"){
+        if(product.category === "Accesorios"){
           accesorios.push(product)} 
       });
       res.render("accesorios.ejs", { accesorios});
       }
        
       catch(error){
-        res.send(error);
+        res.send(error); 
       }   
     },  
 
@@ -65,7 +65,7 @@ const productController = {
 
       try{
       products.forEach(product => {
-        if(product.category === "alimentos"){
+        if(product.category === "Alimentos"){
           alimentos.push(product)} 
       });
       res.render("alimentos.ejs", { alimentos});
@@ -82,12 +82,19 @@ const productController = {
      //------------VALIDACIÓN DE NUEVOS PRODUCTOS
 
     processCreate: async (req, res) =>{
-      try{
-        //console.log("Entrando en la función create");
-        
-        //const insaleValue = req.body.inSale === 1 ? 1 : 0;
+      /* ----------------------- VALIDACION DE NUEVOS PRODUCTOS ---------------- */
+      const resultadosdeValidacion = validationResult(req);
+        if (resultadosdeValidacion.errors.length > 0 ){
+         return res.render('adminNewProducts.ejs', {
+          errors: resultadosdeValidacion.mapped(),
+          oldData: req.body
+        })
+      }
 
-        await db.Product.create({
+      try{
+        console.log("Entrando en la función create")
+        
+       await db.Product.create({
         name: req.body.name,
         category: req.body.category,
         price: req.body.price,
@@ -127,9 +134,9 @@ const productController = {
             } else {
                 res.status(404).send('Producto no encontrado');
             }}
-      catch(error){
-        res.send(error);
-      }
+          catch(error){
+           res.send(error);
+          }
     },
 
     processEdit: async (req, res) => {
@@ -137,7 +144,7 @@ const productController = {
       try {
         const idProduct = req.params.id;
         const product = await db.Product.findByPk(idProduct);
-        console.log(product)
+        /* console.log(product) */
 
           if (product) {
             const updateData = {

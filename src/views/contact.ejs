@@ -1,113 +1,65 @@
 <!DOCTYPE html>
-<html lang = "es">
+<html lang="es">
 <head>
     <%- include("./partials/head.ejs", {cssSheet:"stylesContacto", title:"Contacto"}) %>
-
-    <style>
-        .cuerpoContacto {
-            display: flex;
-            height: 100vh; /* Altura total de la ventana del navegador */
-            width: 75%;
-        }
-        .col-izquiera-margen-contacto, .col-dercha-margen-contacto {
-            flex: 1; /* Ambas partes ocuparán el mismo espacio */
-            border: 1px solid black; /* Bordes para visualización */
-        }
-
-        /*
-        .col-izquiera-margen-contacto {
-            background-color: lightblue; /* Color de fondo de la parte izquierda */
-        }
-         
-        /*
-        .col-dercha-margen-contacto {
-            background-color: lightgreen; /* Color de fondo de la parte derecha */
-        }   -->
-
-
-    </style>
-
 </head>
 
 <body>
     <header>
         <!--Header Huellitas-->
-        
-            <%- include('partials/header.ejs') %>
-            
+        <%- include('partials/header.ejs') %>
     </header>
-
     <main>
-        <h3 class = "title">¡Contactanos!</h3>
-
-
-<div class="cuerpoContacto">
-    <section class="formulario">
-
-        <!--Columna-Izquierda-->
-        <div class="col-izquiera-margen-contacto">
-
-        <form action="tu_servidor_de_procesamiento" method="POST">
-            <div class="form-group">
-                <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Apellido" id="apellido" name="apellido" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Correo Electrónico" id="correo" name="correo" required>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Código de área Ej.: 011 Capital Federal" id="celular" name="celular" required>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Nombre de Usuario" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Asunto" id="asunto" name="asunto" required>
-            </div>
-            <div class="form-group">
-                <textarea id="mensaje" placeholder="Mensaje" name="mensaje" required></textarea>
-            </div>
-            <button class="button-send" type="submit">Enviar</button>
-        </form>
-
+        <h3 class="title-contact">¡Contactanos!</h3>
+        <div class="cuerpoContacto">
+            <div class="columns-contact">
+                <!--Columna-Izquierda-->
+                <section class="formulario-contact col-izquiera-margen-contacto">
+                    <form action="/contact" method="POST">
+                        <div class="form-group">
+                            <input class = "contact-input" type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input class = "contact-input" type="text" placeholder="Apellido" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <input class = "contact-input" type="email" placeholder="Correo Electrónico" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <input class = "contact-input" type="text" placeholder="Código de área Ej.: 011 Capital Federal" id="celular" name="celular" required>
+                        </div>
+                        <div class="form-group">
+                            <input class = "contact-input" type="text" placeholder="Nombre de Usuario" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <input class = "contact-input" type="text" placeholder="Asunto" id="asunto" name="asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" placeholder="Mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <button class="button-send-contact" type="submit">Enviar</button>
+                    </form>
+                </section>
+                <!--Columna-Derecha-->
+                <section class="col-dercha-margen-contacto">
+                    <h3>Centro de Atención al Cliente</h3>
+                    <p class="contenido-contact">
+                        <strong><a href="mailto:contacto@huellitas.com.ar">contacto@huellitas.com.ar</a></strong><br>
+                        <strong>Horario de atención: </strong>
+                            Lunes a viernes de 9 a 18 hs.<br>
+                        <i class="telefono">0800-4110-8428 (MIAU)</i><br>
+                        <strong>Urgencias 24hrs: </strong>
+                        <i class="telefono-urgencias"> 0800-4110-7387 (PETS)</i><br>
+                    </p>                    
+                    <!-- Mapa -->
+                    <h3>Ubicación</h3>
+                    <section class="mapa-contact">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7005649122398!2d-58.520340724524225!3d-34.611732557921044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7d7332684cd%3A0xd9ee55bbdfa6c539!2sDevoto%20Shopping!5e0!3m2!1ses!2sar!4v1703176491679!5m2!1ses!2sar" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </section>
+                </section>
+            </div>            
         </div>
-       
-        <!--Columna-Centro-->
-        <div class = "divider">
-            <div class="circle">H</div>
-        </div>
-
-        <!--Columna-Derecha-->
-        <div class="col-dercha-margen-contacto">
-            <h3>Centro de Atención al Cliente</h3>
-            <br>
-            <p class="contenido">
-                <i class="subcontacto"></i><strong><a href="mailto:clientes@huellitas.com.ar">clientes@huellias.com.ar</a></strong>
-                <br>
-                <i class="subcontacto"></i> 0800 - 4110-PETS (7387)<br>
-                <strong><i class="subcontacto"></i>Horario de atención:</strong> Lunes a viernes de 9 a 18 hs.
-                <i class="subcontacto"></i> 0800 - 4110-PETS (7387)<br>
-                <strong><i class="subcontacto"></i>Urgencias:</strong> Las 24 horas.
-                <i class="subcontacto"></i> 0800 - 4110-MIAU (8428)<br>
-            </p>
-            <br>
-            
-            <h3>Ubicación </h3>
-            <br>
-            <br>
-        </div>
-
-
-        </section>
-        <section class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7005649122398!2d-58.520340724524225!3d-34.611732557921044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7d7332684cd%3A0xd9ee55bbdfa6c539!2sDevoto%20Shopping!5e0!3m2!1ses!2sar!4v1703176491679!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-        
-</div>
     </main>
-
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
