@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const productController = require("../controllers/productController.js");
+const adminMiddleware = require('../middlewares/adminMiddleware.js');
+
 
 //--------------------*Agregado multer-----------------------*/
 const multer = require('multer');
@@ -42,12 +44,12 @@ const validaciones = [
 
 //---------------------RUTAS---------------------------------------
 router.get("/products", productController.productsAll)
-router.get("/create", productController.create);
-router.post("/create", uploadFile.single("photo"),validaciones, productController.processCreate);
+router.get("/create", adminMiddleware, productController.create);
+router.post("/create", adminMiddleware, uploadFile.single("photo"),validaciones, productController.processCreate);
 router.get("/detail/:id", productController.detail);
-router.get("/edit/:id", productController.edit);
-router.put("/edit/:id", uploadFile.single("photo"), validaciones, productController.processEdit);
-router.delete("/delete/:id", productController.destroy); 
+router.get("/edit/:id", adminMiddleware, productController.edit);
+router.put("/edit/:id", adminMiddleware, uploadFile.single("photo"), validaciones, productController.processEdit);
+router.delete("/delete/:id", adminMiddleware, productController.destroy); 
 
 /////rutas por categoría de productos/////
 router.get("/insale", productController.ofertas)
