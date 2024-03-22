@@ -1,63 +1,59 @@
-/* Total */
-* 
-    {font-family: 'Rubik', sans-serif;
-    /* II. M.V.A. Corrección navbar
-    margin: 10px;
-    padding: 0;
-    FF. M.V.A. */
-    box-sizing: border-box;}
+* {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+}
 
-body 
-    {margin: 8px;
+body {
+    margin: 8px;
     padding: 0px;
     height: 90vh;
     background-color: white;
-    /*II L.B. Cambio de color negro a gris*/
     color: rgba(41, 53, 51, 1);
-    /*FF*/}
+}
 
-/* Main */
-main
-    {width: 90%;
+main {
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+}
 
-.title
-    {margin-bottom: 10px;
+.title {
+    margin-bottom: 10px;
     margin-top: 80px;
-    font-size: x-large;}
+    font-size: x-large;
+}
 
-.form
-    {width: 90vw;}
+.form {
+    width: 90vw;
+}
 
-
-/* Nombre y descripcion */
-.name-description
-    {width: 100%;
+.name-description {
+    width: 100%;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     border: #333 1px solid;
-   /*  border-radius: 10px; */
+    border-radius: 10px;
     background-color: #ebebeb;}
 
-.name-description label
-    {display: block;
+.name-description label {
+    display: block;
     margin-bottom: 5px;
     padding: 5px;
-    margin-left: 20px;}
+    margin-left: 20px;
+}
 
 .name-description input,
-.name-description textarea
-    {width: 95%;
+.name-description textarea {
+    width: 95%;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 10px;
     border: 1px solid #888;
     font-size: 12px;
- /*    border-radius: 10px; */
+    border-radius: 10px;
     margin-left: 10px;}
 
 /* Fotos */
@@ -68,7 +64,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-  /*   border-radius: 10px; */
+    border-radius: 10px;
     border: #333 1px solid;}
 
 .image label
@@ -100,7 +96,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-   /*  border-radius: 10px; */
+    border-radius: 10px;
     border: #333 1px solid;
     align-items: center;}
 
@@ -115,7 +111,7 @@ main
     box-sizing: border-box;
     border: 1px solid #888;
     font-size: 12px;
-  /*   border-radius: 10px; */
+    border-radius: 10px;
     text-align-last: center;
     text-align: center;}
 
@@ -127,7 +123,7 @@ main
     padding: 15px;
     display: flex;
     justify-content: space-between;
-   /*  border-radius: 10px; */
+    border-radius: 10px;
     border: #333 1px solid;}
 
 .category label
@@ -150,7 +146,7 @@ main
     padding: 10px;
     display: flex;
     justify-content: space-between;
-  /*   border-radius: 10px; */
+    border-radius: 10px;
     border: #333 1px solid;
     align-items: center;
     flex-wrap: wrap;}
@@ -202,7 +198,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-  /*   border-radius: 10px; */}
+    border-radius: 10px;}
 
 .deleteButton:hover
     {background-color: #E97777;}
@@ -219,7 +215,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-   /*  border-radius: 10px; */
+    border-radius: 10px;
     text-decoration: none;
     text-align: center;}
 
@@ -238,7 +234,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-   /*  border-radius: 10px; */}
+    border-radius: 10px;}
 
 .editProductButton:hover
     {background-color: rgba(17, 153, 158, 1);}
