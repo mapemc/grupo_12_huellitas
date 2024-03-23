@@ -42,7 +42,8 @@ const productRouter = require("./routes/productRouter");
 /*const contactRouter = require("./routes/contactRouter");*/
 const servicesRouter = require("./routes/servicesRouter");
 const cartRouter= require ("./routes/cartRouter");
-
+const apiProductsRouter= require ("./routes/api/apiProductsRouter");
+//const apiUsersRouter= require ("./routes/api/apiUsersRouter");
 
 app.use(express.static("public"));
 
@@ -53,6 +54,11 @@ app.use("/products", productRouter);
 /*app.use("/contact", contactRouter);*/
 app.use("/services", servicesRouter);
 app.use ("/cart", cartRouter);
+
+/* APIs */
+app.use("/api/products", apiProductsRouter);
+//app.use("/api/users", apiUsersRouter);
+
 
 /* Not found */
 app.use((req, res, next) => {res.status(404).render('notFound')})
