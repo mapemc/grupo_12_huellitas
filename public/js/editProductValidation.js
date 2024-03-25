@@ -56,5 +56,11 @@ window.addEventListener("load", () =>{
             }
             console.log("Se envia el formulario!");
         })
+        
+        /*agrego color de fondo a la etiqueta colores*/
+        document.getElementById("color").addEventListener("change", function() {
+            var colorSeleccionado = this.value;
+            document.getElementById("color").className = colorSeleccionado;
+          });
 
 })
