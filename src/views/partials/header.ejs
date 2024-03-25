@@ -65,13 +65,15 @@
                         <div class="dropdown-content">
                             <% if (user && user.username) { %>
                                 <a href="/users/editProfile/<%= user.username %>">Editar perfil</a>
-                                <!-- Aquí deberías usar user.username para el enlace -->
+                                <% if (user.category == 'Admin') { %>
+                                    <a href="/products/create/">Agregar producto</a>
+                                <% } %>
                                 <a href="/users/logout">Cerrar sesión</a>
                             <% } else { %>
                                 <a href="/users/login">Iniciar sesión</a>
                                 <a href="/users/register">Registrarse</a>
                             <% } %>
-                        </div>                        
+                        </div>                                           
                     </div>         
                     
                     <div class = "icon">
