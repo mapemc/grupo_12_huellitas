@@ -135,13 +135,29 @@ main
     margin-bottom: 5px;
     padding: 10px;}
 
-.category select
+/* .category select
     {width: 40%;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #888;
     font-size: 12px;
-    text-align-last: center;}
+    text-align-last: center;} */
+
+.category select#category
+    {width: 30%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    font-size: 12px;
+    border-radius: 0;
+    text-transform: capitalize;
+    background-color: #fff; 
+    appearance: none; /* Eliminar el estilo nativo del sistema operativo */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para navegadores basados en Gecko */
+    box-sizing: border-box;
+    text-align-last: center;
+    text-align: center;}    
 
 /* Color y talle */
 .specs
@@ -159,13 +175,36 @@ main
     {display: block;
     margin-bottom: 5px;}
 
-.specs select
-    {width: 100px;
+.specs select#color
+    {width: 30%; 
     padding: 10px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #888;
     font-size: 12px;
+    border-radius: 0;
+    text-transform: capitalize;
+    appearance: none; /* Eliminar el estilo nativo del sistema operativo */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para navegadores basados en Gecko */
+    box-sizing: border-box;
     text-align-last: center;
-    border: 1px solid #888;}
+    text-align: center;}  
+    .blue
+        {background-color: blue;
+        color: white}
+    .black
+        {background-color: black;
+        color: white}  
+    .green
+        {background-color: green;
+        color: white}
+    .yellow
+        {background-color: yellow;}
+    .red
+        {background-color:red;
+        color: white}
+      
+
 
  .form-label
     {/* width: 100%; */
@@ -204,7 +243,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     text-decoration: none;
     text-align: center;}
 
@@ -223,7 +262,7 @@ main
     margin-top: 10px;
     font-weight: 900;
     font-size: medium;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
 .newProductButton:hover
