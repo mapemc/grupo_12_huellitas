@@ -14,7 +14,7 @@ input
     font-size: 12px;
     text-transform: uppercase;}
 
-.input-boxes 
+.input-boxes
     {margin-top: 1px;
     margin-bottom: 12px;
     display: flex;
@@ -83,6 +83,19 @@ input
 
 .small-input
     {width: 40%;}
+
+.input-boxes select#location
+    {width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    font-size: 12px;
+    border-radius: 0;
+    text-transform: uppercase;
+    background-color: #fff; /* Fondo blanco */
+    appearance: none; /* Eliminar el estilo nativo del sistema operativo */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para navegadores basados en Gecko */}
 
 /*Tarjeta*/
 .card

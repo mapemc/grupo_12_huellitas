@@ -95,8 +95,17 @@
                     </div>
                     <div class="input-boxes">
                         <label for="location" class="form-label">Provincia</label>
-                        <input type="text" name="location" id="location" value="<%= user.location %>">
-                    </div>
+                            <select name="location" id="location">
+                                <% provinces.forEach(provincia => { %>
+                                    <% if (provincia.nombre === user.location) { %>
+                                        <option selected><%= provincia.nombre %></option>
+                                    <% } else { %>
+                                        <option><%= provincia.nombre %></option>
+                                    <% } %>
+                                <% }) %>
+                            </select>
+                    </div> 
+                                     
                     <h4 class="subtitle-right">Mis Métodos de Pago</h4>
                         <div class="card">
                             <div class="visa-card">
@@ -107,7 +116,6 @@
                                     <p class="card-number">**** **** **** 1234</p>
                                 </div>
                             </div>
-<!--                             SETHROGEN1234@GMAIL.COM -->
                         </div>
                 </div>
             </div>

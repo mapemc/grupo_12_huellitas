@@ -68,7 +68,12 @@ router.get("/editProfile/:username", authMiddleware, validationsEditProfile, asy
         }
 
         const userToEdit = await User.findOne({ where: { username: loggedInUsername } });
-        res.render("editProfile", { userToEdit });
+        const response = await fetch('https://apis.datos.gob.ar/georef/api/provincias');
+
+        const provinces = await response.json();
+
+        res.render("editProfile", { user: userToEdit, provinces: provinces.provincias });
+
     }  catch (error) {
         console.error(error);
         return res.status(500).send("Internal Server Error: " + error.message);

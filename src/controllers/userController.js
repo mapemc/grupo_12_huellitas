@@ -65,23 +65,28 @@ const userController = {
             }
             
             const loggedInUser = req.session.user || {}; 
-            res.render("editProfile", { user: loggedInUser });
-
+    
+            const response = await fetch('https://apis.datos.gob.ar/georef/api/provincias');
+            const provinces = await response.json();
+    
+            res.render("editProfile", { user: loggedInUser, provinces: provinces.provincias });
             
         } catch (error) {
             console.error(error);
             return res.status(500).send("Internal Server Error");
-
         }
     },
+    
       
     processEditProfile: async (req, res) => {
         try {
             const loggedInUser = req.session.user.username;
             console.log("Nombre de usuario en sesión:", loggedInUser); 
-            const {username, email, password, birthday, phone, street, address, floor, flat, post_code, location } = req.body;
+            const {username, email, password, birthday, phone, street, address, floor, flat, post_code } = req.body;
             const avatar = req.file ? req.file.filename : req.session.user.avatar;
             const updatedPostCode = post_code !== '' ? post_code : null;
+
+            const selectedProvince = req.body.location;
 
             
             await User.update({
@@ -93,7 +98,7 @@ const userController = {
                 floor,
                 flat,
                 post_code: updatedPostCode,
-                location,
+                location: selectedProvince,
                 avatar,
                 phone,
                 birthday,                
@@ -103,7 +108,6 @@ const userController = {
                 }
             });
     
-            // Consulta para obtener el usuario actualizado
             const updatedUser = await User.findOne({
                 where: {
                     username: loggedInUser
