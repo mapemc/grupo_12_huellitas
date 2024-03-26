@@ -1,4 +1,8 @@
 const path = require("path");
+const { Op } = require("sequelize");
+const db = require('../database/models'); // Importa la configuración de la base de datos
+const Product = require('../database/models/Product')(db.sequelize, db.Sequelize); // Importa el modelo y pasa sequelize y dataTypes
+
 
 
 const mainController ={
@@ -22,5 +26,25 @@ const mainController ={
     contact: (req, res) =>{
         res.render("contact.ejs");
     },
+    search: async (req, res) => {
+        try {
+            const { query } = req.query;
+            const products = await Product.findAll({
+                where: {
+                    [Op.or]: [
+                        { name: { [Op.like]: `%${query}%` } },
+                        { category: { [Op.like]: `%${query}%` } },
+                        { description: { [Op.like]: `%${query}%` } }
+                    ]
+                }
+            });
+            res.render("searchResults.ejs", { products, query }); 
+        } catch (error) {
+            console.error('Error al buscar productos:', error);
+            res.status(500).send('Error al buscar productos');
+        }
+    }
+    
 };
+
 module.exports = mainController;

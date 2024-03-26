@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
-
 const mainController = require("../controllers/mainController.js");
 
 router.get("/", mainController.index);
@@ -33,5 +32,7 @@ router.post('/enviar', (req, res) => {
         });
 });
 router.get("/contact", mainController.contact);
+
+router.get("/search", mainController.search);
 
 module.exports = router;
