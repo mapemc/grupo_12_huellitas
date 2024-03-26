@@ -6,7 +6,7 @@
 }
 
 .img-catalogo{
-    width: 100%;
+    width: 98vw;
     height: auto;
     position: relative;
     z-index: -1;
@@ -19,10 +19,11 @@
     top: 74%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 180%;
+    font-size: 260%;
 }
 
 .products-title{
+   
 }
 
 .container-products{
@@ -54,23 +55,170 @@
 }
 
 .box img{
-    width: 100%;
-    height: auto;
+    width: 230px;
+    height: 280px;
 }
 
 .product-box_image{
     display: flex;
 }
 
+
+
 .product-box_data{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 220px;
     margin-top: 10px;
     border-top: solid 1px #ebebeb;
 }
 
 .price-product{
     margin-top: 16px;
-    padding:0;
+    padding: 10px;
+    font-size: 22px;
+    text-align: right;
+    font-weight: 500;
+    color: rgba(17, 153, 158, 1);
+    text-decoration: none;
+}
+
+.name-product{
+    margin-top: 3px;
+    text-align: left;
+    color: rgba(41, 53, 51, 1);
+    padding: 10px;
+    font-weight: normal;
+    background-color: #7fbcb221;
+    font-size: 130%;
+    text-decoration: none;
+}
+
+.category-product{
+    margin-bottom: 7%;
+    margin-top: 5px;
+    text-align: end;
+    color: rgba(41, 53, 51, 1);
+    padding: 15px;
+    font-size: 16px;
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+a
+{text-decoration: none;}
+
+.img-envios{
+    width: 100vw;
+}
+
+/* banner registrate */
+
+.banner {
+    width: 100%;
+    background-color: #f7a49259;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    /* border: #f4a691 solid 3px; */
+}
+
+.text-left {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #9a5d59;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #e6180ea8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* VISTA INSALE */
+
+.bannerinsale{
+    width: 100%;
+    background-color: #f7a49259;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-leftinsale{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #9a5d59;
+}
+
+.btninsale{
+    padding: 10px 20px;
+    background-color: #e6180ea8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* VISTA ACCESORIOS */
+.banneraccesories{
+    width: 100%;
+    background-color: #a1b8c161;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.text-leftaccesories{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1f534a;
+}
+.btnaccesories{
+    padding: 10px 20px;
+    background-color: #1f9eca;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* VISTA ALIMENTOS */
+.bannerfood{
+    width: 100%;
+    background-color: #a1b8c161;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.text-leftfood{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1f534a;
+}
+.btnfood{
+    padding: 10px 20px;
+    background-color: #1f9eca;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }

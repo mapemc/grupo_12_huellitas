@@ -16,6 +16,13 @@
 		<!-- <h2 class="products-title"></h2> -->
 	</div>
 
+	<div class="banner">
+		<div class="text-left">
+			<p>¡Regístrate para recibir más ofertas y novedades!</p>
+		</div>
+		<button onclick="window.location.href='/users/register'" class="btn">Registrarse</button>
+	</div>
+
     <div class="container-products">
 		<div class="row">
 			
@@ -25,9 +32,9 @@
 						<div class="product-box_image">
 							<img src="/img/<%= product.photo %>" alt="imagen de producto">
 						</div>
-					</a>	
+					</a> 
 						<article class="product-box_data">
-							<a href="/products/detail/<%= product.id %>" gitstyle="text-decoration: none;"> 
+							<a href="/products/detail/<%= product.id %>" gitstyle="text-decoration: none;"></a> 
 							<h2 class="price-product"> $ <%= product.price %></h2>
 							<h1 class="name-product"><%= product.name %></h1>
 							<h3 class="category-product">Categoria: <%= product.category %></h3>
@@ -41,6 +48,10 @@
 	</div>
 	<!-- /todos los productos -->
 
+	<section>
+		<img src="/img/banners/banner_envios.png" alt="imagen-envios" class="img-envios">
+	</section>
+	
 
     <footer>
         <%- include('partials/footer.ejs') %>
