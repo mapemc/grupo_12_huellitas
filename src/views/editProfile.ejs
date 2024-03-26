@@ -31,7 +31,8 @@
                     </div>
                     <div class="input-boxes">
                         <label for="birthday">Cumpleaños</label>
-                        <input type="date" name="birthday" id="birthday" value="<%= user.birthday %>">
+                        <% const formattedBirthday = user.birthday.split(' ')[0]; %>
+                        <input type="date" name="birthday" id="birthday" value="<%= formattedBirthday %>" min="1900-01-01" max="2100-12-31">
                     </div>
                     <div class="input-boxes">
                         <label for="phone">Teléfono</label>

@@ -69,7 +69,7 @@ const userController = {
             const response = await fetch('https://apis.datos.gob.ar/georef/api/provincias');
             const provinces = await response.json();
     
-            res.render("editProfile", { user: loggedInUser, provinces: provinces.provincias });
+            res.render("editProfile", { user: { ...loggedInUser, birthday: loggedInUser.birthday }, provinces: provinces.provincias });
             
         } catch (error) {
             console.error(error);
