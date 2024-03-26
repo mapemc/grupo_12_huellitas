@@ -1,9 +1,14 @@
 const express = require("express");
-const app = express();
 const router = express.Router();
 
 const apiUsersController = require("../../controllers/api/apiUsersController.js");
 
-//router.get("/", apiUsersController.list);
+router.get("/", (req, res) => {
+    apiUsersController.getUsers(req, res);
+});
+
+router.get("/:username", (req, res) => {
+    apiUsersController.getUserByUsername(req, res);
+});
 
 module.exports = router;

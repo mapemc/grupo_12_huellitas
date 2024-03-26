@@ -57,7 +57,9 @@ app.use ("/cart", cartRouter);
 
 /* APIs */
 app.use("/api/products", apiProductsRouter);
-//app.use("/api/users", apiUsersRouter);
+
+const apiUsersRouter = require("./routes/api/apiUsersRouter.js");
+app.use("/api/users", apiUsersRouter);
 
 
 /* Not found */
