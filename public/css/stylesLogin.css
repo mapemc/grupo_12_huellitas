@@ -58,13 +58,18 @@ input
     width: calc(100% - 60px);}
 
 
-#remember-me-label-login
+#remember-me-label
     {display: flex;
     align-items: center;
     margin-right: 10px;}
+
+.input-boxes-login
+    {position: relative;}
     
-    
-      
+.input-boxes-login input[type="checkbox"]
+    {position: absolute;
+    transform: translateX(-20%) translateY(-10%);}
+            
 .forgot-password-login
     {font-style: italic;
     display: flex;
@@ -237,3 +242,4 @@ input
     width: max-content;
     text-transform: none;
 }
+
