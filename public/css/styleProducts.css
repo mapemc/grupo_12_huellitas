@@ -19,7 +19,9 @@
     top: 74%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 260%;
+    font-size: 250%;
+    text-decoration-style: wavy;
+    font-weight: bold;
 }
 
 .products-title{
@@ -62,8 +64,6 @@
 .product-box_image{
     display: flex;
 }
-
-
 
 .product-box_data{
     display: flex;
@@ -116,25 +116,36 @@ a
 
 .banner {
     width: 100%;
-    background-color: #f7a49259;
-    padding: 50px;
+    background-color: #eef6f5;
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
-    flex-direction: column;
-    /* border: #f4a691 solid 3px; */
+    padding-bottom: 25px;
+    align-content: center;
+}
+
+.icono-huella{
+    margin: 19px;
+    padding-right: 8px;
+}
+
+.material-symbols-outlined {
+    font-size: 79px;
+    color: #10a3a8;
+    padding-right: 26px;
 }
 
 .text-left {
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #9a5d59;
+    color: #1f534a;
 }
 
 .btn {
     padding: 10px 20px;
-    background-color: #e6180ea8;
+    background-color: #16afb4;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -142,6 +153,32 @@ a
     cursor: pointer;
 }
 
+.btn-admin{
+    padding: 12px 30px;
+    background-color: #16afb4;
+    color: #fff;
+    text-decoration: double;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 41px;
+    margin-left: 28px;
+    font-weight: bold;
+}
+
+.btn-nonregister{
+    padding: 10px 20px;
+    background-color: #109599d6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 17px;
+    margin-left: 31px;
+    margin-right: 20px;
+}
 /* VISTA INSALE */
 
 .bannerinsale{

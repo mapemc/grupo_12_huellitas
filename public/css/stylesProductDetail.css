@@ -345,6 +345,21 @@ body{
 .boton-enviar{
   width: 80vw;
   color: white;
+  background-color: rgb(26 35 126);
+  border: solid 2px #1259c312;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px;
+  width: 17rem;
+  transition: background-color 0.5s;
+  height: 52px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.boton-carrito{
+  width: 80vw;
+  color: white;
   background-color: rgba(17, 153, 158, 1);
   border: solid 2px #1259c312;
   border-radius: 5px;

@@ -17,22 +17,28 @@ const productController = {
     productsAll: async (req, res) =>{
       await db.Product.findAll()
       .then(products =>{
-        const user = req.session.user;
-        res.render("products.ejs", {products, user})
+        const isAdmin = req.session.user && req.session.user.category == "Admin";
+        const isRegistered = req.session.user && req.session.user.category == "Customer";
+         res.render("products.ejs", {products, isAdmin, isRegistered})
       })
+      
     },
     
     ofertas: async (req, res) =>{
     
       let products = await db.Product.findAll();
       let productosEnOferta = [];
+      
 
       try{
       products.forEach(product => {
         if(product.insale === 1){
           productosEnOferta.push(product)} 
       });
-      res.render("productsInsale.ejs", { productosEnOferta});
+      
+      const isAdmin = req.session.user && req.session.user.category == "Admin";
+      const isRegistered = req.session.user && req.session.user.category == "Customer";
+      res.render("productsInsale.ejs", { productosEnOferta, isAdmin, isRegistered});
       }
        
       catch(error){
@@ -50,7 +56,9 @@ const productController = {
         if(product.category === "Accesorios"){
           accesorios.push(product)} 
       });
-      res.render("accesorios.ejs", { accesorios});
+      const isAdmin = req.session.user && req.session.user.category == "Admin";
+      const isRegistered = req.session.user && req.session.user.category == "Customer";
+      res.render("accesorios.ejs", { accesorios, isAdmin, isRegistered});
       }
        
       catch(error){
@@ -68,7 +76,9 @@ const productController = {
         if(product.category === "Alimentos"){
           alimentos.push(product)} 
       });
-      res.render("alimentos.ejs", { alimentos});
+      const isAdmin = req.session.user && req.session.user.category == "Admin";
+      const isRegistered = req.session.user && req.session.user.category == "Customer";
+      res.render("alimentos.ejs", { alimentos, isAdmin, isRegistered});
       }
        
       catch(error){
@@ -116,12 +126,29 @@ const productController = {
       } 
     },
 
-    detail: (req, res) => {
-      db.Product.findByPk(req.params.id)
-          .then(product => {
-              res.render('productDetail.ejs', {product});
-          });
-    },
+    detail: async (req, res) => {
+      try {
+          console.log(req);
+          // Verificar si el usuario está logueado y es administrador
+          const isAdmin = req.session.user && req.session.user.category == "Admin"; // Suponiendo que tienes una propiedad 'isAdmin' en el objeto de usuario
+         
+          // Obtener el ID del producto desde los parámetros de la ruta
+          const productId = req.params.id;
+          
+          // Consultar la base de datos para obtener los detalles del producto
+          const product = await Product.findByPk(productId);
+  
+          if (!product) {
+              return res.status(404).send('Producto no encontrado');
+          }
+  
+          // Renderizar la vista de detalle de producto pasando la información del producto y el estado de administrador
+          res.render('productDetail.ejs', { product, isAdmin });
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Error al obtener detalles del producto');
+        }
+  },
 
     edit: async (req, res) =>{
       try{

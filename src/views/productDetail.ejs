@@ -108,7 +108,7 @@
             </section> -->
             <section>
                 <div class="caja-boton-carrito">
-                    <button class="boton-enviar" type="submit">
+                    <button class="boton-carrito" type="submit">
                         <i class="fa-solid fa-cart-shopping"></i> <span>AGREGAR AL CARRITO</span>
                     </button>
                 </div>
@@ -130,10 +130,12 @@
 
         </div>
     </div>    
-           
 
-            
-    <section class="caja-editar-borrar">
+      <!-- Contenido exclusivo para administradores -->
+
+    <% if (isAdmin) { %>
+        
+        <section class="caja-editar-borrar">
                 
                 <div class="caja-boton-edit">
                     <form action="/products/edit/<%= product.id %>" method="GET">
@@ -155,7 +157,7 @@
                 </div>
 
             </section>
-            
+    <% } %>         
        
     <section class="caja-descripcion">
         <div class="titulo-descripcion-producto">DESCRIPCIÓN DEL PRODUCTO</div>
@@ -232,13 +234,17 @@
         </div>
         
     </section>
+
+    <section>
+		<img src="/img/banners/banner_envios.png" alt="imagen-envios" class="img-envios">
+	</section>
         
 
     <footer>
         <%- include('partials/footer.ejs') %>
     </footer>
 
-
+    
 
     <script>
         function confirmarEliminar() {
